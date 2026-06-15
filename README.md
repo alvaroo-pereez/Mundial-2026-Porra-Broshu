@@ -174,14 +174,14 @@ Los IDs sugeridos para Broshu (según `config/groups/broshu.json`): `alvaro`, `p
 
 El diseño del marco (borde dorado, bandera, franja roja, badge de posición) es **idéntico para todos**; solo cambian retrato, nombre, posición y número.
 
-## Sync automático (API-Football + Netlify)
+## Sync automático (openfootball + Netlify)
 
-Actualiza resultados reales en Excel y en el dashboard **sin intervención manual**. Optimizado para **pocos deploys de Netlify** (solo cuando cambia un resultado).
+Actualiza resultados reales en Excel y en el dashboard **sin intervención manual**. Usa el dataset gratuito [openfootball/worldcup.json](https://github.com/openfootball/worldcup.json) — **sin API key ni registro**.
 
 ### Cómo funciona
 
 1. **GitHub Actions** ejecuta `sync_results.py` cada ~20 min (ventana de partidos UTC) y 1 vez/día fuera de esa ventana.
-2. **1 llamada API** por sync (`fixtures?league=1&season=2026`).
+2. **1 descarga JSON** por sync desde GitHub (`worldcup.json` 2026).
 3. Si hay resultados nuevos → actualiza Excel (Broshu + Papinenes) → regenera `output/{grupo}/data.json`.
 4. **Commit + push** solo si hubo cambios → Netlify redeploya (o usa Build Hook).
 5. El dashboard carga `data.json` y se **refresca solo cada 5 min** en el navegador.
@@ -191,8 +191,7 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 **1. GitHub**
 
 - Crea un repo y sube el proyecto (incluye los `.xlsx` de `output/`).
-- En **Settings → Secrets → Actions**, añade:
-  - `API_FOOTBALL_KEY` — clave gratis en [api-football.com](https://www.api-football.com/)
+- En **Settings → Secrets → Actions**, añade solo:
   - `NETLIFY_BUILD_HOOK` — URL del Build Hook de Netlify (opcional si Netlify ya está conectado al repo)
 
 **2. Netlify**
@@ -202,28 +201,20 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 - Publish directory: `output` (o usa [`netlify.toml`](netlify.toml))
 - Build Hook: Site settings → Build hooks → copiar URL al secret de GitHub
 
-**3. Bootstrap del mapeo de partidos** (una vez, cuando la API tenga el calendario)
-
-Opción A — desde GitHub Actions (recomendado si la clave solo está en Secrets):
-
-- Repo → **Actions** → **Bootstrap mapeo API-Football** → **Run workflow**
-
-Opción B — en local:
+**3. Verificar que todo está listo**
 
 ```powershell
-$env:API_FOOTBALL_KEY = "tu_clave"
+py verify_automation.py
+py verify_automation.py --skip-api   # solo Excel (sin llamar a openfootball)
+```
+
+**4. Diagnóstico de emparejamiento** (opcional)
+
+```powershell
 py bootstrap_fixture_map.py
-git add data/api_fixture_map.json
-git commit -m "bootstrap: mapeo API-Football"
-git push
 ```
 
-**4. Verificar que todo está listo**
-
-```powershell
-py verify_automation.py --ci          # con API key en el entorno
-py verify_automation.py --ci --skip-api   # solo Excel y mapa (sin llamar a la API)
-```
+Genera un informe en `data/api_fixture_map.json` (no es obligatorio para el sync).
 
 **5. Probar sync**
 
@@ -232,20 +223,23 @@ py sync_results.py --dry-run   # ver qué cambiaría
 py sync_results.py             # aplicar + regenerar dashboards
 ```
 
+Luego en GitHub: **Actions** → **Sync resultados Mundial** → **Run workflow**.
+
 ### Archivos relevantes
 
 | Archivo | Uso |
 |---------|-----|
-| [`verify_automation.py`](verify_automation.py) | Preflight antes del sync (Excel, mapa, API) |
+| [`worldcup_data.py`](worldcup_data.py) | Cliente openfootball (fetch + emparejamiento) |
+| [`verify_automation.py`](verify_automation.py) | Preflight antes del sync |
 | [`sync_results.py`](sync_results.py) | Orquestador principal |
-| [`bootstrap_fixture_map.py`](bootstrap_fixture_map.py) | Mapeo partido 1–104 ↔ fixture_id API |
-| [`config/team_mapping.json`](config/team_mapping.json) | Nombres ES → API |
+| [`bootstrap_fixture_map.py`](bootstrap_fixture_map.py) | Diagnóstico de emparejamiento (opcional) |
+| [`config/team_mapping.json`](config/team_mapping.json) | Nombres ES → inglés (openfootball) |
 | [`.github/workflows/sync-results.yml`](.github/workflows/sync-results.yml) | Cron automático |
-| [`.github/workflows/bootstrap-fixture-map.yml`](.github/workflows/bootstrap-fixture-map.yml) | Bootstrap manual del mapa |
+| [`.github/workflows/verify-fixture-map.yml`](.github/workflows/verify-fixture-map.yml) | Diagnóstico manual del mapeo |
 
 ### Coste
 
-Gratis en uso normal: API-Football (100 req/día), GitHub Actions y Netlify free tier.
+Gratis: openfootball (JSON público), GitHub Actions y Netlify free tier.
 
 ## Edición libre
 

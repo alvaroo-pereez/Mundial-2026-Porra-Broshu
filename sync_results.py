@@ -1,4 +1,4 @@
-"""Sincroniza resultados API-Football → Excel → data.json del dashboard."""
+"""Sincroniza resultados openfootball → Excel → data.json del dashboard."""
 from __future__ import annotations
 
 import sys
@@ -6,16 +6,8 @@ from pathlib import Path
 
 from openpyxl import load_workbook
 
-from api_football import (
-    FINISHED_STATUSES,
-    extract_result,
-    fetch_all_fixtures,
-    fixtures_by_id,
-    load_calendar,
-    load_fixture_map,
-    match_is_ko,
-)
 from config.groups import list_groups, load_group
+from worldcup_data import collect_finished_updates, load_calendar, match_is_ko
 
 ROOT = Path(__file__).parent
 PT_FIRST_ROW = 4
@@ -54,34 +46,7 @@ def write_excel_result(
 
 
 def collect_api_updates() -> dict[int, dict]:
-    calendar = load_calendar()
-    calendar_by_id = {m["id"]: m for m in calendar}
-    fixture_map = load_fixture_map()
-    if not fixture_map:
-        print(
-            "AVISO: MAPA VACÍO — ejecuta py bootstrap_fixture_map.py "
-            "(requiere fixtures WC 2026 en API-Football)"
-        )
-        return {}
-    all_fixtures = fetch_all_fixtures()
-    by_id = fixtures_by_id(all_fixtures)
-
-    updates: dict[int, dict] = {}
-    for mid_str, fixture_id in fixture_map.items():
-        mid = int(mid_str)
-        m = calendar_by_id.get(mid)
-        if not m:
-            continue
-        item = by_id.get(fixture_id)
-        if not item:
-            continue
-        status = item["fixture"]["status"]["short"]
-        if status not in FINISHED_STATUSES:
-            continue
-        parsed = extract_result(item, match_is_ko(m))
-        if parsed:
-            updates[mid] = parsed
-    return updates
+    return collect_finished_updates()
 
 
 def apply_to_excel(excel_path: Path, updates: dict[int, dict], dry_run: bool) -> bool:
@@ -126,9 +91,9 @@ def rebuild_dashboards() -> None:
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
-    print("Consultando API-Football...")
+    print("Consultando openfootball/worldcup.json...")
     updates = collect_api_updates()
-    print(f"Partidos finalizados en API (mapeados): {len(updates)}")
+    print(f"Partidos finalizados (emparejados): {len(updates)}")
 
     any_changed = False
     missing_excels: list[Path] = []

@@ -24,13 +24,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Preflight automatización
-        env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: python verify_automation.py --ci
+        run: python verify_automation.py
 
-      - name: Sincronizar resultados API-Football
-        env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      - name: Sincronizar resultados openfootball
         run: python sync_results.py
 
       - name: Comprobar cambios
@@ -51,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "sync: resultados automáticos API-Football"
+          git commit -m "sync: resultados automáticos openfootball"
           git push
 
       - name: Disparar deploy Netlify

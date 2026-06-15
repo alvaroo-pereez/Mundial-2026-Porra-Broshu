@@ -3,16 +3,14 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date
 from pathlib import Path
 
 from openpyxl import load_workbook
 
-from api_football import FIXTURE_MAP_PATH, fetch_all_fixtures, get_api_key, load_json
 from config.groups import list_groups, load_group
+from worldcup_data import fetch_openfootball_matches
 
 ROOT = Path(__file__).parent
-TOURNAMENT_START = date(2026, 6, 11)
 PT_FIRST_ROW = 4
 
 
@@ -38,49 +36,18 @@ def check_excel_files() -> list[str]:
     return errors
 
 
-def check_fixture_map(ci_mode: bool) -> list[str]:
-    issues: list[str] = []
-    if not FIXTURE_MAP_PATH.exists():
-        issues.append(f"Falta {FIXTURE_MAP_PATH.relative_to(ROOT)}")
-        return issues
-
-    raw = load_json(FIXTURE_MAP_PATH)
-    if not isinstance(raw, dict):
-        issues.append("api_fixture_map.json no es un objeto JSON")
-        return issues
-
-    if raw:
-        _log("OK", f"Mapeo API: {len(raw)} partidos")
-        return issues
-
-    msg = (
-        "MAPA VACÍO: ejecuta py bootstrap_fixture_map.py "
-        "(requiere fixtures WC 2026 en API-Football)"
-    )
-    if ci_mode and date.today() < TOURNAMENT_START:
-        _log("WARN", msg)
-    else:
-        issues.append(msg)
-    return issues
-
-
-def check_api_key(test_api: bool) -> list[str]:
+def check_openfootball(test_fetch: bool) -> list[str]:
     errors: list[str] = []
-    try:
-        get_api_key()
-        _log("OK", "API_FOOTBALL_KEY configurada")
-    except SystemExit:
-        errors.append("API_FOOTBALL_KEY no configurada")
+    if not test_fetch:
         return errors
-
-    if not test_api:
-        return errors
-
     try:
-        fixtures = fetch_all_fixtures()
-        _log("OK", f"API-Football responde ({len(fixtures)} fixtures liga 1 / 2026)")
+        matches = fetch_openfootball_matches()
+        finished = sum(1 for m in matches if (m.get("score") or {}).get("ft"))
+        _log("OK", f"openfootball responde ({len(matches)} partidos, {finished} con resultado)")
+        if len(matches) < 100:
+            errors.append(f"openfootball devolvió solo {len(matches)} partidos (esperados ~104)")
     except Exception as exc:
-        errors.append(f"API-Football no responde: {exc}")
+        errors.append(f"openfootball no responde: {exc}")
     return errors
 
 
@@ -110,25 +77,16 @@ def check_predictions_sample() -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verifica el pipeline de automatización")
     parser.add_argument(
-        "--ci",
-        action="store_true",
-        help="Modo CI: mapa vacío es warning antes del 11/06/2026",
-    )
-    parser.add_argument(
         "--skip-api",
         action="store_true",
-        help="No llama a API-Football (solo comprueba la clave)",
+        help="No llama a openfootball (solo comprueba Excel)",
     )
     args = parser.parse_args()
 
     _log("INFO", "Verificando automatización porra Mundial 2026...")
     errors: list[str] = []
     errors.extend(check_excel_files())
-    errors.extend(check_fixture_map(ci_mode=args.ci))
-    if not args.skip_api:
-        errors.extend(check_api_key(test_api=True))
-    else:
-        _log("INFO", "Comprobación API omitida (--skip-api)")
+    errors.extend(check_openfootball(test_fetch=not args.skip_api))
 
     try:
         check_predictions_sample()

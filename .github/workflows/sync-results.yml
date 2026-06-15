@@ -23,6 +23,11 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Preflight automatización
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python verify_automation.py --ci
+
       - name: Sincronizar resultados API-Football
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -36,6 +41,9 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            if git diff --staged --name-only | grep -q '\.xlsx$'; then
+              echo "xlsx_updated=true" >> "$GITHUB_OUTPUT"
+            fi
           fi
 
       - name: Commit y push

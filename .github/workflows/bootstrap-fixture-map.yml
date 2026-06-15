@@ -1,0 +1,37 @@
+name: Bootstrap mapeo API-Football
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Generar api_fixture_map.json
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python bootstrap_fixture_map.py
+
+      - name: Commit y push si hay cambios
+        run: |
+          git add data/api_fixture_map.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el mapeo"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "bootstrap: mapeo API-Football"
+          git push

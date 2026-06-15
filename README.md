@@ -202,7 +202,13 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 - Publish directory: `output` (o usa [`netlify.toml`](netlify.toml))
 - Build Hook: Site settings → Build hooks → copiar URL al secret de GitHub
 
-**3. Bootstrap del mapeo de partidos** (una vez, antes del torneo)
+**3. Bootstrap del mapeo de partidos** (una vez, cuando la API tenga el calendario)
+
+Opción A — desde GitHub Actions (recomendado si la clave solo está en Secrets):
+
+- Repo → **Actions** → **Bootstrap mapeo API-Football** → **Run workflow**
+
+Opción B — en local:
 
 ```powershell
 $env:API_FOOTBALL_KEY = "tu_clave"
@@ -212,7 +218,14 @@ git commit -m "bootstrap: mapeo API-Football"
 git push
 ```
 
-**4. Probar en local**
+**4. Verificar que todo está listo**
+
+```powershell
+py verify_automation.py --ci          # con API key en el entorno
+py verify_automation.py --ci --skip-api   # solo Excel y mapa (sin llamar a la API)
+```
+
+**5. Probar sync**
 
 ```powershell
 py sync_results.py --dry-run   # ver qué cambiaría
@@ -223,10 +236,12 @@ py sync_results.py             # aplicar + regenerar dashboards
 
 | Archivo | Uso |
 |---------|-----|
+| [`verify_automation.py`](verify_automation.py) | Preflight antes del sync (Excel, mapa, API) |
 | [`sync_results.py`](sync_results.py) | Orquestador principal |
 | [`bootstrap_fixture_map.py`](bootstrap_fixture_map.py) | Mapeo partido 1–104 ↔ fixture_id API |
 | [`config/team_mapping.json`](config/team_mapping.json) | Nombres ES → API |
 | [`.github/workflows/sync-results.yml`](.github/workflows/sync-results.yml) | Cron automático |
+| [`.github/workflows/bootstrap-fixture-map.yml`](.github/workflows/bootstrap-fixture-map.yml) | Bootstrap manual del mapa |
 
 ### Coste
 

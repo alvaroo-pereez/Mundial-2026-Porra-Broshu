@@ -57,6 +57,12 @@ def collect_api_updates() -> dict[int, dict]:
     calendar = load_calendar()
     calendar_by_id = {m["id"]: m for m in calendar}
     fixture_map = load_fixture_map()
+    if not fixture_map:
+        print(
+            "AVISO: MAPA VACÍO — ejecuta py bootstrap_fixture_map.py "
+            "(requiere fixtures WC 2026 en API-Football)"
+        )
+        return {}
     all_fixtures = fetch_all_fixtures()
     by_id = fixtures_by_id(all_fixtures)
 
@@ -125,15 +131,22 @@ def main() -> None:
     print(f"Partidos finalizados en API (mapeados): {len(updates)}")
 
     any_changed = False
+    missing_excels: list[Path] = []
     for group_id in list_groups():
         group = load_group(group_id)
         excel_path = group["excel_path"]
         if not excel_path.exists():
-            print(f"  Aviso: no existe {excel_path}, se omite")
+            missing_excels.append(excel_path)
             continue
         print(f"Grupo {group_id} ({excel_path.name}):")
         if apply_to_excel(excel_path, updates, dry_run):
             any_changed = True
+
+    if missing_excels:
+        for path in missing_excels:
+            print(f"  Error: no existe {path}")
+        print("Los Excel deben estar en output/ y subidos al repositorio.")
+        sys.exit(1)
 
     if any_changed and not dry_run:
         print("Regenerando dashboards...")

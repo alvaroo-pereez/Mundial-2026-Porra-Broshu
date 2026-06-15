@@ -1,0 +1,11 @@
+{
+  "players": [
+    {
+      "id": "felipe",
+      "name": "Felipe",
+      "position": "DEFENSA",
+      "photo": "assets/photos/felipe.png",
+      "number": 8
+    }
+  ]
+}

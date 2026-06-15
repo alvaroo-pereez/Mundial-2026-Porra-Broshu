@@ -1,0 +1,24 @@
+{
+  "id": "broshu",
+  "label": "Broshu",
+  "players": [
+    "Álvaro",
+    "Pepe",
+    "Patri",
+    "Kike",
+    "Quintero",
+    "Nacho",
+    "Luis",
+    "Felipe",
+    "Simón",
+    "Muni",
+    "Fer"
+  ],
+  "excel": "Porra_Mundial_2026.xlsx",
+  "dashboard": "dashboard_broshu.html",
+  "assets_dir": "broshu",
+  "photos_src": "Fotos a usar en dashboard",
+  "photo_overrides": {
+    "Quintero": "Quinte.png"
+  }
+}

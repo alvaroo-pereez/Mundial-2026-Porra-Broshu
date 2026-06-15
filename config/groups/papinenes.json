@@ -1,0 +1,16 @@
+{
+  "id": "papinenes",
+  "label": "Papinenes",
+  "players": [
+    "Álvaro",
+    "Papá",
+    "Diego"
+  ],
+  "excel": "Porra_Mundial_2026_Papinenes.xlsx",
+  "dashboard": "dashboard_papinenes.html",
+  "assets_dir": "papinenes",
+  "photos_src": "Fotos a usar en dashboard Papinenes",
+  "photo_overrides": {
+    "Papá": "Papa.png"
+  }
+}

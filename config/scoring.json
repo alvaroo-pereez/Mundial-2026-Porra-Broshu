@@ -1,0 +1,23 @@
+{
+  "grupos": {
+    "exacto": 5,
+    "diferencia": 3,
+    "ganador_empate": 2
+  },
+  "eliminatorias": {
+    "exacto": 10,
+    "diferencia": 6,
+    "clasificado": 4
+  },
+  "bonus_ronda": {
+    "octavos": 15,
+    "cuartos": 15,
+    "semifinal": 15
+  },
+  "apuesta_especial": 10,
+  "rondas_bonus": {
+    "Octavos": 8,
+    "Cuartos": 4,
+    "Semifinal": 2
+  }
+}

@@ -49,6 +49,18 @@ def collect_api_updates() -> dict[int, dict]:
     return collect_finished_updates()
 
 
+def count_excel_finished(excel_path: Path, total_matches: int) -> int:
+    wb = load_workbook(excel_path, read_only=True, data_only=True)
+    pt = wb["Partidos"]
+    count = 0
+    for mid in range(1, total_matches + 1):
+        row = PT_FIRST_ROW + mid - 1
+        if pt.cell(row, 6).value is not None and pt.cell(row, 7).value is not None:
+            count += 1
+    wb.close()
+    return count
+
+
 def apply_to_excel(excel_path: Path, updates: dict[int, dict], dry_run: bool) -> bool:
     calendar = load_calendar()
     calendar_by_id = {m["id"]: m for m in calendar}
@@ -118,7 +130,18 @@ def main() -> None:
         rebuild_dashboards()
         print("Listo.")
     elif not any_changed:
-        print("Sin cambios.")
+        total_matches = len(load_calendar())
+        for group_id in list_groups():
+            group = load_group(group_id)
+            excel_path = group["excel_path"]
+            if excel_path.exists():
+                in_excel = count_excel_finished(excel_path, total_matches)
+                print(
+                    f"Sin cambios en {group_id}. "
+                    f"openfootball: {len(updates)} con resultado | Excel: {in_excel} con resultado"
+                )
+        if not any(load_group(g)["excel_path"].exists() for g in list_groups()):
+            print("Sin cambios.")
     elif dry_run:
         print("(dry-run: no se escribió nada)")
 

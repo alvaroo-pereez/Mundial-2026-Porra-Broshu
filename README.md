@@ -180,7 +180,7 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 
 ### Cómo funciona
 
-1. **GitHub Actions** ejecuta `sync_results.py` cada **10 min, 24 h** durante el torneo (y un segundo intento 15 min después si hubo cambios).
+1. **GitHub Actions** ejecuta `sync_results.py` cada **10 min, 24 h**, **en cada push a `main`** y con un segundo intento 15 min después si hubo cambios.
 2. **1 descarga JSON** por sync desde GitHub (`worldcup.json` 2026).
 3. Si hay resultados nuevos → actualiza Excel (Broshu + Papinenes) → regenera `output/{grupo}/data.json`.
 4. **Commit + push** solo si hubo cambios → Netlify redeploya (o usa Build Hook).
@@ -191,6 +191,9 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 **1. GitHub**
 
 - Crea un repo y sube el proyecto (incluye los `.xlsx` de `output/`).
+- En **Settings → Actions → General**:
+  - Actions **habilitadas**
+  - Workflow permissions: **Read and write permissions** (necesario para que el bot haga commit+push)
 - En **Settings → Secrets → Actions**, añade solo:
   - `NETLIFY_BUILD_HOOK` — URL del Build Hook de Netlify (opcional si Netlify ya está conectado al repo)
 

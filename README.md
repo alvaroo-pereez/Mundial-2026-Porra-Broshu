@@ -180,11 +180,11 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 
 ### Cómo funciona
 
-1. **GitHub Actions** ejecuta `sync_results.py` cada ~20 min (ventana de partidos UTC) y 1 vez/día fuera de esa ventana.
+1. **GitHub Actions** ejecuta `sync_results.py` cada **10 min, 24 h** durante el torneo (y un segundo intento 15 min después si hubo cambios).
 2. **1 descarga JSON** por sync desde GitHub (`worldcup.json` 2026).
 3. Si hay resultados nuevos → actualiza Excel (Broshu + Papinenes) → regenera `output/{grupo}/data.json`.
 4. **Commit + push** solo si hubo cambios → Netlify redeploya (o usa Build Hook).
-5. El dashboard carga `data.json` y se **refresca solo cada 5 min** en el navegador.
+5. El dashboard carga `data.json` y se **refresca solo cada 2 min** en el navegador.
 
 ### Configuración única
 

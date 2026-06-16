@@ -1539,7 +1539,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     window.addEventListener('hashchange', router);
     loadData(false).then(() => {
-      if (DATA) setInterval(() => loadData(true), 5 * 60 * 1000);
+      if (DATA) setInterval(() => loadData(true), 2 * 60 * 1000);
     });
   </script>
 </body>

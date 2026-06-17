@@ -180,11 +180,13 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 
 ### Cómo funciona
 
-1. **GitHub Actions** ejecuta `sync_results.py` cada **10 min, 24 h**, **en cada push a `main`** y con un segundo intento 15 min después si hubo cambios.
+1. **GitHub Actions** ejecuta `sync_results.py` **2 veces al día**: a las **00:00** y **06:00** (hora peninsular española, CEST en jun-jul).
 2. **1 descarga JSON** por sync desde GitHub (`worldcup.json` 2026).
 3. Si hay resultados nuevos → actualiza Excel (Broshu + Papinenes) → regenera `output/{grupo}/data.json`.
 4. **Commit + push** solo si hubo cambios → Netlify redeploya (o usa Build Hook).
 5. El dashboard carga `data.json` y se **refresca solo cada 2 min** en el navegador.
+
+También puedes lanzar el sync manualmente: **Actions** → **Sync resultados Mundial** → **Run workflow**.
 
 ### Configuración única
 
@@ -192,10 +194,18 @@ Actualiza resultados reales en Excel y en el dashboard **sin intervención manua
 
 - Crea un repo y sube el proyecto (incluye los `.xlsx` de `output/`).
 - En **Settings → Actions → General**:
-  - Actions **habilitadas**
-  - Workflow permissions: **Read and write permissions** (necesario para que el bot haga commit+push)
+  - Actions: **Allow all actions**
+  - Workflow permissions: **Read and write permissions** (obligatorio para que el bot haga commit+push)
+- En **Settings → Branches → `main`**: si hay protección de rama, permite push directo de `github-actions[bot]` o desactiva la restricción para commits automáticos.
 - En **Settings → Secrets → Actions**, añade solo:
   - `NETLIFY_BUILD_HOOK` — URL del Build Hook de Netlify (opcional si Netlify ya está conectado al repo)
+
+**Verificar que Actions funciona** (hazlo una vez tras configurar o cambiar el workflow):
+
+1. Ve a **Actions** → **Sync resultados Mundial** → **Run workflow** → **Run workflow**.
+2. El run debe terminar en verde.
+3. Si hay resultados nuevos en openfootball, aparecerá un commit `sync: resultados automáticos openfootball` de `github-actions[bot]`.
+4. Si el run falla en **Commit y push**, revisa los permisos de arriba.
 
 **2. Netlify**
 
@@ -226,7 +236,7 @@ py sync_results.py --dry-run   # ver qué cambiaría
 py sync_results.py             # aplicar + regenerar dashboards
 ```
 
-Luego en GitHub: **Actions** → **Sync resultados Mundial** → **Run workflow**.
+Luego en GitHub: **Actions** → **Sync resultados Mundial** → **Run workflow** (para comprobar que el bot puede hacer commit+push).
 
 ### Archivos relevantes
 

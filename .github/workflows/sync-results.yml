@@ -1,12 +1,12 @@
 name: Sync resultados Mundial
 
-# Horarios en UTC (GitHub cron). España CEST (jun-jul) = UTC+2:
-#   0 22 * * * → 00:00 hora peninsular española
-#   0 4  * * * → 06:00 hora peninsular española
+# Horarios en UTC. España CEST (jun-jul) = UTC+2.
+# Sync cada 30 min entre 18:00 y 08:00 hora peninsular:
 on:
   schedule:
-    - cron: "0 22 * * *"
-    - cron: "0 4 * * *"
+    - cron: "*/30 16-23 * * *"
+    - cron: "*/30 0-5 * * *"
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:

@@ -344,9 +344,10 @@ def build_stats(
 
     player_stats.sort(key=lambda x: (-x["points"], -x["exact"], x["fails"]))
 
-    evolution_labels = list(range(1, min(16, n_matches) + 1))
+    last_p = max(finished) if finished else 0
+    evolution_labels = list(range(1, last_p + 1)) if last_p else []
     evolution: dict[str, list] = {}
-    for ps in player_stats[:3]:
+    for ps in player_stats:
         name = ps["name"]
         cum = []
         for n in evolution_labels:
@@ -808,6 +809,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     .chart-wrap { position: relative; height: 300px; }
     .chart-wrap.tall { height: 360px; }
+    .chart-wrap.evo { height: 450px; }
 
     .match-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid var(--border); gap: 0.75rem; }
     .match-row:last-child { border-bottom: none; }
@@ -935,11 +937,22 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     .spec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .spec-card { border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 0.85rem; border-top: 4px solid var(--t-pending); }
+    .spec-card-clickable { cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .spec-card-clickable:hover { background: rgba(255,255,255,0.04); }
+    .spec-card-clickable.expanded { border-color: var(--gold); background: rgba(197,160,40,0.06); }
     .spec-card.hit { border-top-color: var(--t-exact); }
     .spec-card.fail { border-top-color: var(--t-miss); }
     .spec-card .cat { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
     .spec-card .pred { font-weight: 700; font-size: 1rem; margin: 0.2rem 0; }
     .spec-card .off { font-size: 0.8rem; color: var(--muted); }
+    .spec-card .spec-hint { font-size: 0.68rem; color: var(--muted); margin-top: 0.45rem; }
+    .spec-detail { margin-top: 0.75rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
+    .spec-detail-title { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.45rem; }
+    .spec-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row-name { font-weight: 600; flex-shrink: 0; }
+    .spec-row-pred { text-align: right; color: var(--text); }
+    .spec-row-hit .spec-row-pred { color: #86efac; font-weight: 700; }
     .spec-status { font-size: 0.74rem; font-weight: 700; margin-top: 0.4rem; }
     .spec-status.hit { color: #86efac; }
     .spec-status.fail { color: #fca5a5; }
@@ -1252,15 +1265,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           }).join('')}</div>`
         : '<p class="muted">No hay partidos pendientes.</p>';
 
-      const specHtml = h.specials_summary.map(s => {
+      const specHtml = h.specials_summary.map((s, i) => {
         const winners = s.aciertos.length
           ? s.aciertos.map(n => `<span class="chip">${esc(n)}</span>`).join('')
           : '<span class="muted">—</span>';
-        return `<div class="spec-card ${s.oficial ? (s.aciertos.length ? 'hit' : 'fail') : ''}">
+        return `<div class="spec-card spec-card-clickable ${s.oficial ? (s.aciertos.length ? 'hit' : 'fail') : ''}" data-idx="${i}">
           <div class="cat">${esc(s.categoria)}</div>
           <div class="pred">${s.oficial ? esc(s.oficial) : '<span class="muted">Sin resultado</span>'}</div>
           <div class="off">Aciertan:</div>
           <div class="chips" style="margin-top:.3rem">${winners}</div>
+          <div class="spec-hint">Clic para ver pronósticos</div>
+          <div class="spec-detail" hidden></div>
         </div>`;
       }).join('');
 
@@ -1278,14 +1293,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           <div id="rankingBox"></div>
         </div>
 
-        <div class="grid-2">
-          <div class="card"><h2>Puntos totales</h2><div class="chart-wrap"><canvas id="chartPoints"></canvas></div></div>
-          <div class="card"><h2>Origen de los puntos</h2><div class="chart-wrap"><canvas id="chartSource"></canvas></div></div>
+        <div class="card">
+          <h2>Puntos totales</h2>
+          <div class="chart-wrap"><canvas id="chartSource"></canvas></div>
         </div>
 
-        <div class="grid-2">
-          <div class="card"><h2>__EVO_TITLE__</h2><div class="chart-wrap"><canvas id="chartEvo"></canvas></div></div>
-          <div class="card"><h2>Últimos resultados</h2>${lastHtml}</div>
+        <div class="card card-evo">
+          <h2>__EVO_TITLE__</h2>
+          <div class="chart-wrap evo"><canvas id="chartEvo"></canvas></div>
+        </div>
+
+        <div class="card">
+          <h2>Últimos resultados</h2>${lastHtml}
         </div>
 
         <div class="card"><h2>Próximos partidos</h2>${upcomingHtml}</div>
@@ -1330,6 +1349,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       });
 
       drawHomeCharts();
+      bindSpecCards();
+    }
+
+    function bindSpecCards() {
+      const ordered = (DATA.players_index || []).map(pi => DATA.players[pi.name]).filter(Boolean);
+      const players = ordered.length ? ordered : Object.values(DATA.players || {});
+      document.querySelectorAll('.spec-card-clickable').forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = parseInt(card.dataset.idx, 10);
+          const wasExpanded = card.classList.contains('expanded');
+          document.querySelectorAll('.spec-card-clickable').forEach(c => {
+            c.classList.remove('expanded');
+            const d = c.querySelector('.spec-detail');
+            if (d) d.hidden = true;
+          });
+          if (!wasExpanded) {
+            card.classList.add('expanded');
+            const detail = card.querySelector('.spec-detail');
+            if (detail && !detail.dataset.filled) {
+              const rows = players.map(p => {
+                const sp = (p.specials || [])[idx] || {};
+                const pred = sp.prediccion ? esc(sp.prediccion) : '<span class="muted">Sin apuesta</span>';
+                const hitCls = sp.hit ? ' spec-row-hit' : '';
+                return `<div class="spec-row${hitCls}"><span class="spec-row-name">${esc(p.name)}</span><span class="spec-row-pred">${pred}</span></div>`;
+              }).join('');
+              detail.innerHTML = `<div class="spec-detail-title">Pronósticos por jugador</div>${rows}`;
+              detail.dataset.filled = '1';
+            }
+            detail.hidden = false;
+          }
+        });
+      });
     }
 
     function drawHomeCharts() {
@@ -1338,15 +1389,6 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       Chart.defaults.font.family = "'Inter', sans-serif";
       const r = DATA.home.ranking;
       const names = r.map(p => p.name);
-
-      charts.push(new Chart(document.getElementById('chartPoints'), {
-        type: 'bar',
-        data: { labels: names, datasets: [{ label: 'Puntos', data: r.map(p => p.points),
-          backgroundColor: 'rgba(0,102,204,0.75)', borderColor: '#0066CC', borderWidth: 1, borderRadius: 4 }] },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: { x: { grid: { display: false } }, y: { grid: { display: false }, ticks: { color: '#f5f5f5', font: { size: 11 } } } } }
-      }));
 
       charts.push(new Chart(document.getElementById('chartSource'), {
         type: 'bar',
@@ -1361,16 +1403,22 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       }));
 
       const evoNames = Object.keys(DATA.home.evolution);
-      const evoColors = ['#C5A028', '#0066CC', '#2E7D32'];
-      charts.push(new Chart(document.getElementById('chartEvo'), {
-        type: 'line',
-        data: { labels: DATA.home.evolution_labels.map(n => 'P' + n),
-          datasets: evoNames.map((name, i) => ({ label: name, data: DATA.home.evolution[name],
-            borderColor: evoColors[i], backgroundColor: evoColors[i] + '33', tension: 0.25, fill: false, pointRadius: 2 })) },
-        options: { responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { position: 'bottom' } },
-          scales: { x: { grid: { display: false } }, y: { grid: { display: false }, beginAtZero: true } } }
-      }));
+      const evoColors = [
+        '#C5A028', '#0066CC', '#2E7D32', '#C62828', '#6d28d9', '#0e7490',
+        '#b45309', '#15803d', '#7c3aed', '#db2777', '#0891b2', '#ca8a04',
+      ];
+      if (evoNames.length && document.getElementById('chartEvo')) {
+        charts.push(new Chart(document.getElementById('chartEvo'), {
+          type: 'line',
+          data: { labels: DATA.home.evolution_labels.map(n => 'P' + n),
+            datasets: evoNames.map((name, i) => ({ label: name, data: DATA.home.evolution[name],
+              borderColor: evoColors[i % evoColors.length], backgroundColor: evoColors[i % evoColors.length] + '33',
+              tension: 0.25, fill: false, pointRadius: 2 })) },
+          options: { responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } } },
+            scales: { x: { grid: { display: false } }, y: { grid: { display: false }, beginAtZero: true } } }
+        }));
+      }
 
       charts.push(new Chart(document.getElementById('chartBreakdown'), {
         type: 'bar',
@@ -1576,7 +1624,7 @@ def render_html(data: dict, group: dict) -> str:
         .replace("__GROUP_TITLE__", group_title)
         .replace("__EXCEL_NAME__", group["excel"])
         .replace("__BUILD_CMD__", f"py build_dashboard.py --group {group['id']}")
-        .replace("__EVO_TITLE__", f"Evolución — Top {evo_top}")
+        .replace("__EVO_TITLE__", "Evolución de puntos")
         .replace("__DATA_URL__", data_url)
     )
 

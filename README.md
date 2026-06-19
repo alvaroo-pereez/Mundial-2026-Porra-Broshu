@@ -32,7 +32,7 @@ py build_dashboard.py --group papinenes
 
 (O se regenera solo al ejecutar `py generate_porra.py --group <grupo>`.)
 
-El dashboard carga los datos desde `output/{grupo}/data.json` (se actualiza al regenerar). En Netlify, el navegador refresca esos datos cada 5 minutos automáticamente.
+El dashboard carga los datos desde `output/{grupo}/data.json` (se actualiza al regenerar). En el navegador, esos datos se refrescan automáticamente cada 2 minutos.
 
 ### Fotos del dashboard
 
@@ -174,45 +174,52 @@ Los IDs sugeridos para Broshu (según `config/groups/broshu.json`): `alvaro`, `p
 
 El diseño del marco (borde dorado, bandera, franja roja, badge de posición) es **idéntico para todos**; solo cambian retrato, nombre, posición y número.
 
-## Sync automático (openfootball + Netlify)
+## Sync automático (openfootball + GitHub Pages)
 
 Actualiza resultados reales en Excel y en el dashboard **sin intervención manual**. Usa el dataset gratuito [openfootball/worldcup.json](https://github.com/openfootball/worldcup.json) — **sin API key ni registro**.
+
+### URLs del dashboard
+
+| Recurso | URL |
+|---------|-----|
+| Portada | `https://alvaroo-pereez.github.io/Mundial-2026-Porra-Broshu/` |
+| Broshu | `https://alvaroo-pereez.github.io/Mundial-2026-Porra-Broshu/dashboard_broshu.html` |
+| Papinenes | `https://alvaroo-pereez.github.io/Mundial-2026-Porra-Broshu/dashboard_papinenes.html` |
 
 ### Cómo funciona
 
 1. **GitHub Actions** ejecuta `sync_results.py` **cada 30 min, de 18:00 a 08:00** (hora peninsular española, CEST en jun-jul). Fuera de esa ventana no hay sync automático.
 2. **1 descarga JSON** por sync desde GitHub (`worldcup.json` 2026).
 3. Si hay resultados nuevos → actualiza Excel (Broshu + Papinenes) → regenera `output/{grupo}/data.json`.
-4. **Commit + push** solo si hubo cambios → Netlify redeploya (o usa Build Hook).
+4. **Commit + push** solo si hubo cambios → GitHub Pages redeploya automáticamente.
 5. El dashboard carga `data.json` y se **refresca solo cada 2 min** en el navegador.
 
 También puedes lanzar el sync manualmente: **Actions** → **Sync resultados Mundial** → **Run workflow**.
 
 ### Configuración única
 
-**1. GitHub**
+**1. GitHub — repositorio**
 
-- Crea un repo y sube el proyecto (incluye los `.xlsx` de `output/`).
+- El repo debe ser **público** (GitHub Pages gratuito en cuentas free).
 - En **Settings → Actions → General**:
   - Actions: **Allow all actions**
   - Workflow permissions: **Read and write permissions** (obligatorio para que el bot haga commit+push)
 - En **Settings → Branches → `main`**: si hay protección de rama, permite push directo de `github-actions[bot]` o desactiva la restricción para commits automáticos.
-- En **Settings → Secrets → Actions**, añade solo:
-  - `NETLIFY_BUILD_HOOK` — URL del Build Hook de Netlify (opcional si Netlify ya está conectado al repo)
+
+**2. GitHub Pages**
+
+- Repo → **Settings → Pages**
+- **Build and deployment → Source:** **GitHub Actions** (no "Deploy from a branch")
+- El workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) publica la carpeta `output/` en cada push a `main`.
 
 **Verificar que Actions funciona** (hazlo una vez tras configurar o cambiar el workflow):
 
-1. Ve a **Actions** → **Sync resultados Mundial** → **Run workflow** → **Run workflow**.
-2. El run debe terminar en verde.
-3. Si hay resultados nuevos en openfootball, aparecerá un commit `sync: resultados automáticos openfootball` de `github-actions[bot]`.
-4. Si el run falla en **Commit y push**, revisa los permisos de arriba.
-
-**2. Netlify**
-
-- **Add site → Import from Git** (sustituye la subida manual).
-- Build command: *(vacío)*
-- Publish directory: `output` (o usa [`netlify.toml`](netlify.toml))
-- Build Hook: Site settings → Build hooks → copiar URL al secret de GitHub
+1. Ve a **Actions** → **Deploy GitHub Pages** → **Run workflow** → **Run workflow** (primer deploy).
+2. Cuando termine en verde, en **Settings → Pages** verás la URL publicada.
+3. Ve a **Actions** → **Sync resultados Mundial** → **Run workflow** → **Run workflow**.
+4. El run debe terminar en verde.
+5. Si hay resultados nuevos en openfootball, aparecerá un commit `sync: resultados automáticos openfootball` de `github-actions[bot]`.
+6. Si el run falla en **Commit y push**, revisa los permisos de arriba.
 
 **3. Verificar que todo está listo**
 
@@ -248,11 +255,12 @@ Luego en GitHub: **Actions** → **Sync resultados Mundial** → **Run workflow*
 | [`bootstrap_fixture_map.py`](bootstrap_fixture_map.py) | Diagnóstico de emparejamiento (opcional) |
 | [`config/team_mapping.json`](config/team_mapping.json) | Nombres ES → inglés (openfootball) |
 | [`.github/workflows/sync-results.yml`](.github/workflows/sync-results.yml) | Cron automático |
+| [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) | Deploy automático a GitHub Pages |
 | [`.github/workflows/verify-fixture-map.yml`](.github/workflows/verify-fixture-map.yml) | Diagnóstico manual del mapeo |
 
 ### Coste
 
-Gratis: openfootball (JSON público), GitHub Actions y Netlify free tier.
+Gratis: openfootball (JSON público), GitHub Actions y GitHub Pages.
 
 ## Edición libre
 

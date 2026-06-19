@@ -51,14 +51,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "sync: resultados automáticos openfootball"
           git push
-
-      - name: Disparar deploy Netlify
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
-        run: |
-          if [ -n "$NETLIFY_BUILD_HOOK" ]; then
-            curl -sS -X POST "$NETLIFY_BUILD_HOOK"
-          else
-            echo "NETLIFY_BUILD_HOOK no configurado; Netlify desplegará al detectar el push si está conectado a Git."
-          fi

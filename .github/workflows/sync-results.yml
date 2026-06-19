@@ -1,12 +1,9 @@
 name: Sync resultados Mundial
 
-# Horarios en UTC. España CEST (jun-jul) = UTC+2.
-# Sync cada 30 min entre 18:00 y 08:00 hora peninsular:
+# Sync cada 30 min, 24 h (UTC).
 on:
   schedule:
-    - cron: "*/30 16-23 * * *"
-    - cron: "*/30 0-5 * * *"
-    - cron: "0 6 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:

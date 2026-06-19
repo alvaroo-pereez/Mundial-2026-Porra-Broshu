@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "19/06/2026 11:11",
+    "generated_at": "19/06/2026 21:49",
     "total_matches": 104,
-    "finished_count": 28,
-    "progress_pct": 26.9,
-    "avg_pts": 1.54,
+    "finished_count": 29,
+    "progress_pct": 27.9,
+    "avg_pts": 1.55,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,59 +23,59 @@
   "home": {
     "leader": {
       "name": "Patri",
-      "points": 43,
-      "points_match": 43,
+      "points": 45,
+      "points_match": 45,
       "points_bonus": 0,
       "points_special": 0,
       "exact": 1,
-      "partial": 16,
+      "partial": 17,
       "fails": 11,
-      "pct": 60.7
+      "pct": 62.1
     },
     "ranking": [
       {
         "name": "Patri",
-        "points": 43,
-        "points_match": 43,
+        "points": 45,
+        "points_match": 45,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 16,
+        "partial": 17,
         "fails": 11,
-        "pct": 60.7
+        "pct": 62.1
       },
       {
         "name": "Kike",
-        "points": 42,
-        "points_match": 42,
+        "points": 44,
+        "points_match": 44,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 14,
+        "partial": 15,
         "fails": 12,
-        "pct": 57.1
+        "pct": 58.6
       },
       {
         "name": "Pepe",
-        "points": 38,
-        "points_match": 38,
+        "points": 40,
+        "points_match": 40,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 13,
+        "fails": 14,
+        "pct": 51.7
+      },
+      {
+        "name": "Álvaro",
+        "points": 39,
+        "points_match": 39,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 12,
-        "fails": 14,
-        "pct": 50.0
-      },
-      {
-        "name": "Álvaro",
-        "points": 37,
-        "points_match": 37,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 11,
         "fails": 15,
-        "pct": 46.4
+        "pct": 48.3
       },
       {
         "name": "Quintero",
@@ -85,52 +85,52 @@
         "points_special": 0,
         "exact": 2,
         "partial": 11,
-        "fails": 15,
-        "pct": 46.4
+        "fails": 16,
+        "pct": 44.8
       },
       {
         "name": "Fer",
+        "points": 35,
+        "points_match": 35,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 11,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Nacho",
+        "points": 34,
+        "points_match": 34,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 1,
+        "partial": 12,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Simón",
         "points": 32,
         "points_match": 32,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 1,
+        "partial": 12,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Luis",
+        "points": 31,
+        "points_match": 31,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 10,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Nacho",
-        "points": 32,
-        "points_match": 32,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 1,
-        "partial": 11,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Simón",
-        "points": 30,
-        "points_match": 30,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 1,
-        "partial": 11,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Luis",
-        "points": 29,
-        "points_match": 29,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 9,
         "fails": 17,
-        "pct": 39.3
+        "pct": 41.4
       },
       {
         "name": "Felipe",
@@ -140,8 +140,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 11,
-        "fails": 16,
-        "pct": 42.9
+        "fails": 17,
+        "pct": 41.4
       },
       {
         "name": "Muni",
@@ -151,54 +151,54 @@
         "points_special": 0,
         "exact": 1,
         "partial": 10,
-        "fails": 17,
-        "pct": 39.3
+        "fails": 18,
+        "pct": 37.9
       }
     ],
     "ranking_by_pct": [
       {
         "name": "Patri",
-        "points": 43,
-        "points_match": 43,
+        "points": 45,
+        "points_match": 45,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 16,
+        "partial": 17,
         "fails": 11,
-        "pct": 60.7
+        "pct": 62.1
       },
       {
         "name": "Kike",
-        "points": 42,
-        "points_match": 42,
+        "points": 44,
+        "points_match": 44,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 14,
+        "partial": 15,
         "fails": 12,
-        "pct": 57.1
+        "pct": 58.6
       },
       {
         "name": "Pepe",
-        "points": 38,
-        "points_match": 38,
+        "points": 40,
+        "points_match": 40,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 13,
+        "fails": 14,
+        "pct": 51.7
+      },
+      {
+        "name": "Álvaro",
+        "points": 39,
+        "points_match": 39,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 12,
-        "fails": 14,
-        "pct": 50.0
-      },
-      {
-        "name": "Álvaro",
-        "points": 37,
-        "points_match": 37,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 11,
         "fails": 15,
-        "pct": 46.4
+        "pct": 48.3
       },
       {
         "name": "Quintero",
@@ -208,41 +208,52 @@
         "points_special": 0,
         "exact": 2,
         "partial": 11,
-        "fails": 15,
-        "pct": 46.4
+        "fails": 16,
+        "pct": 44.8
       },
       {
         "name": "Fer",
+        "points": 35,
+        "points_match": 35,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 11,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Nacho",
+        "points": 34,
+        "points_match": 34,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 1,
+        "partial": 12,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Simón",
         "points": 32,
         "points_match": 32,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 1,
+        "partial": 12,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Luis",
+        "points": 31,
+        "points_match": 31,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 10,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Nacho",
-        "points": 32,
-        "points_match": 32,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 1,
-        "partial": 11,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Simón",
-        "points": 30,
-        "points_match": 30,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 1,
-        "partial": 11,
-        "fails": 16,
-        "pct": 42.9
+        "fails": 17,
+        "pct": 41.4
       },
       {
         "name": "Felipe",
@@ -252,19 +263,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 11,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Luis",
-        "points": 29,
-        "points_match": 29,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 9,
         "fails": 17,
-        "pct": 39.3
+        "pct": 41.4
       },
       {
         "name": "Muni",
@@ -274,43 +274,43 @@
         "points_special": 0,
         "exact": 1,
         "partial": 10,
-        "fails": 17,
-        "pct": 39.3
+        "fails": 18,
+        "pct": 37.9
       }
     ],
     "ranking_by_exact": [
       {
         "name": "Kike",
-        "points": 42,
-        "points_match": 42,
+        "points": 44,
+        "points_match": 44,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 14,
+        "partial": 15,
         "fails": 12,
-        "pct": 57.1
+        "pct": 58.6
       },
       {
         "name": "Pepe",
-        "points": 38,
-        "points_match": 38,
+        "points": 40,
+        "points_match": 40,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 13,
+        "fails": 14,
+        "pct": 51.7
+      },
+      {
+        "name": "Álvaro",
+        "points": 39,
+        "points_match": 39,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 12,
-        "fails": 14,
-        "pct": 50.0
-      },
-      {
-        "name": "Álvaro",
-        "points": 37,
-        "points_match": 37,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 11,
         "fails": 15,
-        "pct": 46.4
+        "pct": 48.3
       },
       {
         "name": "Quintero",
@@ -320,63 +320,63 @@
         "points_special": 0,
         "exact": 2,
         "partial": 11,
-        "fails": 15,
-        "pct": 46.4
+        "fails": 16,
+        "pct": 44.8
       },
       {
         "name": "Fer",
-        "points": 32,
-        "points_match": 32,
+        "points": 35,
+        "points_match": 35,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 2,
+        "partial": 11,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Luis",
+        "points": 31,
+        "points_match": 31,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
         "partial": 10,
-        "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Luis",
-        "points": 29,
-        "points_match": 29,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 2,
-        "partial": 9,
         "fails": 17,
-        "pct": 39.3
+        "pct": 41.4
       },
       {
         "name": "Patri",
-        "points": 43,
-        "points_match": 43,
+        "points": 45,
+        "points_match": 45,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 16,
+        "partial": 17,
         "fails": 11,
-        "pct": 60.7
+        "pct": 62.1
       },
       {
         "name": "Nacho",
+        "points": 34,
+        "points_match": 34,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 1,
+        "partial": 12,
+        "fails": 16,
+        "pct": 44.8
+      },
+      {
+        "name": "Simón",
         "points": 32,
         "points_match": 32,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 11,
+        "partial": 12,
         "fails": 16,
-        "pct": 42.9
-      },
-      {
-        "name": "Simón",
-        "points": 30,
-        "points_match": 30,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 1,
-        "partial": 11,
-        "fails": 16,
-        "pct": 42.9
+        "pct": 44.8
       },
       {
         "name": "Felipe",
@@ -386,8 +386,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 11,
-        "fails": 16,
-        "pct": 42.9
+        "fails": 17,
+        "pct": 41.4
       },
       {
         "name": "Muni",
@@ -397,11 +397,97 @@
         "points_special": 0,
         "exact": 1,
         "partial": 10,
-        "fails": 17,
-        "pct": 39.3
+        "fails": 18,
+        "pct": 37.9
       }
     ],
     "last_matches": [
+      {
+        "id": 29,
+        "local": "Estados Unidos",
+        "visitante": "Australia",
+        "score": "2-0",
+        "fecha": "19/06/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "winner",
+            "points": 2,
+            "pred": "1-0"
+          },
+          {
+            "name": "Pepe",
+            "initials": "P",
+            "tier": "winner",
+            "points": 2,
+            "pred": "2-1"
+          },
+          {
+            "name": "Patri",
+            "initials": "PA",
+            "tier": "winner",
+            "points": 2,
+            "pred": "1-0"
+          },
+          {
+            "name": "Kike",
+            "initials": "K",
+            "tier": "winner",
+            "points": 2,
+            "pred": "2-1"
+          },
+          {
+            "name": "Quintero",
+            "initials": "Q",
+            "tier": "miss",
+            "points": 0,
+            "pred": "1-1"
+          },
+          {
+            "name": "Nacho",
+            "initials": "N",
+            "tier": "winner",
+            "points": 2,
+            "pred": "3-0"
+          },
+          {
+            "name": "Luis",
+            "initials": "L",
+            "tier": "winner",
+            "points": 2,
+            "pred": "1-0"
+          },
+          {
+            "name": "Felipe",
+            "initials": "F",
+            "tier": "miss",
+            "points": 0,
+            "pred": "1-2"
+          },
+          {
+            "name": "Simón",
+            "initials": "S",
+            "tier": "winner",
+            "points": 2,
+            "pred": "1-0"
+          },
+          {
+            "name": "Muni",
+            "initials": "M",
+            "tier": "miss",
+            "points": 0,
+            "pred": "2-2"
+          },
+          {
+            "name": "Fer",
+            "initials": "FE",
+            "tier": "difference",
+            "points": 3,
+            "pred": "3-1"
+          }
+        ]
+      },
       {
         "id": 28,
         "local": "México",
@@ -745,170 +831,9 @@
             "pred": "1-1"
           }
         ]
-      },
-      {
-        "id": 24,
-        "local": "Uzbekistán",
-        "visitante": "Colombia",
-        "score": "1-3",
-        "fecha": "17/06/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Pepe",
-            "initials": "P",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Patri",
-            "initials": "PA",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Kike",
-            "initials": "K",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Quintero",
-            "initials": "Q",
-            "tier": "winner",
-            "points": 2,
-            "pred": "0-1"
-          },
-          {
-            "name": "Nacho",
-            "initials": "N",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Luis",
-            "initials": "L",
-            "tier": "winner",
-            "points": 2,
-            "pred": "0-3"
-          },
-          {
-            "name": "Felipe",
-            "initials": "F",
-            "tier": "winner",
-            "points": 2,
-            "pred": "0-4"
-          },
-          {
-            "name": "Simón",
-            "initials": "S",
-            "tier": "difference",
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Muni",
-            "initials": "M",
-            "tier": "winner",
-            "points": 2,
-            "pred": "0-1"
-          },
-          {
-            "name": "Fer",
-            "initials": "FE",
-            "tier": "winner",
-            "points": 2,
-            "pred": "0-3"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 29,
-        "fecha": "19/06/2026",
-        "fase": "Grupos",
-        "local": "Estados Unidos",
-        "visitante": "Australia",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Pepe",
-            "initials": "P",
-            "pred": "2-1",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Patri",
-            "initials": "PA",
-            "pred": "1-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Kike",
-            "initials": "K",
-            "pred": "2-1",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Quintero",
-            "initials": "Q",
-            "pred": "1-1",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Nacho",
-            "initials": "N",
-            "pred": "3-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Luis",
-            "initials": "L",
-            "pred": "1-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Felipe",
-            "initials": "F",
-            "pred": "1-2",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Simón",
-            "initials": "S",
-            "pred": "1-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Muni",
-            "initials": "M",
-            "pred": "2-2",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Fer",
-            "initials": "FE",
-            "pred": "3-1",
-            "pred_clasificado": "-"
-          }
-        ]
-      },
       {
         "id": 30,
         "fecha": "19/06/2026",
@@ -1208,6 +1133,81 @@
             "pred_clasificado": "-"
           }
         ]
+      },
+      {
+        "id": 34,
+        "fecha": "20/06/2026",
+        "fase": "Grupos",
+        "local": "Alemania",
+        "visitante": "Costa de Marfil",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "2-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Pepe",
+            "initials": "P",
+            "pred": "2-1",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Patri",
+            "initials": "PA",
+            "pred": "2-1",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Kike",
+            "initials": "K",
+            "pred": "2-1",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Quintero",
+            "initials": "Q",
+            "pred": "5-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Nacho",
+            "initials": "N",
+            "pred": "1-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Luis",
+            "initials": "L",
+            "pred": "5-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Felipe",
+            "initials": "F",
+            "pred": "2-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Simón",
+            "initials": "S",
+            "pred": "2-1",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Muni",
+            "initials": "M",
+            "pred": "3-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Fer",
+            "initials": "FE",
+            "pred": "3-1",
+            "pred_clasificado": "-"
+          }
+        ]
       }
     ],
     "evolution_labels": [
@@ -1238,7 +1238,8 @@
       25,
       26,
       27,
-      28
+      28,
+      29
     ],
     "evolution": {
       "Patri": [
@@ -1269,7 +1270,8 @@
         37,
         39,
         41,
-        43
+        43,
+        45
       ],
       "Kike": [
         5,
@@ -1299,7 +1301,8 @@
         38,
         40,
         42,
-        42
+        42,
+        44
       ],
       "Pepe": [
         5,
@@ -1329,7 +1332,8 @@
         31,
         33,
         35,
-        38
+        38,
+        40
       ],
       "Álvaro": [
         2,
@@ -1359,7 +1363,8 @@
         35,
         35,
         37,
-        37
+        37,
+        39
       ],
       "Quintero": [
         2,
@@ -1389,6 +1394,7 @@
         31,
         31,
         31,
+        36,
         36
       ],
       "Fer": [
@@ -1419,7 +1425,8 @@
         26,
         28,
         30,
-        32
+        32,
+        35
       ],
       "Nacho": [
         2,
@@ -1449,7 +1456,8 @@
         28,
         30,
         32,
-        32
+        32,
+        34
       ],
       "Simón": [
         0,
@@ -1479,7 +1487,8 @@
         28,
         30,
         30,
-        30
+        30,
+        32
       ],
       "Luis": [
         5,
@@ -1509,7 +1518,8 @@
         25,
         27,
         29,
-        29
+        29,
+        31
       ],
       "Felipe": [
         2,
@@ -1535,6 +1545,7 @@
         22,
         24,
         26,
+        28,
         28,
         28,
         28,
@@ -1569,6 +1580,7 @@
         20,
         22,
         24,
+        27,
         27
       ]
     },
@@ -1987,11 +1999,11 @@
       "jornada": 4,
       "local": "Estados Unidos",
       "visitante": "Australia",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
+      "res_h": 2,
+      "res_a": 0,
+      "score": "2-0",
       "clasificado": "-",
-      "finished": false
+      "finished": true
     },
     {
       "id": 30,
@@ -3046,14 +3058,14 @@
       "photo": "broshu/photos/alvaro.jpg",
       "stats": {
         "name": "Álvaro",
-        "points": 37,
-        "points_match": 37,
+        "points": 39,
+        "points_match": 39,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 11,
+        "partial": 12,
         "fails": 15,
-        "pct": 46.4
+        "pct": 48.3
       },
       "matches": [
         {
@@ -3513,12 +3525,12 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -4788,14 +4800,14 @@
       "photo": "broshu/photos/pepe.jpg",
       "stats": {
         "name": "Pepe",
-        "points": 38,
-        "points_match": 38,
+        "points": 40,
+        "points_match": 40,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 12,
+        "partial": 13,
         "fails": 14,
-        "pct": 50.0
+        "pct": 51.7
       },
       "matches": [
         {
@@ -5255,12 +5267,12 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -6530,14 +6542,14 @@
       "photo": "broshu/photos/patri.jpg",
       "stats": {
         "name": "Patri",
-        "points": 43,
-        "points_match": 43,
+        "points": 45,
+        "points_match": 45,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 16,
+        "partial": 17,
         "fails": 11,
-        "pct": 60.7
+        "pct": 62.1
       },
       "matches": [
         {
@@ -6997,12 +7009,12 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -8272,14 +8284,14 @@
       "photo": "broshu/photos/kike.jpg",
       "stats": {
         "name": "Kike",
-        "points": 42,
-        "points_match": 42,
+        "points": 44,
+        "points_match": 44,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 14,
+        "partial": 15,
         "fails": 12,
-        "pct": 57.1
+        "pct": 58.6
       },
       "matches": [
         {
@@ -8739,12 +8751,12 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -10020,8 +10032,8 @@
         "points_special": 0,
         "exact": 2,
         "partial": 11,
-        "fails": 15,
-        "pct": 46.4
+        "fails": 16,
+        "pct": 44.8
       },
       "matches": [
         {
@@ -10481,12 +10493,12 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "miss",
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 30,
@@ -11756,14 +11768,14 @@
       "photo": "broshu/photos/nacho.jpg",
       "stats": {
         "name": "Nacho",
-        "points": 32,
-        "points_match": 32,
+        "points": 34,
+        "points_match": 34,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 11,
+        "partial": 12,
         "fails": 16,
-        "pct": 42.9
+        "pct": 44.8
       },
       "matches": [
         {
@@ -12223,12 +12235,12 @@
           "pred_h": 3,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -13498,14 +13510,14 @@
       "photo": "broshu/photos/luis.jpg",
       "stats": {
         "name": "Luis",
-        "points": 29,
-        "points_match": 29,
+        "points": 31,
+        "points_match": 31,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 9,
+        "partial": 10,
         "fails": 17,
-        "pct": 39.3
+        "pct": 41.4
       },
       "matches": [
         {
@@ -13965,12 +13977,12 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -15246,8 +15258,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 11,
-        "fails": 16,
-        "pct": 42.9
+        "fails": 17,
+        "pct": 41.4
       },
       "matches": [
         {
@@ -15707,12 +15719,12 @@
           "pred_h": 1,
           "pred_a": 2,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "miss",
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 30,
@@ -16982,14 +16994,14 @@
       "photo": "broshu/photos/simon.jpg",
       "stats": {
         "name": "Simón",
-        "points": 30,
-        "points_match": 30,
+        "points": 32,
+        "points_match": 32,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 1,
-        "partial": 11,
+        "partial": 12,
         "fails": 16,
-        "pct": 42.9
+        "pct": 44.8
       },
       "matches": [
         {
@@ -17449,12 +17461,12 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 30,
@@ -18730,8 +18742,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 10,
-        "fails": 17,
-        "pct": 39.3
+        "fails": 18,
+        "pct": 37.9
       },
       "matches": [
         {
@@ -19191,12 +19203,12 @@
           "pred_h": 2,
           "pred_a": 2,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "miss",
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 30,
@@ -20466,14 +20478,14 @@
       "photo": "broshu/photos/fer.jpg",
       "stats": {
         "name": "Fer",
-        "points": 32,
-        "points_match": 32,
+        "points": 35,
+        "points_match": 35,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 2,
-        "partial": 10,
+        "partial": 11,
         "fails": 16,
-        "pct": 42.9
+        "pct": 44.8
       },
       "matches": [
         {
@@ -20933,12 +20945,12 @@
           "pred_h": 3,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 2,
+          "real_a": 0,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "difference",
+          "tier_label": "Diferencia de goles",
+          "points": 3
         },
         {
           "id": 30,

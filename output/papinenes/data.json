@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "20/06/2026 08:36",
+    "generated_at": "20/06/2026 20:10",
     "total_matches": 104,
-    "finished_count": 32,
-    "progress_pct": 30.8,
-    "avg_pts": 1.53,
+    "finished_count": 33,
+    "progress_pct": 31.7,
+    "avg_pts": 1.55,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,37 +23,37 @@
   "home": {
     "leader": {
       "name": "Álvaro",
-      "points": 49,
-      "points_match": 49,
+      "points": 51,
+      "points_match": 51,
       "points_bonus": 0,
       "points_special": 0,
       "exact": 4,
-      "partial": 12,
+      "partial": 13,
       "fails": 16,
-      "pct": 50.0
+      "pct": 51.5
     },
     "ranking": [
       {
         "name": "Álvaro",
-        "points": 49,
-        "points_match": 49,
+        "points": 51,
+        "points_match": 51,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 4,
+        "partial": 13,
+        "fails": 16,
+        "pct": 51.5
+      },
+      {
+        "name": "Papá",
+        "points": 47,
+        "points_match": 47,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
         "partial": 12,
-        "fails": 16,
-        "pct": 50.0
-      },
-      {
-        "name": "Papá",
-        "points": 45,
-        "points_match": 45,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 4,
-        "partial": 11,
         "fails": 17,
-        "pct": 46.9
+        "pct": 48.5
       },
       {
         "name": "Diego",
@@ -63,32 +63,32 @@
         "points_special": 0,
         "exact": 1,
         "partial": 14,
-        "fails": 17,
-        "pct": 46.9
+        "fails": 18,
+        "pct": 45.5
       }
     ],
     "ranking_by_pct": [
       {
         "name": "Álvaro",
-        "points": 49,
-        "points_match": 49,
+        "points": 51,
+        "points_match": 51,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 4,
+        "partial": 13,
+        "fails": 16,
+        "pct": 51.5
+      },
+      {
+        "name": "Papá",
+        "points": 47,
+        "points_match": 47,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
         "partial": 12,
-        "fails": 16,
-        "pct": 50.0
-      },
-      {
-        "name": "Papá",
-        "points": 45,
-        "points_match": 45,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 4,
-        "partial": 11,
         "fails": 17,
-        "pct": 46.9
+        "pct": 48.5
       },
       {
         "name": "Diego",
@@ -98,32 +98,32 @@
         "points_special": 0,
         "exact": 1,
         "partial": 14,
-        "fails": 17,
-        "pct": 46.9
+        "fails": 18,
+        "pct": 45.5
       }
     ],
     "ranking_by_exact": [
       {
         "name": "Álvaro",
-        "points": 49,
-        "points_match": 49,
+        "points": 51,
+        "points_match": 51,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 4,
+        "partial": 13,
+        "fails": 16,
+        "pct": 51.5
+      },
+      {
+        "name": "Papá",
+        "points": 47,
+        "points_match": 47,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
         "partial": 12,
-        "fails": 16,
-        "pct": 50.0
-      },
-      {
-        "name": "Papá",
-        "points": 45,
-        "points_match": 45,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 4,
-        "partial": 11,
         "fails": 17,
-        "pct": 46.9
+        "pct": 48.5
       },
       {
         "name": "Diego",
@@ -133,11 +133,41 @@
         "points_special": 0,
         "exact": 1,
         "partial": 14,
-        "fails": 17,
-        "pct": 46.9
+        "fails": 18,
+        "pct": 45.5
       }
     ],
     "last_matches": [
+      {
+        "id": 33,
+        "local": "Países Bajos",
+        "visitante": "Suecia",
+        "score": "5-1",
+        "fecha": "20/06/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "winner",
+            "points": 2,
+            "pred": "1-0"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "winner",
+            "points": 2,
+            "pred": "2-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "miss",
+            "points": 0,
+            "pred": "1-1"
+          }
+        ]
+      },
       {
         "id": 32,
         "local": "Turquía",
@@ -257,66 +287,9 @@
             "pred": "3-0"
           }
         ]
-      },
-      {
-        "id": 28,
-        "local": "México",
-        "visitante": "República de Corea",
-        "score": "1-0",
-        "fecha": "18/06/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "points": 0,
-            "pred": "1-1"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "points": 0,
-            "pred": "2-2"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "points": 0,
-            "pred": "1-1"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 33,
-        "fecha": "20/06/2026",
-        "fase": "Grupos",
-        "local": "Países Bajos",
-        "visitante": "Suecia",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-0",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "2-1",
-            "pred_clasificado": "-"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "1-1",
-            "pred_clasificado": "-"
-          }
-        ]
-      },
       {
         "id": 34,
         "fecha": "20/06/2026",
@@ -424,6 +397,33 @@
             "pred_clasificado": "-"
           }
         ]
+      },
+      {
+        "id": 38,
+        "fecha": "21/06/2026",
+        "fase": "Grupos",
+        "local": "Bélgica",
+        "visitante": "Irán",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "2-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "1-0",
+            "pred_clasificado": "-"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "2-1",
+            "pred_clasificado": "-"
+          }
+        ]
       }
     ],
     "evolution_labels": [
@@ -458,7 +458,8 @@
       29,
       30,
       31,
-      32
+      32,
+      33
     ],
     "evolution": {
       "Álvaro": [
@@ -493,7 +494,8 @@
         39,
         44,
         49,
-        49
+        49,
+        51
       ],
       "Papá": [
         2,
@@ -527,7 +529,8 @@
         37,
         40,
         45,
-        45
+        45,
+        47
       ],
       "Diego": [
         5,
@@ -560,6 +563,7 @@
         28,
         30,
         32,
+        34,
         34,
         34
       ]
@@ -1031,11 +1035,11 @@
       "jornada": 6,
       "local": "Países Bajos",
       "visitante": "Suecia",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
+      "res_h": 5,
+      "res_a": 1,
+      "score": "5-1",
       "clasificado": "-",
-      "finished": false
+      "finished": true
     },
     {
       "id": 34,
@@ -1990,14 +1994,14 @@
       "photo": "papinenes/photos/alvaro.jpg",
       "stats": {
         "name": "Álvaro",
-        "points": 49,
-        "points_match": 49,
+        "points": 51,
+        "points_match": 51,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 12,
+        "partial": 13,
         "fails": 16,
-        "pct": 50.0
+        "pct": 51.5
       },
       "matches": [
         {
@@ -2521,12 +2525,12 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 5,
+          "real_a": 1,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 34,
@@ -3732,14 +3736,14 @@
       "photo": "papinenes/photos/papa.jpg",
       "stats": {
         "name": "Papá",
-        "points": 45,
-        "points_match": 45,
+        "points": 47,
+        "points_match": 47,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 11,
+        "partial": 12,
         "fails": 17,
-        "pct": 46.9
+        "pct": 48.5
       },
       "matches": [
         {
@@ -4263,12 +4267,12 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 5,
+          "real_a": 1,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "winner",
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 34,
@@ -5480,8 +5484,8 @@
         "points_special": 0,
         "exact": 1,
         "partial": 14,
-        "fails": 17,
-        "pct": 46.9
+        "fails": 18,
+        "pct": 45.5
       },
       "matches": [
         {
@@ -6005,12 +6009,12 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "-",
-          "real_h": null,
-          "real_a": null,
+          "real_h": 5,
+          "real_a": 1,
           "real_clasificado": "-",
-          "tier": "pending",
-          "tier_label": "Pendiente",
-          "points": null
+          "tier": "miss",
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 34,

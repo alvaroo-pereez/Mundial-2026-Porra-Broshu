@@ -188,25 +188,27 @@ KNOCKOUT_FIXTURES: list[dict] = [
     {"id": 88, "fecha": "03/07/2026", "hora": "13:00", "local": "Ganador 2D", "visitante": "Ganador 2G", "fase": "Dieciseisavos", "jornada": 13},
 ]
 
-# Placeholders al estilo porra (Ganador 1A vs Ganador 2B) — usados en Excel y UI.
-PORRA_KO_LABELS = [
-    ("Ganador 1A", "Ganador 2B"),
-    ("Ganador 1C", "Ganador 2D"),
-    ("Ganador 1E", "Ganador 2F"),
-    ("Ganador 1G", "Ganador 2H"),
-    ("Ganador 1I", "Ganador 2J"),
-    ("Ganador 1K", "Ganador 2L"),
-    ("Ganador 1B", "Ganador 2A"),
-    ("Ganador 1D", "Ganador 2C"),
-    ("Ganador 1F", "Ganador 2E"),
-    ("Ganador 1H", "Ganador 2G"),
-    ("Ganador 1J", "Ganador 2I"),
-    ("Ganador 1L", "Ganador 2K"),
-    ("Ganador 3A", "Ganador 3B"),
-    ("Ganador 3C", "Ganador 3D"),
-    ("Ganador 3E", "Ganador 3F"),
-    ("Ganador 3G", "Ganador 3H"),
+# Dieciseisavos (partidos 73–88): equipos reales post-fase de grupos (orden = IDs 73…88).
+R32_RESOLVED: list[tuple[str, str]] = [
+    ("Sudáfrica", "Canadá"),
+    ("Alemania", "Paraguay"),
+    ("Países Bajos", "Marruecos"),
+    ("Brasil", "Japón"),
+    ("Francia", "Suecia"),
+    ("Costa de Marfil", "Noruega"),
+    ("México", "Ecuador"),
+    ("Inglaterra", "RD Congo"),
+    ("Estados Unidos", "Bosnia y Herzegovina"),
+    ("Bélgica", "Senegal"),
+    ("Portugal", "Croacia"),
+    ("España", "Austria"),
+    ("Suiza", "Argelia"),
+    ("Argentina", "Cabo Verde"),
+    ("Colombia", "Ghana"),
+    ("Australia", "Egipto"),
 ]
+
+# Placeholders al estilo porra (Ganador 1A vs Ganador 2B) — octavos en adelante.
 
 JORNADA_BY_GROUP = {letter: idx for idx, letter in enumerate("ABCDEFGHIJKL", start=1)}
 
@@ -246,7 +248,10 @@ def build_all_matches(
         )
 
     for idx, ko in enumerate(KNOCKOUT_FIXTURES):
-        local, visitante = PORRA_KO_LABELS[idx]
+        if idx < len(R32_RESOLVED):
+            local, visitante = R32_RESOLVED[idx]
+        else:
+            raise ValueError(f"Falta equipo R32 para partido {ko['id']}")
         matches.append(
             {
                 "id": ko["id"],

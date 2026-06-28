@@ -13,7 +13,14 @@ SCORING_JSON = ROOT / "config" / "scoring.json"
 
 DEFAULT_CFG: dict[str, Any] = {
     "grupos": {"exacto": 5, "diferencia": 3, "ganador_empate": 2},
-    "eliminatorias": {"exacto": 10, "diferencia": 6, "clasificado": 4},
+    "eliminatorias": {
+        "exacto": 10,
+        "diferencia": 6,
+        "clasificado": 4,
+        "empate_exacto_falla_clasificado": 6,
+        "empate_diferencia_acierta_clasificado": 6,
+        "empate_diferencia_falla_clasificado": 2,
+    },
     "bonus_ronda": {"octavos": 15, "cuartos": 15, "semifinal": 15},
     "apuesta_especial": 10,
     "rondas_bonus": {"Octavos": 8, "Cuartos": 4, "Semifinal": 2},
@@ -43,6 +50,48 @@ def _as_int(v) -> int | None:
         return int(v)
     except (TypeError, ValueError):
         return None
+
+
+def _clasif_ok(pred_clasif: str | None, real_clasif: str | None) -> bool:
+    pc = (pred_clasif or "").strip()
+    rc = (real_clasif or "").strip()
+    return bool(pc and rc and pc == rc)
+
+
+def _calc_ko_points(
+    ph: int,
+    pa: int,
+    rh: int,
+    ra: int,
+    pred_clasif: str | None,
+    real_clasif: str | None,
+    ko: dict[str, Any],
+) -> int:
+    exact = ph == rh and pa == ra
+    diff = (ph - pa) == (rh - ra)
+    pred_draw = ph == pa
+    real_draw = rh == ra
+    clas_ok = _clasif_ok(pred_clasif, real_clasif)
+    emp_ex_fail = ko.get("empate_exacto_falla_clasificado", ko["diferencia"])
+    emp_diff_ok = ko.get("empate_diferencia_acierta_clasificado", ko["diferencia"])
+    emp_diff_fail = ko.get("empate_diferencia_falla_clasificado", 2)
+
+    if not real_draw:
+        if exact:
+            return ko["exacto"]
+        if diff:
+            return ko["diferencia"]
+        if clas_ok:
+            return ko["clasificado"]
+        return 0
+
+    if exact:
+        return ko["exacto"] if clas_ok else emp_ex_fail
+    if pred_draw and diff:
+        return emp_diff_ok if clas_ok else emp_diff_fail
+    if clas_ok:
+        return ko["clasificado"]
+    return 0
 
 
 def calc_match_points(
@@ -77,15 +126,7 @@ def calc_match_points(
         return 0
 
     ko = c["eliminatorias"]
-    if ph == rh and pa == ra:
-        return ko["exacto"]
-    if (ph - pa) == (rh - ra):
-        return ko["diferencia"]
-    pc = (pred_clasif or "").strip()
-    rc = (real_clasif or "").strip()
-    if pc and rc and pc == rc:
-        return ko["clasificado"]
-    return 0
+    return _calc_ko_points(ph, pa, rh, ra, pred_clasif, real_clasif, ko)
 
 
 # Niveles visuales para el dashboard. Mantienen la MISMA prioridad que
@@ -121,20 +162,32 @@ def classify_match_tier(
     if ph is None or pa is None or rh is None or ra is None:
         return "pending"
 
-    if ph == rh and pa == ra:
-        return "exact"
-    if (ph - pa) == (rh - ra):
-        return "difference"
-
-    if (fase or "").strip() == "Grupos":
+    fase = (fase or "").strip()
+    if fase == "Grupos":
+        if ph == rh and pa == ra:
+            return "exact"
+        if (ph - pa) == (rh - ra):
+            return "difference"
         if _sign(ph, pa) == _sign(rh, ra):
             return "winner"
         return "miss"
 
-    pc = (pred_clasif or "").strip()
-    rc = (real_clasif or "").strip()
-    if pc and rc and pc == rc:
+    cfg = load_scoring_config()
+    ko = cfg["eliminatorias"]
+    pts = _calc_ko_points(ph, pa, rh, ra, pred_clasif, real_clasif, ko)
+    if pts == ko["exacto"]:
+        return "exact"
+    emp_diff_fail = ko.get("empate_diferencia_falla_clasificado", 2)
+    if pts in (
+        ko["diferencia"],
+        ko.get("empate_exacto_falla_clasificado", ko["diferencia"]),
+        ko.get("empate_diferencia_acierta_clasificado", ko["diferencia"]),
+    ):
+        return "difference"
+    if pts == ko["clasificado"]:
         return "clasificado"
+    if pts == emp_diff_fail:
+        return "winner"
     return "miss"
 
 
@@ -200,6 +253,11 @@ def run_self_tests() -> None:
         ("Octavos", 3, 1, 2, 0, "Local", "Local", 6),
         ("Octavos", 2, 0, 1, 1, "Local", "Local", 4),
         ("Octavos", 2, 0, 1, 1, "Local", "Visitante", 0),
+        ("Dieciseisavos", 1, 1, 1, 1, "Local", "Local", 10),
+        ("Dieciseisavos", 1, 1, 1, 1, "Local", "Visitante", 6),
+        ("Dieciseisavos", 2, 2, 1, 1, "Local", "Local", 6),
+        ("Dieciseisavos", 2, 2, 1, 1, "Visitante", "Local", 2),
+        ("Dieciseisavos", 2, 1, 1, 1, "Local", "Local", 4),
     ]
     for i, (fase, ph, pa, rh, ra, pc, rc, expected) in enumerate(cases, 1):
         got = calc_match_points(fase, ph, pa, rh, ra, pc, rc, cfg)
@@ -220,6 +278,9 @@ def run_self_tests() -> None:
         ("Octavos", 3, 1, 2, 0, "Local", "Local", "difference"),
         ("Octavos", 2, 0, 1, 1, "Local", "Local", "clasificado"),
         ("Octavos", 2, 0, 1, 1, "Local", "Visitante", "miss"),
+        ("Dieciseisavos", 1, 1, 1, 1, "Local", "Local", "exact"),
+        ("Dieciseisavos", 2, 2, 1, 1, "Local", "Local", "difference"),
+        ("Dieciseisavos", 2, 2, 1, 1, "Visitante", "Local", "winner"),
     ]
     for i, (fase, ph, pa, rh, ra, pc, rc, expected) in enumerate(tier_cases, 1):
         got = classify_match_tier(fase, ph, pa, rh, ra, pc, rc)

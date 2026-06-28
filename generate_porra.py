@@ -58,10 +58,13 @@ PTS_GR_WIN = "Puntuacion!$B$6"
 PTS_KO_EXACT = "Puntuacion!$B$9"
 PTS_KO_DIFF = "Puntuacion!$B$10"
 PTS_KO_CLAS = "Puntuacion!$B$11"
-BONUS_OCT = "Puntuacion!$B$14"
-BONUS_CUA = "Puntuacion!$B$15"
-BONUS_SEM = "Puntuacion!$B$16"
-PTS_APUESTA = "Puntuacion!$B$19"
+PTS_KO_EMP_EX_FAIL = "Puntuacion!$B$12"
+PTS_KO_EMP_DIFF_OK = "Puntuacion!$B$13"
+PTS_KO_EMP_DIFF_FAIL = "Puntuacion!$B$14"
+BONUS_OCT = "Puntuacion!$B$17"
+BONUS_CUA = "Puntuacion!$B$18"
+BONUS_SEM = "Puntuacion!$B$19"
+PTS_APUESTA = "Puntuacion!$B$22"
 SPECIAL_RESULTS_FIRST_ROW = 34
 
 TAB_INTRO = GOLD
@@ -294,6 +297,30 @@ def match_is_ko(m: dict) -> bool:
     return m.get("fase", "Grupos") != "Grupos"
 
 
+def ko_points_formula(row: int, last_row: int) -> str:
+    """Puntos eliminatorias con reglas de empate a 90'."""
+    r = row
+    rh = pt_value("F", f"$A{r}", last_row)
+    rv = pt_value("G", f"$A{r}", last_row)
+    rk = pt_value("K", f"$A{r}", last_row)
+    real_draw = f"{rh}={rv}"
+    pred_exact = f"AND($E{r}={rh},$F{r}={rv})"
+    pred_draw = f"$E{r}=$F{r}"
+    diff = f"($E{r}-$F{r})=({rh}-{rv})"
+    clas_ok = f'AND($H{r}<>"",$H{r}={rk})'
+    ko_no_draw = (
+        f"IF({pred_exact},{PTS_KO_EXACT},"
+        f"IF({diff},{PTS_KO_DIFF},"
+        f"IF({clas_ok},{PTS_KO_CLAS},0)))"
+    )
+    ko_draw = (
+        f"IF({pred_exact},IF({clas_ok},{PTS_KO_EXACT},{PTS_KO_EMP_EX_FAIL}),"
+        f"IF(AND({pred_draw},{diff}),IF({clas_ok},{PTS_KO_EMP_DIFF_OK},{PTS_KO_EMP_DIFF_FAIL}),"
+        f"IF({clas_ok},{PTS_KO_CLAS},0)))"
+    )
+    return f"IF({real_draw},{ko_draw},{ko_no_draw})"
+
+
 def points_formula(row: int, last_row: int) -> str:
     """Puntuación no acumulativa: solo el tier más alto (grupos vs eliminatorias)."""
     r = row
@@ -312,11 +339,7 @@ def points_formula(row: int, last_row: int) -> str:
         f"IF(($E{r}-$F{r})=({rh}-{rv}),{PTS_GR_DIFF},"
         f"IF({win},{PTS_GR_WIN},0)))"
     )
-    ko = (
-        f"IF(AND($E{r}={rh},$F{r}={rv}),{PTS_KO_EXACT},"
-        f"IF(($E{r}-$F{r})=({rh}-{rv}),{PTS_KO_DIFF},"
-        f"IF(AND($H{r}<>\"\",$H{r}={rk}),{PTS_KO_CLAS},0)))"
-    )
+    ko = ko_points_formula(r, last_row)
     return (
         f"=IFERROR(IF({st}<>\"Finalizado\",\"\","
         f"IF(OR(NOT(ISNUMBER($E{r})),NOT(ISNUMBER($F{r}))),\"\","
@@ -952,6 +975,9 @@ def build_puntuacion(wb: Workbook, cfg: dict) -> None:
         ("Resultado exacto (90 min)", ko["exacto"], "pts"),
         ("Diferencia de goles (90 min)", ko["diferencia"], "pts"),
         ("Clasificado correcto", ko["clasificado"], "pts"),
+        ("Empate exacto, fallo clasificado", ko.get("empate_exacto_falla_clasificado", 6), "pts"),
+        ("Empate dif., acierto clasificado", ko.get("empate_diferencia_acierta_clasificado", 6), "pts"),
+        ("Empate dif., fallo clasificado", ko.get("empate_diferencia_falla_clasificado", 2), "pts"),
         ("", "", ""),
         ("BONUS RONDA PERFECTA", "", ""),
         ("Octavos (8 clasificados)", bon["octavos"], "pts"),

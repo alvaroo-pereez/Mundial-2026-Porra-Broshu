@@ -89,11 +89,42 @@ Los puntos se definen en la hoja **Puntuacion** (editable).
 
 Solo aplica el **máximo** (no acumulativo).
 
-### Eliminatorias
-- Marcador exacto (90 min): **10**
-- Diferencia de goles (90 min): **6**
-- Clasificado correcto (incluye prórroga/penaltis): **4**
-- Fallo: **0**
+### Eliminatorias (90 min + clasificado en prórroga/penaltis)
+
+**Sin empate en el resultado real a 90':**
+
+| Acierto | Puntos |
+|---------|--------|
+| Marcador exacto | 10 |
+| Diferencia de goles (no exacto) | 6 |
+| Solo clasificado correcto | 4 |
+| Fallo | 0 |
+
+**Con empate en el resultado real a 90':**
+
+| Acierto | Puntos |
+|---------|--------|
+| Marcador exacto + clasificado correcto | 10 |
+| Marcador exacto + clasificado incorrecto | 6 |
+| Empate predicho (no exacto) + clasificado correcto | 6 |
+| Empate predicho (no exacto) + clasificado incorrecto | 2 |
+| Solo clasificado (sin acierto de marcador) | 4 |
+| Fallo | 0 |
+
+Solo aplica el **máximo** (no acumulativo). Valores editables en **Puntuacion**.
+
+### Pronósticos dieciseisavos (partidos 73–88)
+
+Cada jugador rellena en **su pestaña** (columnas amarillas):
+
+| Columna | Campo |
+|---------|--------|
+| F / G | Mis goles local / visitante (90 min) |
+| H | Clasificado: `Local` o `Visitante` |
+
+Los equipos se leen de la hoja **Partidos** (actualízalos con `py update_ko_teams.py` si usas Excel local).
+
+Tras recoger pronósticos: copia al Excel de `output/`, ejecuta `py build_dashboard.py --group <grupo>` y haz push a GitHub.
 
 ### Bonus
 - Bonus por ronda perfecta (Octavos/Cuartos/Semifinales): **+15** por ronda.

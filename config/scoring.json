@@ -5,11 +5,11 @@
     "ganador_empate": 2
   },
   "eliminatorias": {
-    "exacto": 10,
-    "diferencia": 6,
-    "clasificado": 4,
-    "empate_exacto_falla_clasificado": 6,
-    "empate_diferencia_acierta_clasificado": 6,
+    "exacto": 8,
+    "diferencia": 4,
+    "clasificado": 3,
+    "empate_exacto_falla_clasificado": 4,
+    "empate_diferencia_acierta_clasificado": 4,
     "empate_diferencia_falla_clasificado": 2
   },
   "bonus_ronda": {

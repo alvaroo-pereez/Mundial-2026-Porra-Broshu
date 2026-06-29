@@ -36,6 +36,25 @@ def _patch_formula_refs(wb) -> None:
                         cell.value = new_val
 
 
+def sync_puntuacion_values(ws) -> bool:
+    """Escribe B9–B14 desde config/scoring.json (idempotente)."""
+    ko = load_scoring_config()["eliminatorias"]
+    mapping = [
+        (9, ko["exacto"]),
+        (10, ko["diferencia"]),
+        (11, ko["clasificado"]),
+        (12, ko.get("empate_exacto_falla_clasificado", 4)),
+        (13, ko.get("empate_diferencia_acierta_clasificado", 4)),
+        (14, ko.get("empate_diferencia_falla_clasificado", 2)),
+    ]
+    changed = False
+    for row, pts in mapping:
+        if ws.cell(row, 2).value != pts:
+            ws.cell(row, 2, value=pts)
+            changed = True
+    return changed
+
+
 def _update_puntuacion(ws) -> bool:
     ko = load_scoring_config()["eliminatorias"]
     if ws.cell(12, 1).value and "Empate" in str(ws.cell(12, 1).value):
@@ -80,10 +99,13 @@ def patch_excel(excel_path: Path, dry_run: bool = False) -> None:
     last_row = pt_last_row(n_matches)
 
     if "Puntuacion" in wb.sheetnames:
-        if _update_puntuacion(wb["Puntuacion"]):
+        ws_p = wb["Puntuacion"]
+        if _update_puntuacion(ws_p):
             print("  Puntuacion: filas empate añadidas")
             _patch_formula_refs(wb)
             print("  Referencias bonus/apuestas actualizadas")
+        if sync_puntuacion_values(ws_p):
+            print("  Puntuacion: valores KO sincronizados (B9-B14)")
 
     if "Pronosticos" in wb.sheetnames:
         n = _update_pronosticos(wb["Pronosticos"], last_row)

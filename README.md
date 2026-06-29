@@ -95,20 +95,20 @@ Solo aplica el **máximo** (no acumulativo).
 
 | Acierto | Puntos |
 |---------|--------|
-| Marcador exacto | 10 |
-| Diferencia de goles (no exacto) | 6 |
-| Solo clasificado correcto | 4 |
+| Marcador exacto | 8 |
+| Diferencia de goles (no exacto) | 4 |
+| Solo clasificado correcto | 3 |
 | Fallo | 0 |
 
 **Con empate en el resultado real a 90':**
 
 | Acierto | Puntos |
 |---------|--------|
-| Marcador exacto + clasificado correcto | 10 |
-| Marcador exacto + clasificado incorrecto | 6 |
-| Empate predicho (no exacto) + clasificado correcto | 6 |
+| Marcador exacto + clasificado correcto | 8 |
+| Marcador exacto + clasificado incorrecto | 4 |
+| Empate predicho (no exacto) + clasificado correcto | 4 |
 | Empate predicho (no exacto) + clasificado incorrecto | 2 |
-| Solo clasificado (sin acierto de marcador) | 4 |
+| Solo clasificado (sin acierto de marcador) | 3 |
 | Fallo | 0 |
 
 Solo aplica el **máximo** (no acumulativo). Valores editables en **Puntuacion**.

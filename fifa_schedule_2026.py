@@ -224,6 +224,40 @@ def lookup_pair_meta(local: str, visitante: str) -> dict[str, str]:
     return FIFA_PAIR_META[key]
 
 
+def _ko_datetime_key(ko: dict) -> tuple:
+    """Orden cronológico: DD/MM/YYYY + HH:MM."""
+    d, m, y = ko["fecha"].split("/")
+    return (int(y), int(m), int(d), ko["hora"])
+
+
+def build_r32_matches_chronological() -> list[dict]:
+    """Dieciseisavos con IDs 73–88 en orden fecha/hora (no orden del cuadro)."""
+    slots = []
+    for idx, ko in enumerate(KNOCKOUT_FIXTURES):
+        if ko["fase"] != "Dieciseisavos":
+            continue
+        if idx >= len(R32_RESOLVED):
+            raise ValueError(f"Falta equipo R32 para slot {ko['id']}")
+        local, visitante = R32_RESOLVED[idx]
+        slots.append((ko, local, visitante))
+    slots.sort(key=lambda item: _ko_datetime_key(item[0]))
+    out: list[dict] = []
+    for new_id, (ko, local, visitante) in enumerate(slots, start=73):
+        out.append(
+            {
+                "id": new_id,
+                "fecha": ko["fecha"],
+                "hora": ko["hora"],
+                "local": local,
+                "visitante": visitante,
+                "grupo": "",
+                "fase": ko["fase"],
+                "jornada": ko["jornada"],
+            }
+        )
+    return out
+
+
 def build_all_matches(
     group_fixtures: list[tuple[str, str]] | None = None,
 ) -> list[dict]:
@@ -247,23 +281,7 @@ def build_all_matches(
             }
         )
 
-    for idx, ko in enumerate(KNOCKOUT_FIXTURES):
-        if idx < len(R32_RESOLVED):
-            local, visitante = R32_RESOLVED[idx]
-        else:
-            raise ValueError(f"Falta equipo R32 para partido {ko['id']}")
-        matches.append(
-            {
-                "id": ko["id"],
-                "fecha": ko["fecha"],
-                "hora": ko["hora"],
-                "local": local,
-                "visitante": visitante,
-                "grupo": "",
-                "fase": ko["fase"],
-                "jornada": ko["jornada"],
-            }
-        )
+    matches.extend(build_r32_matches_chronological())
 
     octavos_start = 89
     for i in range(8):

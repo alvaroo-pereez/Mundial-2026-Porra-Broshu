@@ -732,6 +732,16 @@
   {
     "id": 74,
     "fecha": "29/06/2026",
+    "hora": "12:00",
+    "local": "Brasil",
+    "visitante": "Japón",
+    "grupo": "",
+    "fase": "Dieciseisavos",
+    "jornada": 13
+  },
+  {
+    "id": 75,
+    "fecha": "29/06/2026",
     "hora": "16:30",
     "local": "Alemania",
     "visitante": "Paraguay",
@@ -740,7 +750,7 @@
     "jornada": 13
   },
   {
-    "id": 75,
+    "id": 76,
     "fecha": "29/06/2026",
     "hora": "19:00",
     "local": "Países Bajos",
@@ -750,21 +760,11 @@
     "jornada": 13
   },
   {
-    "id": 76,
-    "fecha": "29/06/2026",
-    "hora": "12:00",
-    "local": "Brasil",
-    "visitante": "Japón",
-    "grupo": "",
-    "fase": "Dieciseisavos",
-    "jornada": 13
-  },
-  {
     "id": 77,
     "fecha": "30/06/2026",
-    "hora": "17:00",
-    "local": "Francia",
-    "visitante": "Suecia",
+    "hora": "12:00",
+    "local": "Costa de Marfil",
+    "visitante": "Noruega",
     "grupo": "",
     "fase": "Dieciseisavos",
     "jornada": 13
@@ -772,9 +772,9 @@
   {
     "id": 78,
     "fecha": "30/06/2026",
-    "hora": "12:00",
-    "local": "Costa de Marfil",
-    "visitante": "Noruega",
+    "hora": "17:00",
+    "local": "Francia",
+    "visitante": "Suecia",
     "grupo": "",
     "fase": "Dieciseisavos",
     "jornada": 13
@@ -802,16 +802,6 @@
   {
     "id": 81,
     "fecha": "01/07/2026",
-    "hora": "17:00",
-    "local": "Estados Unidos",
-    "visitante": "Bosnia y Herzegovina",
-    "grupo": "",
-    "fase": "Dieciseisavos",
-    "jornada": 13
-  },
-  {
-    "id": 82,
-    "fecha": "01/07/2026",
     "hora": "13:00",
     "local": "Bélgica",
     "visitante": "Senegal",
@@ -820,11 +810,21 @@
     "jornada": 13
   },
   {
+    "id": 82,
+    "fecha": "01/07/2026",
+    "hora": "17:00",
+    "local": "Estados Unidos",
+    "visitante": "Bosnia y Herzegovina",
+    "grupo": "",
+    "fase": "Dieciseisavos",
+    "jornada": 13
+  },
+  {
     "id": 83,
     "fecha": "02/07/2026",
-    "hora": "19:00",
-    "local": "Portugal",
-    "visitante": "Croacia",
+    "hora": "12:00",
+    "local": "España",
+    "visitante": "Austria",
     "grupo": "",
     "fase": "Dieciseisavos",
     "jornada": 13
@@ -832,9 +832,9 @@
   {
     "id": 84,
     "fecha": "02/07/2026",
-    "hora": "12:00",
-    "local": "España",
-    "visitante": "Austria",
+    "hora": "19:00",
+    "local": "Portugal",
+    "visitante": "Croacia",
     "grupo": "",
     "fase": "Dieciseisavos",
     "jornada": 13
@@ -852,6 +852,16 @@
   {
     "id": 86,
     "fecha": "03/07/2026",
+    "hora": "13:00",
+    "local": "Australia",
+    "visitante": "Egipto",
+    "grupo": "",
+    "fase": "Dieciseisavos",
+    "jornada": 13
+  },
+  {
+    "id": 87,
+    "fecha": "03/07/2026",
     "hora": "18:00",
     "local": "Argentina",
     "visitante": "Cabo Verde",
@@ -860,21 +870,11 @@
     "jornada": 13
   },
   {
-    "id": 87,
+    "id": 88,
     "fecha": "03/07/2026",
     "hora": "20:30",
     "local": "Colombia",
     "visitante": "Ghana",
-    "grupo": "",
-    "fase": "Dieciseisavos",
-    "jornada": 13
-  },
-  {
-    "id": 88,
-    "fecha": "03/07/2026",
-    "hora": "13:00",
-    "local": "Australia",
-    "visitante": "Egipto",
     "grupo": "",
     "fase": "Dieciseisavos",
     "jornada": 13

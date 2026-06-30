@@ -7,10 +7,14 @@ from worldcup_data import FIXTURE_MAP_PATH, diagnose_mapping, save_json
 
 
 def main() -> None:
-    fixture_map, unmatched = diagnose_mapping()
+    fixture_map, unmatched, warnings = diagnose_mapping()
     save_json(FIXTURE_MAP_PATH, fixture_map)
     print(f"Emparejados: {len(fixture_map)} partidos con nombres reales")
     print(f"Informe opcional guardado: {FIXTURE_MAP_PATH}")
+
+    if warnings:
+        print(f"\nAvisos num distinto ({len(warnings)}):")
+        print("\n".join(warnings[:15]))
 
     if unmatched:
         print(f"\nSin emparejar ({len(unmatched)}):")

@@ -142,31 +142,67 @@ def match_openfootball_to_calendar(
     visitante_es: str,
     mapping: dict[str, str],
 ) -> bool:
+    return teams_orientation(of_item, local_es, visitante_es, mapping) is not None
+
+
+def teams_orientation(
+    of_item: dict,
+    local_es: str,
+    visitante_es: str,
+    mapping: dict[str, str],
+) -> str | None:
+    """Devuelve 'normal' si team1=local, 'swapped' si team1=visitante, None si no coincide."""
     home_api = spanish_to_api(local_es, mapping)
     away_api = spanish_to_api(visitante_es, mapping)
     t1 = of_item.get("team1", "")
     t2 = of_item.get("team2", "")
     if is_placeholder_name(t1) or is_placeholder_name(t2):
-        return False
-    return team_names_match(t1, home_api) and team_names_match(t2, away_api)
+        return None
+    if team_names_match(t1, home_api) and team_names_match(t2, away_api):
+        return "normal"
+    if team_names_match(t1, away_api) and team_names_match(t2, home_api):
+        return "swapped"
+    return None
 
 
 def match_is_ko(m: dict) -> bool:
     return m.get("fase", "Grupos") != "Grupos"
 
 
-def extract_result_from_openfootball(of_item: dict, is_ko: bool) -> dict | None:
+def extract_result_from_openfootball(
+    of_item: dict,
+    is_ko: bool,
+    orientation: str = "normal",
+) -> dict | None:
+    """Goles a 90' (score.ft). Clasificado KO por marcador o penaltis (score.p)."""
     score = of_item.get("score") or {}
     ft = score.get("ft")
     if not ft or len(ft) < 2:
         return None
-    home, away = int(ft[0]), int(ft[1])
+    t1, t2 = int(ft[0]), int(ft[1])
+    if orientation == "swapped":
+        home, away = t2, t1
+    else:
+        home, away = t1, t2
+
     result: dict = {"home": home, "away": away}
-    if is_ko:
-        if home > away:
-            result["clasificado"] = "Local"
-        elif away > home:
-            result["clasificado"] = "Visitante"
+    if not is_ko:
+        return result
+
+    if home > away:
+        result["clasificado"] = "Local"
+    elif away > home:
+        result["clasificado"] = "Visitante"
+    else:
+        pens = score.get("p")
+        if pens and len(pens) >= 2:
+            p1, p2 = int(pens[0]), int(pens[1])
+            if p1 != p2:
+                t1_wins = p1 > p2
+                if orientation == "normal":
+                    result["clasificado"] = "Local" if t1_wins else "Visitante"
+                else:
+                    result["clasificado"] = "Visitante" if t1_wins else "Local"
     return result
 
 
@@ -188,26 +224,24 @@ def find_openfootball_match(
     by_date: dict[str, list[dict]],
     mapping: dict[str, str],
 ) -> dict | None:
-    mid = cal["id"]
     local = cal["local"]
     visitante = cal["visitante"]
 
     if is_calendar_placeholder(local):
         return None
 
-    if mid >= 73 and mid in by_num:
-        item = by_num[mid]
-        t1, t2 = item.get("team1", ""), item.get("team2", "")
-        if is_placeholder_name(t1) or is_placeholder_name(t2):
-            return None
-        if match_openfootball_to_calendar(item, local, visitante, mapping):
-            return item
-        return item
-
     date_key = parse_match_date(cal["fecha"])
     for candidate in by_date.get(date_key, []):
-        if match_openfootball_to_calendar(candidate, local, visitante, mapping):
+        if teams_orientation(candidate, local, visitante, mapping) is not None:
             return candidate
+
+    # Respaldo: ids 1–72 suelen coincidir num con openfootball si la fecha falla
+    mid = cal["id"]
+    if mid in by_num:
+        item = by_num[mid]
+        if teams_orientation(item, local, visitante, mapping) is not None:
+            return item
+
     return None
 
 
@@ -224,14 +258,21 @@ def collect_finished_updates() -> dict[int, dict]:
         of_item = find_openfootball_match(cal, by_num, by_date, mapping)
         if not of_item:
             continue
-        parsed = extract_result_from_openfootball(of_item, match_is_ko(cal))
+        orientation = teams_orientation(
+            of_item, cal["local"], cal["visitante"], mapping
+        )
+        if not orientation:
+            continue
+        parsed = extract_result_from_openfootball(
+            of_item, match_is_ko(cal), orientation
+        )
         if parsed:
             updates[mid] = parsed
     return updates
 
 
-def diagnose_mapping() -> tuple[dict[str, int], list[str]]:
-    """Cruza calendario local con openfootball; devuelve mapa id->num y no emparejados."""
+def diagnose_mapping() -> tuple[dict[str, int], list[str], list[str]]:
+    """Cruza calendario local con openfootball; mapa id->num, no emparejados y avisos."""
     calendar = load_calendar()
     mapping = load_team_mapping()
     of_matches = fetch_openfootball_matches()
@@ -239,6 +280,7 @@ def diagnose_mapping() -> tuple[dict[str, int], list[str]]:
 
     fixture_map: dict[str, int] = {}
     unmatched: list[str] = []
+    warnings: list[str] = []
 
     for cal in calendar:
         mid = cal["id"]
@@ -248,12 +290,80 @@ def diagnose_mapping() -> tuple[dict[str, int], list[str]]:
             continue
         found = find_openfootball_match(cal, by_num, by_date, mapping)
         if found:
-            key = found.get("num", mid)
-            fixture_map[str(mid)] = int(key)
+            of_num = int(found.get("num", mid))
+            fixture_map[str(mid)] = of_num
+            if of_num != mid:
+                warnings.append(
+                    f"  #{mid} calendario -> OF num {of_num} "
+                    f"({local} vs {visitante}; emparejado por equipos)"
+                )
         else:
             date_key = parse_match_date(cal["fecha"])
             unmatched.append(
                 f"  #{mid} {date_key} {local} vs {visitante} "
-                f"(OF: {spanish_to_api(local, mapping)} vs {spanish_to_api(visitante, mapping)})"
+                f"(OF: {spanish_to_api(local, mapping)} vs "
+                f"{spanish_to_api(visitante, mapping)})"
             )
-    return fixture_map, unmatched
+    return fixture_map, unmatched, warnings
+
+
+def run_self_tests() -> None:
+    mapping = load_team_mapping()
+
+    brasil_japon = {
+        "num": 76,
+        "date": "2026-06-29",
+        "team1": "Brazil",
+        "team2": "Japan",
+        "score": {"ft": [2, 1], "ht": [0, 1]},
+    }
+    cal_bj = {
+        "id": 74,
+        "fecha": "29/06/2026",
+        "local": "Brasil",
+        "visitante": "Japón",
+        "fase": "Dieciseisavos",
+    }
+    wrong_num = {
+        "num": 74,
+        "date": "2026-06-29",
+        "team1": "Germany",
+        "team2": "Paraguay",
+        "score": {"ft": [1, 1], "p": [3, 4], "ht": [0, 1]},
+    }
+    by_num, by_date = index_openfootball_matches([brasil_japon, wrong_num])
+    found = find_openfootball_match(cal_bj, by_num, by_date, mapping)
+    assert found is brasil_japon, "Brasil-Japón debe emparejar OF num 76, no 74"
+    assert teams_orientation(found, cal_bj["local"], cal_bj["visitante"], mapping) == "normal"
+
+    orient = teams_orientation(wrong_num, "Alemania", "Paraguay", mapping)
+    res = extract_result_from_openfootball(wrong_num, True, orient)
+    assert res == {"home": 1, "away": 1, "clasificado": "Visitante"}, res
+
+    holanda = {
+        "num": 75,
+        "team1": "Netherlands",
+        "team2": "Morocco",
+        "score": {"ft": [1, 1], "p": [2, 3]},
+    }
+    res_h = extract_result_from_openfootball(
+        holanda, True, teams_orientation(holanda, "Países Bajos", "Marruecos", mapping)
+    )
+    assert res_h == {"home": 1, "away": 1, "clasificado": "Visitante"}, res_h
+
+    swapped = {
+        "team1": "Japan",
+        "team2": "Brazil",
+        "score": {"ft": [1, 2]},
+    }
+    res_s = extract_result_from_openfootball(swapped, True, "swapped")
+    assert res_s == {"home": 2, "away": 1, "clasificado": "Local"}, res_s
+
+    draw_no_pens = {"score": {"ft": [1, 1]}}
+    res_d = extract_result_from_openfootball(draw_no_pens, True, "normal")
+    assert res_d == {"home": 1, "away": 1}, res_d
+
+
+if __name__ == "__main__":
+    run_self_tests()
+    print("worldcup_data: tests OK")

@@ -191,6 +191,68 @@ def classify_match_tier(
     return "miss"
 
 
+def classify_ko_score_tier(
+    pred_h,
+    pred_a,
+    res_h,
+    res_a,
+) -> str:
+    """Tier visual de marcador en eliminatorias (solo goles a 90')."""
+    ph = _as_int(pred_h)
+    pa = _as_int(pred_a)
+    rh = _as_int(res_h)
+    ra = _as_int(res_a)
+    if ph is None or pa is None or rh is None or ra is None:
+        return "pending"
+    if ph == rh and pa == ra:
+        return "exact"
+    if (ph - pa) == (rh - ra):
+        return "difference"
+    return "miss"
+
+
+def match_display_meta(
+    fase: str,
+    pred_h,
+    pred_a,
+    res_h,
+    res_a,
+    pred_clasif: str | None,
+    real_clasif: str | None,
+) -> dict[str, Any]:
+    """Metadatos visuales para dashboard: tier de marcador + estrella clasificado."""
+    ph = _as_int(pred_h)
+    pa = _as_int(pred_a)
+    rh = _as_int(res_h)
+    ra = _as_int(res_a)
+    if ph is None or pa is None or rh is None or ra is None:
+        return {
+            "tier": "pending",
+            "clasif_hit": False,
+            "tier_label": TIER_LABELS["pending"],
+        }
+
+    fase = (fase or "").strip()
+    if fase == "Grupos":
+        tier = classify_match_tier(fase, ph, pa, rh, ra, pred_clasif, real_clasif)
+        return {
+            "tier": tier,
+            "clasif_hit": False,
+            "tier_label": TIER_LABELS.get(tier, tier),
+        }
+
+    score_tier = classify_ko_score_tier(ph, pa, rh, ra)
+    clasif_hit = _clasif_ok(pred_clasif, real_clasif)
+    label = TIER_LABELS.get(score_tier, score_tier)
+    if clasif_hit:
+        label = f"{label} · ★ clasificado"
+    return {
+        "tier": score_tier,
+        "clasif_hit": clasif_hit,
+        "tier_label": label,
+    }
+
+
 def calc_special_points(pred, official, cfg: dict[str, Any] | None = None) -> int:
     c = cfg or load_scoring_config()
     pts = c.get("apuesta_especial", 10)
@@ -285,6 +347,29 @@ def run_self_tests() -> None:
     for i, (fase, ph, pa, rh, ra, pc, rc, expected) in enumerate(tier_cases, 1):
         got = classify_match_tier(fase, ph, pa, rh, ra, pc, rc)
         assert got == expected, f"Tier {i}: esperado {expected}, obtuvo {got}"
+
+    ko_score_cases = [
+        (0, 2, 0, 1, "miss"),
+        (1, 1, 1, 1, "exact"),
+        (2, 2, 1, 1, "difference"),
+        (2, 1, 2, 1, "exact"),
+        (3, 1, 2, 0, "difference"),
+    ]
+    for i, (ph, pa, rh, ra, expected) in enumerate(ko_score_cases, 1):
+        got = classify_ko_score_tier(ph, pa, rh, ra)
+        assert got == expected, f"KO score {i}: esperado {expected}, obtuvo {got}"
+
+    display_cases = [
+        ("Grupos", 2, 1, 2, 1, None, None, "exact", False),
+        ("Dieciseisavos", 0, 2, 0, 1, "Visitante", "Visitante", "miss", True),
+        ("Dieciseisavos", 1, 1, 1, 1, "Local", "Visitante", "exact", False),
+        ("Dieciseisavos", 2, 2, 1, 1, "Visitante", "Visitante", "difference", True),
+        ("Octavos", 2, 1, 2, 1, "Local", "Local", "exact", True),
+    ]
+    for i, (fase, ph, pa, rh, ra, pc, rc, exp_tier, exp_cl) in enumerate(display_cases, 1):
+        meta = match_display_meta(fase, ph, pa, rh, ra, pc, rc)
+        assert meta["tier"] == exp_tier, f"Display {i} tier: {meta['tier']} != {exp_tier}"
+        assert meta["clasif_hit"] == exp_cl, f"Display {i} clasif: {meta['clasif_hit']} != {exp_cl}"
     print("scoring.py: todos los casos OK")
 
 

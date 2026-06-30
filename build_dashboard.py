@@ -20,8 +20,8 @@ from scoring import (
     calc_match_points,
     calc_round_bonus,
     calc_special_points,
-    classify_match_tier,
     load_scoring_config,
+    match_display_meta,
 )
 
 ROOT = Path(__file__).parent
@@ -367,7 +367,7 @@ def build_stats(
         match_players = []
         for player in players:
             ph, pa, pc = predictions.get((player, mid), (None, None, None))
-            tier = classify_match_tier(
+            display = match_display_meta(
                 m["fase"], ph, pa, h, a, pc, clasificados.get(mid)
             )
             pts = points.get((player, mid))
@@ -379,7 +379,8 @@ def build_stats(
                 {
                     "name": player,
                     "initials": initials_map.get(player, player[:1]),
-                    "tier": tier,
+                    "tier": display["tier"],
+                    "clasif_hit": display["clasif_hit"],
                     "points": pts,
                     "pred": pred_str,
                 }
@@ -535,7 +536,7 @@ def build_full_payload(
             m = matches_meta[mid]
             rh, ra = results.get(mid, (None, None))
             ph, pa, pc = predictions.get((player, mid), (None, None, None))
-            tier = classify_match_tier(
+            display = match_display_meta(
                 m["fase"], ph, pa, rh, ra, pc, clasificados.get(mid)
             )
             finished = is_finished(rh, ra)
@@ -552,8 +553,9 @@ def build_full_payload(
                     "real_h": rh if finished else None,
                     "real_a": ra if finished else None,
                     "real_clasificado": clasificados.get(mid) or "",
-                    "tier": tier,
-                    "tier_label": TIER_LABELS.get(tier, tier),
+                    "tier": display["tier"],
+                    "clasif_hit": display["clasif_hit"],
+                    "tier_label": display["tier_label"],
                     "points": points.get((player, mid)),
                 }
             )
@@ -820,7 +822,11 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       display: inline-flex; align-items: center; justify-content: center;
       width: 26px; height: 26px; border-radius: 50%; font-size: 0.62rem; font-weight: 700;
       border: 2px solid var(--t-pending); color: var(--text); background: transparent;
-      flex-shrink: 0;
+      flex-shrink: 0; position: relative;
+    }
+    .init-badge.has-clasif::after {
+      content: "★"; position: absolute; top: -5px; right: -5px;
+      font-size: 0.55rem; color: #fbbf24; line-height: 1;
     }
     .init-badge.exact { border-color: var(--t-exact); }
     .init-badge.difference { border-color: var(--t-diff); }
@@ -836,7 +842,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .tier-legend-mini .winner i { color: var(--t-winner); }
     .tier-legend-mini .clasificado i { color: var(--t-clasif); }
     .tier-legend-mini .miss i { color: var(--t-miss); }
+    .tier-legend-mini .clasif-star i { color: #fbbf24; font-style: normal; font-size: 0.75rem; border: none; width: auto; height: auto; background: transparent; }
 
+    .pred-card.has-clasif .tier-tag::after { content: " ★"; color: #fbbf24; }
     .upcoming-list { display: flex; flex-direction: column; gap: 0.85rem; }
     .upcoming-block {
       border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem;
@@ -1080,16 +1088,34 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       return p ? p.initials : name.slice(0, 1);
     }
 
-    function initBadgeHtml(pl, tier) {
+    function initBadgeHtml(pl, tier, clasifHit) {
       const pts = pl.points != null ? ` · +${pl.points} pts` : '';
-      const tip = `${pl.name}: ${pl.pred || '—'}${pts}`;
-      return `<span class="init-badge ${tier}" title="${esc(tip)}">${esc(pl.initials || playerInitials(pl.name))}</span>`;
+      const star = clasifHit ? ' · ★ clasificado' : '';
+      const tip = `${pl.name}: ${pl.pred || '—'}${pts}${star}`;
+      const cls = clasifHit ? ' has-clasif' : '';
+      return `<span class="init-badge ${tier}${cls}" title="${esc(tip)}">${esc(pl.initials || playerInitials(pl.name))}</span>`;
     }
 
     function tierLegendMiniHtml() {
-      return ['exact', 'difference', 'winner', 'clasificado', 'miss'].map(t =>
+      return ['exact', 'difference', 'miss', 'winner'].map(t =>
         `<span class="${t}"><i></i>${TIER_LABELS[t]}</span>`
-      ).join('');
+      ).join('') + `<span class="clasif-star"><i>★</i> Clasificado (elim.)</span>`;
+    }
+
+    function tierLegendPlayerHtml(matches) {
+      const hasGrupos = matches.some(m => (m.fase || '') === 'Grupos');
+      const hasKo = matches.some(m => (m.fase || '') !== 'Grupos');
+      let parts = [];
+      if (hasGrupos) {
+        parts = parts.concat(['exact', 'difference', 'winner', 'miss'].map(t =>
+          `<span><i style="background:${TIER_COLORS[t]}"></i>${TIER_LABELS[t]}</span>`));
+      }
+      if (hasKo) {
+        parts = parts.concat(['exact', 'difference', 'miss'].map(t =>
+          `<span><i style="background:${TIER_COLORS[t]}"></i>${TIER_LABELS[t]} (elim.)</span>`));
+        parts.push(`<span><i style="color:#fbbf24;font-style:normal">★</i> Clasificado acertado</span>`);
+      }
+      return parts.join('');
     }
 
     function getMatchPredictions(matchId) {
@@ -1103,6 +1129,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           pred_clasificado: m ? m.pred_clasificado : '',
           tier: m ? m.tier : 'pending',
           tier_label: m ? m.tier_label : TIER_LABELS.pending,
+          clasif_hit: m ? !!m.clasif_hit : false,
           points: m ? m.points : null,
         };
       });
@@ -1230,7 +1257,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       const lastHtml = h.last_matches.length
         ? h.last_matches.map(x => {
             const badges = (x.players || []).map(pl =>
-              initBadgeHtml(pl, pl.tier || 'pending')
+              initBadgeHtml(pl, pl.tier || 'pending', pl.clasif_hit)
             ).join('');
             return `
             <div class="match-row">
@@ -1500,8 +1527,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         return;
       }
       const s = p.stats;
-      const legend = ['exact', 'difference', 'winner', 'clasificado', 'miss', 'pending'].map(t =>
-        `<span><i style="background:${TIER_COLORS[t]}"></i>${TIER_LABELS[t]}</span>`).join('');
+      const legend = tierLegendPlayerHtml(p.matches);
 
       const specHtml = p.specials.map(sp => {
         const state = sp.oficial ? (sp.hit ? 'hit' : 'fail') : 'pend';
@@ -1526,7 +1552,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           if (m.pred_clasificado || m.real_clasificado) {
             clasifLine = `<div class="clasif-line">Clasificado — tú: ${esc(m.pred_clasificado || '—')} · real: ${esc(m.real_clasificado || '—')}</div>`;
           }
-          return `<div class="pred-card ${m.tier}">
+          return `<div class="pred-card ${m.tier}${m.clasif_hit ? ' has-clasif' : ''}">
             <div class="pc-teams">${esc(m.local)} <span class="muted">vs</span> ${esc(m.visitante)}</div>
             <div class="pc-date">${esc(m.fecha)}</div>
             <div class="pred-line"><span class="lbl">Tu pronóstico</span><span class="score-chip">${pred}</span></div>

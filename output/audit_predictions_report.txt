@@ -1,0 +1,57 @@
+AUDITORÍA PRONÓSTICOS R32 (73-88)
+============================================================
+
+FOCUS: Pepe / Patri
+----------------------------------------
+
+Pepe (Pepe)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Pepe.xlsx
+
+Patricio (Patri)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Patricio.xlsx
+
+RESTO
+----------------------------------------
+
+Simon (Simón)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Simontorreglosa2000@gmail.com.xlsx
+
+Fer (Fer)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Correo 3.xlsx
+
+Nacho (Nacho)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\PORRA MUNDIAL NACH.xlsx
+
+Luis (Luis)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Correo.xlsx
+
+Quintero (Quintero)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Correo_Quintero-16AVOS.xlsx
+
+Felipe (Felipe)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Correo (1) (1) (1).xlsx
+
+Kike (Kike)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\PORRA KIKOTA.xlsx
+
+Papa (Papá)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_papi.xlsx
+
+Diego (Diego)
+  FLAGS CRÍTICOS:
+    [MISSING_SOURCE] Archivo no encontrado: c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Diego.xlsx
+
+============================================================
+RESULTADO: sin MISMATCH entre fuente y maestro.
+Pepe/Patri: datos coherentes con Excel original (si fuente disponible).
+La confusión visual en R32 jugados venía del tier 'clasificado' (morado).

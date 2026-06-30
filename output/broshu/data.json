@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "30/06/2026 12:26",
+    "generated_at": "30/06/2026 14:53",
     "total_matches": 104,
     "finished_count": 76,
     "progress_pct": 73.1,
@@ -980,14 +980,14 @@
           {
             "name": "Pepe",
             "initials": "P",
-            "pred": "2-4",
+            "pred": "4-2",
             "pred_clasificado": "Local"
           },
           {
             "name": "Patri",
             "initials": "PA",
             "pred": "3-1",
-            "pred_clasificado": "Visitante"
+            "pred_clasificado": "Local"
           },
           {
             "name": "Kike",
@@ -6848,8 +6848,8 @@
           "fase": "Dieciseisavos",
           "local": "Francia",
           "visitante": "Suecia",
-          "pred_h": 2,
-          "pred_a": 4,
+          "pred_h": 4,
+          "pred_a": 2,
           "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
@@ -8696,7 +8696,7 @@
           "visitante": "Suecia",
           "pred_h": 3,
           "pred_a": 1,
-          "pred_clasificado": "Visitante",
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",

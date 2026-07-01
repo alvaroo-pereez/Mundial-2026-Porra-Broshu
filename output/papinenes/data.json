@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "01/07/2026 10:58",
+    "generated_at": "01/07/2026 18:08",
     "total_matches": 104,
-    "finished_count": 79,
-    "progress_pct": 76.0,
-    "avg_pts": 1.9,
+    "finished_count": 80,
+    "progress_pct": 76.9,
+    "avg_pts": 1.93,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,121 +23,154 @@
   "home": {
     "leader": {
       "name": "Papá",
-      "points": 150,
-      "points_match": 150,
+      "points": 154,
+      "points_match": 154,
       "points_bonus": 0,
       "points_special": 0,
       "exact": 13,
-      "partial": 34,
+      "partial": 35,
       "fails": 32,
-      "pct": 59.5
+      "pct": 60.0
     },
     "ranking": [
       {
         "name": "Papá",
+        "points": 154,
+        "points_match": 154,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 13,
+        "partial": 35,
+        "fails": 32,
+        "pct": 60.0
+      },
+      {
+        "name": "Álvaro",
         "points": 150,
         "points_match": 150,
         "points_bonus": 0,
         "points_special": 0,
-        "exact": 13,
-        "partial": 34,
-        "fails": 32,
-        "pct": 59.5
-      },
-      {
-        "name": "Álvaro",
-        "points": 147,
-        "points_match": 147,
-        "points_bonus": 0,
-        "points_special": 0,
         "exact": 9,
-        "partial": 40,
+        "partial": 41,
         "fails": 30,
-        "pct": 62.0
+        "pct": 62.5
       },
       {
         "name": "Diego",
-        "points": 95,
-        "points_match": 95,
+        "points": 98,
+        "points_match": 98,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 3,
-        "partial": 36,
+        "partial": 37,
         "fails": 40,
-        "pct": 49.4
+        "pct": 50.0
       }
     ],
     "ranking_by_pct": [
       {
         "name": "Álvaro",
-        "points": 147,
-        "points_match": 147,
-        "points_bonus": 0,
-        "points_special": 0,
-        "exact": 9,
-        "partial": 40,
-        "fails": 30,
-        "pct": 62.0
-      },
-      {
-        "name": "Papá",
         "points": 150,
         "points_match": 150,
         "points_bonus": 0,
         "points_special": 0,
+        "exact": 9,
+        "partial": 41,
+        "fails": 30,
+        "pct": 62.5
+      },
+      {
+        "name": "Papá",
+        "points": 154,
+        "points_match": 154,
+        "points_bonus": 0,
+        "points_special": 0,
         "exact": 13,
-        "partial": 34,
+        "partial": 35,
         "fails": 32,
-        "pct": 59.5
+        "pct": 60.0
       },
       {
         "name": "Diego",
-        "points": 95,
-        "points_match": 95,
+        "points": 98,
+        "points_match": 98,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 3,
-        "partial": 36,
+        "partial": 37,
         "fails": 40,
-        "pct": 49.4
+        "pct": 50.0
       }
     ],
     "ranking_by_exact": [
       {
         "name": "Papá",
+        "points": 154,
+        "points_match": 154,
+        "points_bonus": 0,
+        "points_special": 0,
+        "exact": 13,
+        "partial": 35,
+        "fails": 32,
+        "pct": 60.0
+      },
+      {
+        "name": "Álvaro",
         "points": 150,
         "points_match": 150,
         "points_bonus": 0,
         "points_special": 0,
-        "exact": 13,
-        "partial": 34,
-        "fails": 32,
-        "pct": 59.5
-      },
-      {
-        "name": "Álvaro",
-        "points": 147,
-        "points_match": 147,
-        "points_bonus": 0,
-        "points_special": 0,
         "exact": 9,
-        "partial": 40,
+        "partial": 41,
         "fails": 30,
-        "pct": 62.0
+        "pct": 62.5
       },
       {
         "name": "Diego",
-        "points": 95,
-        "points_match": 95,
+        "points": 98,
+        "points_match": 98,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 3,
-        "partial": 36,
+        "partial": 37,
         "fails": 40,
-        "pct": 49.4
+        "pct": 50.0
       }
     ],
     "last_matches": [
+      {
+        "id": 80,
+        "local": "Inglaterra",
+        "visitante": "RD Congo",
+        "score": "2-1",
+        "fecha": "01/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-0"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "difference",
+            "clasif_hit": true,
+            "points": 4,
+            "pred": "1-0"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-0"
+          }
+        ]
+      },
       {
         "id": 79,
         "local": "México",
@@ -269,69 +302,9 @@
             "pred": "1-1"
           }
         ]
-      },
-      {
-        "id": 75,
-        "local": "Alemania",
-        "visitante": "Paraguay",
-        "score": "1-1",
-        "fecha": "29/06/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-0"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "3-0"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "4-1"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 80,
-        "fecha": "01/07/2026",
-        "fase": "Dieciseisavos",
-        "local": "Inglaterra",
-        "visitante": "RD Congo",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "2-0",
-            "pred_clasificado": "Local"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "1-0",
-            "pred_clasificado": "Local"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "2-0",
-            "pred_clasificado": "Local"
-          }
-        ]
-      },
       {
         "id": 81,
         "fecha": "01/07/2026",
@@ -439,6 +412,33 @@
             "pred_clasificado": "Visitante"
           }
         ]
+      },
+      {
+        "id": 85,
+        "fecha": "02/07/2026",
+        "fase": "Dieciseisavos",
+        "local": "Suiza",
+        "visitante": "Argelia",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "1-1",
+            "pred_clasificado": "Local"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "2-0",
+            "pred_clasificado": "Local"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "2-1",
+            "pred_clasificado": "Local"
+          }
+        ]
       }
     ],
     "evolution_labels": [
@@ -520,7 +520,8 @@
       76,
       77,
       78,
-      79
+      79,
+      80
     ],
     "evolution": {
       "Papá": [
@@ -602,7 +603,8 @@
         136,
         139,
         142,
-        150
+        150,
+        154
       ],
       "Álvaro": [
         2,
@@ -683,7 +685,8 @@
         138,
         141,
         144,
-        147
+        147,
+        150
       ],
       "Diego": [
         5,
@@ -764,7 +767,8 @@
         89,
         89,
         92,
-        95
+        95,
+        98
       ]
     },
     "specials_summary": [
@@ -1845,11 +1849,11 @@
       "jornada": 13,
       "local": "Inglaterra",
       "visitante": "RD Congo",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 2,
+      "res_a": 1,
+      "score": "2-1",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 81,
@@ -2193,14 +2197,14 @@
       "photo": "papinenes/photos/alvaro.jpg",
       "stats": {
         "name": "Álvaro",
-        "points": 147,
-        "points_match": 147,
+        "points": 150,
+        "points_match": 150,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 9,
-        "partial": 40,
+        "partial": 41,
         "fails": 30,
-        "pct": 62.0
+        "pct": 62.5
       },
       "matches": [
         {
@@ -3555,13 +3559,13 @@
           "pred_h": 2,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 81,
@@ -4039,14 +4043,14 @@
       "photo": "papinenes/photos/papa.jpg",
       "stats": {
         "name": "Papá",
-        "points": 150,
-        "points_match": 150,
+        "points": 154,
+        "points_match": 154,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 13,
-        "partial": 34,
+        "partial": 35,
         "fails": 32,
-        "pct": 59.5
+        "pct": 60.0
       },
       "matches": [
         {
@@ -5401,13 +5405,13 @@
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": true,
+          "tier_label": "Diferencia de goles · ★ clasificado",
+          "points": 4
         },
         {
           "id": 81,
@@ -5885,14 +5889,14 @@
       "photo": "papinenes/photos/diego.jpg",
       "stats": {
         "name": "Diego",
-        "points": 95,
-        "points_match": 95,
+        "points": 98,
+        "points_match": 98,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 3,
-        "partial": 36,
+        "partial": 37,
         "fails": 40,
-        "pct": 49.4
+        "pct": 50.0
       },
       "matches": [
         {
@@ -7247,13 +7251,13 @@
           "pred_h": 2,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 81,

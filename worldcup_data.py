@@ -169,6 +169,19 @@ def match_is_ko(m: dict) -> bool:
     return m.get("fase", "Grupos") != "Grupos"
 
 
+def _clasificado_from_t1_t2(
+    t1_score: int,
+    t2_score: int,
+    orientation: str,
+) -> str | None:
+    if t1_score == t2_score:
+        return None
+    t1_wins = t1_score > t2_score
+    if orientation == "normal":
+        return "Local" if t1_wins else "Visitante"
+    return "Visitante" if t1_wins else "Local"
+
+
 def extract_result_from_openfootball(
     of_item: dict,
     is_ko: bool,
@@ -196,13 +209,15 @@ def extract_result_from_openfootball(
     else:
         pens = score.get("p")
         if pens and len(pens) >= 2:
-            p1, p2 = int(pens[0]), int(pens[1])
-            if p1 != p2:
-                t1_wins = p1 > p2
-                if orientation == "normal":
-                    result["clasificado"] = "Local" if t1_wins else "Visitante"
-                else:
-                    result["clasificado"] = "Visitante" if t1_wins else "Local"
+            cl = _clasificado_from_t1_t2(int(pens[0]), int(pens[1]), orientation)
+            if cl:
+                result["clasificado"] = cl
+        else:
+            et = score.get("et")
+            if et and len(et) >= 2:
+                cl = _clasificado_from_t1_t2(int(et[0]), int(et[1]), orientation)
+                if cl:
+                    result["clasificado"] = cl
     return result
 
 
@@ -362,6 +377,27 @@ def run_self_tests() -> None:
     draw_no_pens = {"score": {"ft": [1, 1]}}
     res_d = extract_result_from_openfootball(draw_no_pens, True, "normal")
     assert res_d == {"home": 1, "away": 1}, res_d
+
+    bel_sen = {
+        "num": 82,
+        "date": "2026-07-01",
+        "team1": "Belgium",
+        "team2": "Senegal",
+        "score": {"et": [3, 2], "ft": [2, 2], "ht": [0, 1]},
+    }
+    cal_bs = {
+        "id": 81,
+        "fecha": "01/07/2026",
+        "local": "Bélgica",
+        "visitante": "Senegal",
+        "fase": "Dieciseisavos",
+    }
+    by_num_bs, by_date_bs = index_openfootball_matches([bel_sen])
+    found_bs = find_openfootball_match(cal_bs, by_num_bs, by_date_bs, mapping)
+    assert found_bs is bel_sen, "Bélgica-Senegal debe emparejar por fecha+equipos"
+    orient_bs = teams_orientation(found_bs, cal_bs["local"], cal_bs["visitante"], mapping)
+    res_bs = extract_result_from_openfootball(found_bs, True, orient_bs)
+    assert res_bs == {"home": 2, "away": 2, "clasificado": "Local"}, res_bs
 
 
 if __name__ == "__main__":

@@ -8,7 +8,13 @@ from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
 from propagate_ko_teams import propagate_ko_teams
-from worldcup_data import collect_finished_updates, load_calendar, match_is_ko
+from worldcup_data import (
+    collect_finished_updates,
+    load_calendar,
+    match_is_ko,
+    save_json,
+    MATCHES_JSON,
+)
 
 ROOT = Path(__file__).parent
 PT_FIRST_ROW = 4
@@ -26,24 +32,58 @@ def write_excel_result(
     away: int,
     clasificado: str | None,
     is_ko: bool,
+    local: str | None = None,
+    visitante: str | None = None,
 ) -> bool:
     row = PT_FIRST_ROW + match_id - 1
     old_h, old_a, old_cl = pt.cell(row, 6).value, pt.cell(row, 7).value, pt.cell(row, 11).value
+    old_l, old_v = pt.cell(row, 4).value, pt.cell(row, 5).value
     new_cl = clasificado if is_ko and clasificado else (old_cl if is_ko else "-")
 
     changed = (
         old_h != home
         or old_a != away
         or (is_ko and old_cl != new_cl)
+        or (local is not None and old_l != local)
+        or (visitante is not None and old_v != visitante)
     )
     if not changed:
         return False
 
+    if local is not None:
+        pt.cell(row, 4, value=local)
+    if visitante is not None:
+        pt.cell(row, 5, value=visitante)
     pt.cell(row, 6, value=home)
     pt.cell(row, 7, value=away)
     if is_ko and clasificado:
         pt.cell(row, 11, value=clasificado)
     return True
+
+
+def apply_team_updates_to_json(updates: dict[int, dict]) -> bool:
+    """Actualiza local/visitante en matches_2026.json cuando vienen del sync."""
+    team_changes = {
+        mid: (r["local"], r["visitante"])
+        for mid, r in updates.items()
+        if "local" in r and "visitante" in r
+    }
+    if not team_changes:
+        return False
+    calendar = load_calendar()
+    changed = False
+    for m in calendar:
+        mid = m["id"]
+        if mid not in team_changes:
+            continue
+        local, visitante = team_changes[mid]
+        if m["local"] != local or m["visitante"] != visitante:
+            m["local"] = local
+            m["visitante"] = visitante
+            changed = True
+    if changed:
+        save_json(MATCHES_JSON, calendar)
+    return changed
 
 
 def collect_api_updates() -> dict[int, dict]:
@@ -75,19 +115,41 @@ def apply_to_excel(excel_path: Path, updates: dict[int, dict], dry_run: bool) ->
         old_h, old_a, old_cl = read_excel_result(pt, mid)
         home, away = result["home"], result["away"]
         clasif = result.get("clasificado")
+        new_local = result.get("local")
+        new_visit = result.get("visitante")
 
         if dry_run:
-            if old_h != home or old_a != away or (is_ko and clasif and old_cl != clasif):
+            team_note = ""
+            if new_local or new_visit:
+                team_note = f" equipos-> {new_local} vs {new_visit}"
+            if (
+                old_h != home
+                or old_a != away
+                or (is_ko and clasif and old_cl != clasif)
+                or new_local
+                or new_visit
+            ):
                 print(
                     f"  #{mid} {m['local']} vs {m['visitante']}: "
                     f"{old_h}-{old_a} -> {home}-{away}"
                     + (f" clasif={clasif}" if is_ko and clasif else "")
+                    + team_note
                 )
                 changed = True
             continue
 
-        if write_excel_result(pt, mid, home, away, clasif, is_ko):
-            print(f"  Actualizado #{mid}: {home}-{away}" + (f" ({clasif})" if clasif else ""))
+        if write_excel_result(
+            pt, mid, home, away, clasif, is_ko, new_local, new_visit
+        ):
+            print(
+                f"  Actualizado #{mid}: {home}-{away}"
+                + (f" ({clasif})" if clasif else "")
+                + (
+                    f" [{new_local} vs {new_visit}]"
+                    if new_local and new_visit
+                    else ""
+                )
+            )
             changed = True
 
     if changed and not dry_run:
@@ -117,6 +179,9 @@ def main() -> None:
     print("Consultando openfootball/worldcup.json...")
     updates = collect_api_updates()
     print(f"Partidos finalizados (emparejados): {len(updates)}")
+    if not dry_run and apply_team_updates_to_json(updates):
+        print("  Equipos actualizados en matches_2026.json")
+        teams_changed = True
 
     missing_excels: list[Path] = []
     for group_id in list_groups():

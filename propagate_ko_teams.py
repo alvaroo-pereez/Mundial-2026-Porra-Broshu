@@ -9,6 +9,7 @@ from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
 from ko_bracket import compute_resolved_teams, is_ko_placeholder
+from octavos_fixtures import OCTAVOS_CANONICAL, apply_octavos_canonical_teams
 from worldcup_data import load_calendar, save_json, MATCHES_JSON
 
 PT_FIRST_ROW = 4
@@ -47,6 +48,11 @@ def apply_teams_to_excel(excel_path: Path, teams: dict[int, tuple[str, str]], dr
         old_l, old_v = pt.cell(row, 4).value, pt.cell(row, 5).value
         if old_l == local and old_v == visitante:
             continue
+        if mid in OCTAVOS_CANONICAL:
+            continue
+        cal_local = str(old_l or "")
+        if not is_ko_placeholder(cal_local) and mid < 97:
+            continue
         print(f"  #{mid}: {old_l} vs {old_v} -> {local} vs {visitante}")
         if not dry_run:
             pt.cell(row, 4, value=local)
@@ -68,7 +74,9 @@ def apply_teams_to_json(teams: dict[int, tuple[str, str]], dry_run: bool) -> lis
             continue
         if m["local"] == local and m["visitante"] == visitante:
             continue
-        if not is_ko_placeholder(m["local"]):
+        if mid in OCTAVOS_CANONICAL:
+            continue
+        if not is_ko_placeholder(m["local"]) and mid < 97:
             continue
         print(f"  JSON #{mid}: {m['local']} vs {m['visitante']} -> {local} vs {visitante}")
         m["local"] = local
@@ -81,6 +89,7 @@ def apply_teams_to_json(teams: dict[int, tuple[str, str]], dry_run: bool) -> lis
 
 def propagate_ko_teams(dry_run: bool = False) -> list[int]:
     """Propaga equipos usando resultados del Excel del primer grupo disponible."""
+    oct_changed = apply_octavos_canonical_teams(dry_run=dry_run)
     calendar = load_calendar()
     source_excel: Path | None = None
     for group_id in list_groups():
@@ -90,19 +99,19 @@ def propagate_ko_teams(dry_run: bool = False) -> list[int]:
             break
     if source_excel is None:
         print("No hay Excel maestro en output/.")
-        return []
+        return sorted(oct_changed)
 
     print(f"Resultados fuente: {source_excel.name}")
     results = read_results_from_excel(source_excel)
     resolved = compute_resolved_teams(results, calendar)
+    all_changed: set[int] = set(oct_changed)
     if not resolved:
-        print("Sin equipos nuevos que propagar.")
-        return []
+        print("Sin equipos nuevos que propagar (cuartos+).")
+        return sorted(all_changed)
 
-    print("Actualizando matches_2026.json:")
+    print("Actualizando matches_2026.json (cuartos+):")
     json_changed = apply_teams_to_json(resolved, dry_run)
-
-    all_changed: set[int] = set(json_changed)
+    all_changed.update(json_changed)
     for group_id in list_groups():
         excel_path = load_group(group_id)["excel_path"]
         if not excel_path.exists():

@@ -5,6 +5,7 @@ import re
 import unicodedata
 
 from fifa_schedule_2026 import R32_RESOLVED, build_r32_matches_chronological
+from octavos_fixtures import OCTAVOS_CANONICAL
 
 _PLACEHOLDER_RE = re.compile(
     r"^(Ganador|Perdedor)\s",
@@ -121,11 +122,8 @@ def compute_resolved_teams(
         w, _ = _match_result(chrono_id, teams, results)
         r32_feeders[slot] = w
 
-    for i in range(8):
-        mid = 89 + i
-        loc, vis = r32_feeders[2 * i], r32_feeders[2 * i + 1]
-        if loc and vis:
-            teams[mid] = (loc, vis)
+    for mid, pair in OCTAVOS_CANONICAL.items():
+        teams[mid] = pair
 
     oct_feeders: list[str | None] = [None] * 8
     for i in range(8):
@@ -169,6 +167,12 @@ def compute_resolved_teams(
         if mid not in cal_by_id:
             continue
         cal = cal_by_id[mid]
-        if is_ko_placeholder(cal["local"]) and mid in teams:
-            out[mid] = teams[mid]
+        if mid not in teams:
+            continue
+        cur = (cal["local"], cal["visitante"])
+        new = teams[mid]
+        if is_ko_placeholder(cal["local"]):
+            out[mid] = new
+        elif mid >= 97 and new != cur:
+            out[mid] = new
     return out

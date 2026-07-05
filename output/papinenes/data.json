@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "05/07/2026 22:28",
+    "generated_at": "06/07/2026 00:39",
     "total_matches": 104,
-    "finished_count": 90,
-    "progress_pct": 86.5,
-    "avg_pts": 2.18,
+    "finished_count": 91,
+    "progress_pct": 87.5,
+    "avg_pts": 2.15,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -29,8 +29,8 @@
       "points_special": 0,
       "exact": 12,
       "partial": 48,
-      "fails": 30,
-      "pct": 66.7
+      "fails": 31,
+      "pct": 65.9
     },
     "ranking": [
       {
@@ -41,8 +41,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 48,
-        "fails": 30,
-        "pct": 66.7
+        "fails": 31,
+        "pct": 65.9
       },
       {
         "name": "Papá",
@@ -52,8 +52,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 42,
-        "fails": 33,
-        "pct": 63.3
+        "fails": 34,
+        "pct": 62.6
       },
       {
         "name": "Diego",
@@ -63,8 +63,8 @@
         "points_special": 0,
         "exact": 4,
         "partial": 45,
-        "fails": 41,
-        "pct": 54.4
+        "fails": 42,
+        "pct": 53.8
       }
     ],
     "ranking_by_pct": [
@@ -76,8 +76,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 48,
-        "fails": 30,
-        "pct": 66.7
+        "fails": 31,
+        "pct": 65.9
       },
       {
         "name": "Papá",
@@ -87,8 +87,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 42,
-        "fails": 33,
-        "pct": 63.3
+        "fails": 34,
+        "pct": 62.6
       },
       {
         "name": "Diego",
@@ -98,8 +98,8 @@
         "points_special": 0,
         "exact": 4,
         "partial": 45,
-        "fails": 41,
-        "pct": 54.4
+        "fails": 42,
+        "pct": 53.8
       }
     ],
     "ranking_by_exact": [
@@ -111,8 +111,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 42,
-        "fails": 33,
-        "pct": 63.3
+        "fails": 34,
+        "pct": 62.6
       },
       {
         "name": "Álvaro",
@@ -122,8 +122,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 48,
-        "fails": 30,
-        "pct": 66.7
+        "fails": 31,
+        "pct": 65.9
       },
       {
         "name": "Diego",
@@ -133,41 +133,41 @@
         "points_special": 0,
         "exact": 4,
         "partial": 45,
-        "fails": 41,
-        "pct": 54.4
+        "fails": 42,
+        "pct": 53.8
       }
     ],
     "last_matches": [
       {
-        "id": 90,
-        "local": "Canadá",
-        "visitante": "Marruecos",
-        "score": "0-3",
-        "fecha": "04/07/2026",
+        "id": 91,
+        "local": "Brasil",
+        "visitante": "Noruega",
+        "score": "1-2",
+        "fecha": "05/07/2026",
         "players": [
           {
             "name": "Álvaro",
             "initials": "A",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
+            "clasif_hit": false,
+            "points": 0,
             "pred": "1-1"
           },
           {
             "name": "Papá",
             "initials": "P",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-2"
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-1"
           },
           {
             "name": "Diego",
             "initials": "D",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-1"
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-1"
           }
         ]
       },
@@ -201,6 +201,39 @@
             "clasif_hit": true,
             "points": 3,
             "pred": "0-4"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "local": "Canadá",
+        "visitante": "Marruecos",
+        "score": "0-3",
+        "fecha": "04/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "1-1"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "0-2"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "0-1"
           }
         ]
       },
@@ -269,72 +302,13 @@
             "pred": "2-0"
           }
         ]
-      },
-      {
-        "id": 86,
-        "local": "Australia",
-        "visitante": "Egipto",
-        "score": "1-1",
-        "fecha": "03/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "exact",
-            "clasif_hit": true,
-            "points": 8,
-            "pred": "1-1"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "1-2"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
       {
-        "id": 91,
-        "fecha": "05/07/2026",
-        "fase": "Octavos",
-        "local": "Brasil",
-        "visitante": "Noruega",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-1",
-            "pred_clasificado": "Local"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "2-1",
-            "pred_clasificado": "Local"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "2-1",
-            "pred_clasificado": "Local"
-          }
-        ]
-      },
-      {
         "id": 92,
         "fecha": "05/07/2026",
+        "hora": "18:00",
         "fase": "Octavos",
         "local": "México",
         "visitante": "Inglaterra",
@@ -362,6 +336,7 @@
       {
         "id": 93,
         "fecha": "06/07/2026",
+        "hora": "14:00",
         "fase": "Octavos",
         "local": "Portugal",
         "visitante": "España",
@@ -389,6 +364,7 @@
       {
         "id": 94,
         "fecha": "06/07/2026",
+        "hora": "17:00",
         "fase": "Octavos",
         "local": "Estados Unidos",
         "visitante": "Bélgica",
@@ -416,6 +392,7 @@
       {
         "id": 95,
         "fecha": "07/07/2026",
+        "hora": "12:00",
         "fase": "Octavos",
         "local": "Argentina",
         "visitante": "Egipto",
@@ -436,6 +413,34 @@
             "name": "Diego",
             "initials": "D",
             "pred": "2-1",
+            "pred_clasificado": "Local"
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "fecha": "07/07/2026",
+        "hora": "13:00",
+        "fase": "Octavos",
+        "local": "Suiza",
+        "visitante": "Colombia",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "1-1",
+            "pred_clasificado": "Visitante"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "1-1",
+            "pred_clasificado": "Visitante"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "1-1",
             "pred_clasificado": "Local"
           }
         ]
@@ -531,7 +536,8 @@
       87,
       88,
       89,
-      90
+      90,
+      91
     ],
     "evolution": {
       "Álvaro": [
@@ -624,6 +630,7 @@
         182,
         190,
         193,
+        196,
         196
       ],
       "Papá": [
@@ -716,6 +723,7 @@
         183,
         186,
         189,
+        192,
         192
       ],
       "Diego": [
@@ -808,6 +816,7 @@
         115,
         123,
         126,
+        129,
         129
       ]
     },
@@ -1246,19 +1255,6 @@
       "finished": true
     },
     {
-      "id": 31,
-      "fecha": "19/06/2026",
-      "fase": "Grupos",
-      "jornada": 3,
-      "local": "Brasil",
-      "visitante": "Haití",
-      "res_h": 3,
-      "res_a": 0,
-      "score": "3-0",
-      "clasificado": "-",
-      "finished": true
-    },
-    {
       "id": 32,
       "fecha": "19/06/2026",
       "fase": "Grupos",
@@ -1268,6 +1264,19 @@
       "res_h": 0,
       "res_a": 1,
       "score": "0-1",
+      "clasificado": "-",
+      "finished": true
+    },
+    {
+      "id": 31,
+      "fecha": "19/06/2026",
+      "fase": "Grupos",
+      "jornada": 3,
+      "local": "Brasil",
+      "visitante": "Haití",
+      "res_h": 3,
+      "res_a": 0,
+      "score": "3-0",
       "clasificado": "-",
       "finished": true
     },
@@ -1662,19 +1671,6 @@
       "finished": true
     },
     {
-      "id": 63,
-      "fecha": "26/06/2026",
-      "fase": "Grupos",
-      "jornada": 8,
-      "local": "Cabo Verde",
-      "visitante": "Arabia Saudí",
-      "res_h": 0,
-      "res_a": 0,
-      "score": "0-0",
-      "clasificado": "-",
-      "finished": true
-    },
-    {
       "id": 64,
       "fecha": "26/06/2026",
       "fase": "Grupos",
@@ -1684,6 +1680,19 @@
       "res_h": 0,
       "res_a": 1,
       "score": "0-1",
+      "clasificado": "-",
+      "finished": true
+    },
+    {
+      "id": 63,
+      "fecha": "26/06/2026",
+      "fase": "Grupos",
+      "jornada": 8,
+      "local": "Cabo Verde",
+      "visitante": "Arabia Saudí",
+      "res_h": 0,
+      "res_a": 0,
+      "score": "0-0",
       "clasificado": "-",
       "finished": true
     },
@@ -2000,19 +2009,6 @@
       "finished": true
     },
     {
-      "id": 89,
-      "fecha": "04/07/2026",
-      "fase": "Octavos",
-      "jornada": 14,
-      "local": "Paraguay",
-      "visitante": "Francia",
-      "res_h": 0,
-      "res_a": 1,
-      "score": "0-1",
-      "clasificado": "Visitante",
-      "finished": true
-    },
-    {
       "id": 90,
       "fecha": "04/07/2026",
       "fase": "Octavos",
@@ -2026,17 +2022,30 @@
       "finished": true
     },
     {
+      "id": 89,
+      "fecha": "04/07/2026",
+      "fase": "Octavos",
+      "jornada": 14,
+      "local": "Paraguay",
+      "visitante": "Francia",
+      "res_h": 0,
+      "res_a": 1,
+      "score": "0-1",
+      "clasificado": "Visitante",
+      "finished": true
+    },
+    {
       "id": 91,
       "fecha": "05/07/2026",
       "fase": "Octavos",
       "jornada": 14,
       "local": "Brasil",
       "visitante": "Noruega",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 1,
+      "res_a": 2,
+      "score": "1-2",
+      "clasificado": "Visitante",
+      "finished": true
     },
     {
       "id": 92,
@@ -2243,8 +2252,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 48,
-        "fails": 30,
-        "pct": 66.7
+        "fails": 31,
+        "pct": 65.9
       },
       "matches": [
         {
@@ -2758,23 +2767,6 @@
           "points": 5
         },
         {
-          "id": 31,
-          "fecha": "19/06/2026",
-          "fase": "Grupos",
-          "local": "Brasil",
-          "visitante": "Haití",
-          "pred_h": 3,
-          "pred_a": 0,
-          "pred_clasificado": "-",
-          "real_h": 3,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "exact",
-          "clasif_hit": false,
-          "tier_label": "Resultado exacto",
-          "points": 5
-        },
-        {
           "id": 32,
           "fecha": "19/06/2026",
           "fase": "Grupos",
@@ -2790,6 +2782,23 @@
           "clasif_hit": false,
           "tier_label": "Sin acierto",
           "points": 0
+        },
+        {
+          "id": 31,
+          "fecha": "19/06/2026",
+          "fase": "Grupos",
+          "local": "Brasil",
+          "visitante": "Haití",
+          "pred_h": 3,
+          "pred_a": 0,
+          "pred_clasificado": "-",
+          "real_h": 3,
+          "real_a": 0,
+          "real_clasificado": "-",
+          "tier": "exact",
+          "clasif_hit": false,
+          "tier_label": "Resultado exacto",
+          "points": 5
         },
         {
           "id": 33,
@@ -3302,23 +3311,6 @@
           "points": 2
         },
         {
-          "id": 63,
-          "fecha": "26/06/2026",
-          "fase": "Grupos",
-          "local": "Cabo Verde",
-          "visitante": "Arabia Saudí",
-          "pred_h": 0,
-          "pred_a": 1,
-          "pred_clasificado": "-",
-          "real_h": 0,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "miss",
-          "clasif_hit": false,
-          "tier_label": "Sin acierto",
-          "points": 0
-        },
-        {
           "id": 64,
           "fecha": "26/06/2026",
           "fase": "Grupos",
@@ -3329,6 +3321,23 @@
           "pred_clasificado": "-",
           "real_h": 0,
           "real_a": 1,
+          "real_clasificado": "-",
+          "tier": "miss",
+          "clasif_hit": false,
+          "tier_label": "Sin acierto",
+          "points": 0
+        },
+        {
+          "id": 63,
+          "fecha": "26/06/2026",
+          "fase": "Grupos",
+          "local": "Cabo Verde",
+          "visitante": "Arabia Saudí",
+          "pred_h": 0,
+          "pred_a": 1,
+          "pred_clasificado": "-",
+          "real_h": 0,
+          "real_a": 0,
           "real_clasificado": "-",
           "tier": "miss",
           "clasif_hit": false,
@@ -3744,23 +3753,6 @@
           "points": 8
         },
         {
-          "id": 89,
-          "fecha": "04/07/2026",
-          "fase": "Octavos",
-          "local": "Paraguay",
-          "visitante": "Francia",
-          "pred_h": 0,
-          "pred_a": 2,
-          "pred_clasificado": "Visitante",
-          "real_h": 0,
-          "real_a": 1,
-          "real_clasificado": "Visitante",
-          "tier": "miss",
-          "clasif_hit": true,
-          "tier_label": "Sin acierto · ★ clasificado",
-          "points": 3
-        },
-        {
           "id": 90,
           "fecha": "04/07/2026",
           "fase": "Octavos",
@@ -3778,6 +3770,23 @@
           "points": 3
         },
         {
+          "id": 89,
+          "fecha": "04/07/2026",
+          "fase": "Octavos",
+          "local": "Paraguay",
+          "visitante": "Francia",
+          "pred_h": 0,
+          "pred_a": 2,
+          "pred_clasificado": "Visitante",
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
+        },
+        {
           "id": 91,
           "fecha": "05/07/2026",
           "fase": "Octavos",
@@ -3786,13 +3795,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 92,
@@ -4089,8 +4098,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 42,
-        "fails": 33,
-        "pct": 63.3
+        "fails": 34,
+        "pct": 62.6
       },
       "matches": [
         {
@@ -4604,23 +4613,6 @@
           "points": 3
         },
         {
-          "id": 31,
-          "fecha": "19/06/2026",
-          "fase": "Grupos",
-          "local": "Brasil",
-          "visitante": "Haití",
-          "pred_h": 3,
-          "pred_a": 0,
-          "pred_clasificado": "-",
-          "real_h": 3,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "exact",
-          "clasif_hit": false,
-          "tier_label": "Resultado exacto",
-          "points": 5
-        },
-        {
           "id": 32,
           "fecha": "19/06/2026",
           "fase": "Grupos",
@@ -4636,6 +4628,23 @@
           "clasif_hit": false,
           "tier_label": "Sin acierto",
           "points": 0
+        },
+        {
+          "id": 31,
+          "fecha": "19/06/2026",
+          "fase": "Grupos",
+          "local": "Brasil",
+          "visitante": "Haití",
+          "pred_h": 3,
+          "pred_a": 0,
+          "pred_clasificado": "-",
+          "real_h": 3,
+          "real_a": 0,
+          "real_clasificado": "-",
+          "tier": "exact",
+          "clasif_hit": false,
+          "tier_label": "Resultado exacto",
+          "points": 5
         },
         {
           "id": 33,
@@ -5148,23 +5157,6 @@
           "points": 2
         },
         {
-          "id": 63,
-          "fecha": "26/06/2026",
-          "fase": "Grupos",
-          "local": "Cabo Verde",
-          "visitante": "Arabia Saudí",
-          "pred_h": 0,
-          "pred_a": 0,
-          "pred_clasificado": "-",
-          "real_h": 0,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "exact",
-          "clasif_hit": false,
-          "tier_label": "Resultado exacto",
-          "points": 5
-        },
-        {
           "id": 64,
           "fecha": "26/06/2026",
           "fase": "Grupos",
@@ -5180,6 +5172,23 @@
           "clasif_hit": false,
           "tier_label": "Solo el ganador",
           "points": 2
+        },
+        {
+          "id": 63,
+          "fecha": "26/06/2026",
+          "fase": "Grupos",
+          "local": "Cabo Verde",
+          "visitante": "Arabia Saudí",
+          "pred_h": 0,
+          "pred_a": 0,
+          "pred_clasificado": "-",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "-",
+          "tier": "exact",
+          "clasif_hit": false,
+          "tier_label": "Resultado exacto",
+          "points": 5
         },
         {
           "id": 65,
@@ -5590,23 +5599,6 @@
           "points": 3
         },
         {
-          "id": 89,
-          "fecha": "04/07/2026",
-          "fase": "Octavos",
-          "local": "Paraguay",
-          "visitante": "Francia",
-          "pred_h": 0,
-          "pred_a": 3,
-          "pred_clasificado": "Visitante",
-          "real_h": 0,
-          "real_a": 1,
-          "real_clasificado": "Visitante",
-          "tier": "miss",
-          "clasif_hit": true,
-          "tier_label": "Sin acierto · ★ clasificado",
-          "points": 3
-        },
-        {
           "id": 90,
           "fecha": "04/07/2026",
           "fase": "Octavos",
@@ -5624,6 +5616,23 @@
           "points": 3
         },
         {
+          "id": 89,
+          "fecha": "04/07/2026",
+          "fase": "Octavos",
+          "local": "Paraguay",
+          "visitante": "Francia",
+          "pred_h": 0,
+          "pred_a": 3,
+          "pred_clasificado": "Visitante",
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
+        },
+        {
           "id": 91,
           "fecha": "05/07/2026",
           "fase": "Octavos",
@@ -5632,13 +5641,13 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 92,
@@ -5935,8 +5944,8 @@
         "points_special": 0,
         "exact": 4,
         "partial": 45,
-        "fails": 41,
-        "pct": 54.4
+        "fails": 42,
+        "pct": 53.8
       },
       "matches": [
         {
@@ -6450,23 +6459,6 @@
           "points": 2
         },
         {
-          "id": 31,
-          "fecha": "19/06/2026",
-          "fase": "Grupos",
-          "local": "Brasil",
-          "visitante": "Haití",
-          "pred_h": 4,
-          "pred_a": 0,
-          "pred_clasificado": "-",
-          "real_h": 3,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "winner",
-          "clasif_hit": false,
-          "tier_label": "Solo el ganador",
-          "points": 2
-        },
-        {
           "id": 32,
           "fecha": "19/06/2026",
           "fase": "Grupos",
@@ -6482,6 +6474,23 @@
           "clasif_hit": false,
           "tier_label": "Sin acierto",
           "points": 0
+        },
+        {
+          "id": 31,
+          "fecha": "19/06/2026",
+          "fase": "Grupos",
+          "local": "Brasil",
+          "visitante": "Haití",
+          "pred_h": 4,
+          "pred_a": 0,
+          "pred_clasificado": "-",
+          "real_h": 3,
+          "real_a": 0,
+          "real_clasificado": "-",
+          "tier": "winner",
+          "clasif_hit": false,
+          "tier_label": "Solo el ganador",
+          "points": 2
         },
         {
           "id": 33,
@@ -6994,23 +7003,6 @@
           "points": 2
         },
         {
-          "id": 63,
-          "fecha": "26/06/2026",
-          "fase": "Grupos",
-          "local": "Cabo Verde",
-          "visitante": "Arabia Saudí",
-          "pred_h": 0,
-          "pred_a": 2,
-          "pred_clasificado": "-",
-          "real_h": 0,
-          "real_a": 0,
-          "real_clasificado": "-",
-          "tier": "miss",
-          "clasif_hit": false,
-          "tier_label": "Sin acierto",
-          "points": 0
-        },
-        {
           "id": 64,
           "fecha": "26/06/2026",
           "fase": "Grupos",
@@ -7026,6 +7018,23 @@
           "clasif_hit": false,
           "tier_label": "Solo el ganador",
           "points": 2
+        },
+        {
+          "id": 63,
+          "fecha": "26/06/2026",
+          "fase": "Grupos",
+          "local": "Cabo Verde",
+          "visitante": "Arabia Saudí",
+          "pred_h": 0,
+          "pred_a": 2,
+          "pred_clasificado": "-",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "-",
+          "tier": "miss",
+          "clasif_hit": false,
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 65,
@@ -7436,23 +7445,6 @@
           "points": 8
         },
         {
-          "id": 89,
-          "fecha": "04/07/2026",
-          "fase": "Octavos",
-          "local": "Paraguay",
-          "visitante": "Francia",
-          "pred_h": 0,
-          "pred_a": 4,
-          "pred_clasificado": "Visitante",
-          "real_h": 0,
-          "real_a": 1,
-          "real_clasificado": "Visitante",
-          "tier": "miss",
-          "clasif_hit": true,
-          "tier_label": "Sin acierto · ★ clasificado",
-          "points": 3
-        },
-        {
           "id": 90,
           "fecha": "04/07/2026",
           "fase": "Octavos",
@@ -7470,6 +7462,23 @@
           "points": 3
         },
         {
+          "id": 89,
+          "fecha": "04/07/2026",
+          "fase": "Octavos",
+          "local": "Paraguay",
+          "visitante": "Francia",
+          "pred_h": 0,
+          "pred_a": 4,
+          "pred_clasificado": "Visitante",
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
+        },
+        {
           "id": 91,
           "fecha": "05/07/2026",
           "fase": "Octavos",
@@ -7478,13 +7487,13 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 92,

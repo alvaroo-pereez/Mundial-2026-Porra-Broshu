@@ -164,6 +164,40 @@ def is_finished(res_h, res_a) -> bool:
     return res_h is not None and res_a is not None
 
 
+def parse_fecha_key(fecha: str) -> tuple[int, int, int]:
+    """Convierte dd/mm/yyyy a tupla ordenable."""
+    try:
+        parts = str(fecha).strip().split("/")
+        if len(parts) == 3:
+            d, m, y = int(parts[0]), int(parts[1]), int(parts[2])
+            return (y, m, d)
+    except (ValueError, TypeError):
+        pass
+    return (9999, 12, 31)
+
+
+def parse_hora_key(hora: str) -> tuple[int, int]:
+    try:
+        parts = str(hora).strip().split(":")
+        if len(parts) >= 2:
+            return (int(parts[0]), int(parts[1]))
+    except (ValueError, TypeError):
+        pass
+    return (99, 99)
+
+
+def match_sort_key(meta: dict) -> tuple:
+    return (
+        parse_fecha_key(meta.get("fecha", "")),
+        parse_hora_key(meta.get("hora", "")),
+        meta.get("id", 0),
+    )
+
+
+def sorted_match_ids(matches_meta: dict[int, dict]) -> list[int]:
+    return sorted(matches_meta, key=lambda mid: match_sort_key(matches_meta[mid]))
+
+
 def read_special_categories(wb) -> list[str]:
     """Lee el orden y nombres de apuestas especiales desde Resumen (col. A)."""
     if "Resumen" not in wb.sheetnames:
@@ -198,6 +232,7 @@ def read_workbook_data(excel_path: Path, players: list[str], n_matches: int) -> 
         matches_meta[mid] = {
             "id": mid,
             "fecha": pt.cell(r, 2).value or "",
+            "hora": pt.cell(r, 3).value or "",
             "local": pt.cell(r, 4).value or "",
             "visitante": pt.cell(r, 5).value or "",
             "jornada": pt.cell(r, 9).value,
@@ -286,7 +321,7 @@ def build_stats(
         for mid, (h, a) in results.items()
         if h is not None and a is not None
     ]
-    finished.sort()
+    finished.sort(key=lambda mid: match_sort_key(matches_meta[mid]))
 
     player_stats = []
     for player in players:
@@ -423,7 +458,7 @@ def build_upcoming_matches(
 ) -> list[dict]:
     """Próximos partidos pendientes con pronósticos de cada jugador."""
     upcoming: list[dict] = []
-    for mid in sorted(matches_meta):
+    for mid in sorted_match_ids(matches_meta):
         rh, ra = results.get(mid, (None, None))
         if is_finished(rh, ra):
             continue
@@ -447,6 +482,7 @@ def build_upcoming_matches(
             {
                 "id": mid,
                 "fecha": str(m["fecha"]),
+                "hora": str(m.get("hora") or ""),
                 "fase": m["fase"],
                 "local": m["local"],
                 "visitante": m["visitante"],
@@ -479,9 +515,9 @@ def build_full_payload(
 
     rank_pos = {ps["name"]: i + 1 for i, ps in enumerate(stats["ranking"])}
 
-    # ---- Lista de partidos (orden por id) ----
+    # ---- Lista de partidos (orden cronológico) ----
     matches = []
-    for mid in sorted(matches_meta):
+    for mid in sorted_match_ids(matches_meta):
         m = matches_meta[mid]
         rh, ra = results.get(mid, (None, None))
         finished = is_finished(rh, ra)
@@ -532,7 +568,7 @@ def build_full_payload(
     for player in players:
         ps = next((x for x in stats["ranking"] if x["name"] == player), None)
         player_matches = []
-        for mid in sorted(matches_meta):
+        for mid in sorted_match_ids(matches_meta):
             m = matches_meta[mid]
             rh, ra = results.get(mid, (None, None))
             ph, pa, pc = predictions.get((player, mid), (None, None, None))
@@ -1285,7 +1321,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             return `<div class="upcoming-block">
               <div class="upcoming-head">
                 <span class="upcoming-teams">${esc(u.local)} <span class="muted">vs</span> ${esc(u.visitante)}</span>
-                <span class="upcoming-meta">${esc(u.fecha)} · ${esc(u.fase || '')}</span>
+                <span class="upcoming-meta">${esc(u.fecha)}${u.hora ? ' ' + esc(u.hora) : ''} · ${esc(u.fase || '')}</span>
               </div>
               <div class="upcoming-preds">${preds}</div>
             </div>`;

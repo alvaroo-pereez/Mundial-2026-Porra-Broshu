@@ -19,6 +19,9 @@ OPENFOOTBALL_URL = (
     "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
 )
 
+# Ids octavos con equipos fijados por octavos_fixtures (evitar import circular).
+OCTAVOS_PROTECTED_IDS = frozenset(range(89, 97))
+
 _PLACEHOLDER_RE = re.compile(
     r"^(Ganador|Perdedor|Winner|Loser|W\d|L\d|\d+[A-Z]|\d+º|\d+o)",
     re.IGNORECASE,
@@ -332,9 +335,12 @@ def collect_finished_updates() -> dict[int, dict]:
         )
         if not parsed:
             continue
-        if slot_match:
+        if slot_match and mid not in OCTAVOS_PROTECTED_IDS:
             parsed["local"] = api_to_spanish(of_item.get("team1", ""), mapping)
             parsed["visitante"] = api_to_spanish(of_item.get("team2", ""), mapping)
+        elif mid in OCTAVOS_PROTECTED_IDS:
+            parsed.pop("local", None)
+            parsed.pop("visitante", None)
         updates[mid] = parsed
     return updates
 

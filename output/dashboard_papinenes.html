@@ -633,7 +633,7 @@
             return `<div class="upcoming-block">
               <div class="upcoming-head">
                 <span class="upcoming-teams">${esc(u.local)} <span class="muted">vs</span> ${esc(u.visitante)}</span>
-                <span class="upcoming-meta">${esc(u.fecha)} · ${esc(u.fase || '')}</span>
+                <span class="upcoming-meta">${esc(u.fecha)}${u.hora ? ' ' + esc(u.hora) : ''} · ${esc(u.fase || '')}</span>
               </div>
               <div class="upcoming-preds">${preds}</div>
             </div>`;

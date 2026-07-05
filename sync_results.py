@@ -8,6 +8,7 @@ from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
 from propagate_ko_teams import propagate_ko_teams
+from octavos_fixtures import OCTAVOS_CANONICAL
 from worldcup_data import (
     collect_finished_updates,
     load_calendar,
@@ -117,6 +118,9 @@ def apply_to_excel(excel_path: Path, updates: dict[int, dict], dry_run: bool) ->
         clasif = result.get("clasificado")
         new_local = result.get("local")
         new_visit = result.get("visitante")
+        if mid in OCTAVOS_CANONICAL:
+            new_local = None
+            new_visit = None
 
         if dry_run:
             team_note = ""

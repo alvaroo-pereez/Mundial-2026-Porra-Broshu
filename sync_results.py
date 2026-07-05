@@ -7,6 +7,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
+from propagate_ko_teams import propagate_ko_teams
 from worldcup_data import collect_finished_updates, load_calendar, match_is_ko
 
 ROOT = Path(__file__).parent
@@ -103,11 +104,20 @@ def rebuild_dashboards() -> None:
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
+    any_changed = False
+    teams_changed = False
+
+    if not dry_run:
+        print("Propagando equipos eliminatorias...")
+        propagated = propagate_ko_teams(dry_run=False)
+        if propagated:
+            print(f"  Equipos actualizados: {propagated}")
+            teams_changed = True
+
     print("Consultando openfootball/worldcup.json...")
     updates = collect_api_updates()
     print(f"Partidos finalizados (emparejados): {len(updates)}")
 
-    any_changed = False
     missing_excels: list[Path] = []
     for group_id in list_groups():
         group = load_group(group_id)
@@ -125,11 +135,24 @@ def main() -> None:
         print("Los Excel deben estar en output/ y subidos al repositorio.")
         sys.exit(1)
 
-    if any_changed and not dry_run:
+    if not dry_run:
+        propagated_after = propagate_ko_teams(dry_run=False)
+        if propagated_after:
+            print(f"Re-propagación tras resultados: {propagated_after}")
+            teams_changed = True
+            updates_after = collect_finished_updates()
+            for group_id in list_groups():
+                group = load_group(group_id)
+                excel_path = group["excel_path"]
+                if excel_path.exists():
+                    if apply_to_excel(excel_path, updates_after, dry_run=False):
+                        any_changed = True
+
+    if (any_changed or teams_changed) and not dry_run:
         print("Regenerando dashboards...")
         rebuild_dashboards()
         print("Listo.")
-    elif not any_changed:
+    elif not any_changed and not teams_changed:
         total_matches = len(load_calendar())
         for group_id in list_groups():
             group = load_group(group_id)

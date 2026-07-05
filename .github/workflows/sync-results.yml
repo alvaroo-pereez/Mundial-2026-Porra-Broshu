@@ -31,7 +31,7 @@ jobs:
       - name: Comprobar cambios
         id: changes
         run: |
-          git add output/ data/api_fixture_map.json 2>/dev/null || true
+          git add output/ data/matches_2026.json data/api_fixture_map.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Sin cambios que commitear."

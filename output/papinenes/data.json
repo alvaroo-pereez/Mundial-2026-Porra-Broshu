@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "07/07/2026 18:33",
+    "generated_at": "08/07/2026 07:43",
     "total_matches": 104,
-    "finished_count": 95,
-    "progress_pct": 91.3,
-    "avg_pts": 2.13,
+    "finished_count": 96,
+    "progress_pct": 92.3,
+    "avg_pts": 2.12,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,121 +23,154 @@
   "home": {
     "leader": {
       "name": "Álvaro",
-      "points": 202,
-      "points_match": 202,
+      "points": 204,
+      "points_match": 204,
       "points_bonus": 0,
       "points_special": 0,
       "exact": 12,
-      "partial": 50,
+      "partial": 51,
       "fails": 33,
-      "pct": 65.3
+      "pct": 65.6
     },
     "ranking": [
       {
         "name": "Álvaro",
-        "points": 202,
-        "points_match": 202,
+        "points": 204,
+        "points_match": 204,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 50,
+        "partial": 51,
         "fails": 33,
-        "pct": 65.3
+        "pct": 65.6
       },
       {
         "name": "Papá",
-        "points": 201,
-        "points_match": 201,
+        "points": 203,
+        "points_match": 203,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 45,
+        "partial": 46,
         "fails": 35,
-        "pct": 63.2
+        "pct": 63.5
       },
       {
         "name": "Diego",
-        "points": 136,
-        "points_match": 136,
+        "points": 140,
+        "points_match": 140,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 47,
+        "partial": 48,
         "fails": 44,
-        "pct": 53.7
+        "pct": 54.2
       }
     ],
     "ranking_by_pct": [
       {
         "name": "Álvaro",
-        "points": 202,
-        "points_match": 202,
+        "points": 204,
+        "points_match": 204,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 50,
+        "partial": 51,
         "fails": 33,
-        "pct": 65.3
+        "pct": 65.6
       },
       {
         "name": "Papá",
-        "points": 201,
-        "points_match": 201,
+        "points": 203,
+        "points_match": 203,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 45,
+        "partial": 46,
         "fails": 35,
-        "pct": 63.2
+        "pct": 63.5
       },
       {
         "name": "Diego",
-        "points": 136,
-        "points_match": 136,
+        "points": 140,
+        "points_match": 140,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 47,
+        "partial": 48,
         "fails": 44,
-        "pct": 53.7
+        "pct": 54.2
       }
     ],
     "ranking_by_exact": [
       {
         "name": "Papá",
-        "points": 201,
-        "points_match": 201,
+        "points": 203,
+        "points_match": 203,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 45,
+        "partial": 46,
         "fails": 35,
-        "pct": 63.2
+        "pct": 63.5
       },
       {
         "name": "Álvaro",
-        "points": 202,
-        "points_match": 202,
+        "points": 204,
+        "points_match": 204,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 50,
+        "partial": 51,
         "fails": 33,
-        "pct": 65.3
+        "pct": 65.6
       },
       {
         "name": "Diego",
-        "points": 136,
-        "points_match": 136,
+        "points": 140,
+        "points_match": 140,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 47,
+        "partial": 48,
         "fails": 44,
-        "pct": 53.7
+        "pct": 54.2
       }
     ],
     "last_matches": [
+      {
+        "id": 96,
+        "local": "Suiza",
+        "visitante": "Colombia",
+        "score": "0-0",
+        "fecha": "07/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "difference",
+            "clasif_hit": false,
+            "points": 2,
+            "pred": "1-1"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "difference",
+            "clasif_hit": false,
+            "points": 2,
+            "pred": "1-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "difference",
+            "clasif_hit": true,
+            "points": 4,
+            "pred": "1-1"
+          }
+        ]
+      },
       {
         "id": 95,
         "local": "Argentina",
@@ -269,70 +302,9 @@
             "pred": "1-1"
           }
         ]
-      },
-      {
-        "id": 91,
-        "local": "Brasil",
-        "visitante": "Noruega",
-        "score": "1-2",
-        "fecha": "05/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "1-1"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-1"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-1"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 96,
-        "fecha": "07/07/2026",
-        "hora": "13:00",
-        "fase": "Octavos",
-        "local": "Suiza",
-        "visitante": "Colombia",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "1-1",
-            "pred_clasificado": "Local"
-          }
-        ]
-      },
       {
         "id": 97,
         "fecha": "09/07/2026",
@@ -422,8 +394,36 @@
         "fecha": "11/07/2026",
         "hora": "20:00",
         "fase": "Cuartos",
-        "local": "Ganador Cuartos 7",
-        "visitante": "Ganador Cuartos 8",
+        "local": "Argentina",
+        "visitante": "Suiza",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "—",
+            "pred_clasificado": ""
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "fecha": "14/07/2026",
+        "hora": "14:00",
+        "fase": "Semifinal",
+        "local": "Ganador Semifinal 1",
+        "visitante": "Ganador Semifinal 2",
         "predictions": [
           {
             "name": "Álvaro",
@@ -541,7 +541,8 @@
       92,
       93,
       94,
-      95
+      95,
+      96
     ],
     "evolution": {
       "Álvaro": [
@@ -639,7 +640,8 @@
         196,
         199,
         199,
-        202
+        202,
+        204
       ],
       "Papá": [
         2,
@@ -736,7 +738,8 @@
         195,
         198,
         198,
-        201
+        201,
+        203
       ],
       "Diego": [
         5,
@@ -833,7 +836,8 @@
         129,
         132,
         132,
-        136
+        136,
+        140
       ]
     },
     "specials_summary": [
@@ -2122,11 +2126,11 @@
       "jornada": 14,
       "local": "Suiza",
       "visitante": "Colombia",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 0,
+      "res_a": 0,
+      "score": "0-0",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 97,
@@ -2172,8 +2176,8 @@
       "fecha": "11/07/2026",
       "fase": "Cuartos",
       "jornada": 15,
-      "local": "Ganador Cuartos 7",
-      "visitante": "Ganador Cuartos 8",
+      "local": "Argentina",
+      "visitante": "Suiza",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -2262,14 +2266,14 @@
       "photo": "papinenes/photos/alvaro.jpg",
       "stats": {
         "name": "Álvaro",
-        "points": 202,
-        "points_match": 202,
+        "points": 204,
+        "points_match": 204,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 50,
+        "partial": 51,
         "fails": 33,
-        "pct": 65.3
+        "pct": 65.6
       },
       "matches": [
         {
@@ -3896,13 +3900,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Diferencia de goles",
+          "points": 2
         },
         {
           "id": 97,
@@ -3959,8 +3963,8 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
+          "local": "Argentina",
+          "visitante": "Suiza",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -4108,14 +4112,14 @@
       "photo": "papinenes/photos/papa.jpg",
       "stats": {
         "name": "Papá",
-        "points": 201,
-        "points_match": 201,
+        "points": 203,
+        "points_match": 203,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 45,
+        "partial": 46,
         "fails": 35,
-        "pct": 63.2
+        "pct": 63.5
       },
       "matches": [
         {
@@ -5742,13 +5746,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Diferencia de goles",
+          "points": 2
         },
         {
           "id": 97,
@@ -5805,8 +5809,8 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
+          "local": "Argentina",
+          "visitante": "Suiza",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -5954,14 +5958,14 @@
       "photo": "papinenes/photos/diego.jpg",
       "stats": {
         "name": "Diego",
-        "points": 136,
-        "points_match": 136,
+        "points": 140,
+        "points_match": 140,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 47,
+        "partial": 48,
         "fails": 44,
-        "pct": 53.7
+        "pct": 54.2
       },
       "matches": [
         {
@@ -7588,13 +7592,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": true,
+          "tier_label": "Diferencia de goles · ★ clasificado",
+          "points": 4
         },
         {
           "id": 97,
@@ -7651,8 +7655,8 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
+          "local": "Argentina",
+          "visitante": "Suiza",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",

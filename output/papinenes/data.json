@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "10/07/2026 12:52",
+    "generated_at": "10/07/2026 21:36",
     "total_matches": 104,
-    "finished_count": 97,
-    "progress_pct": 93.3,
-    "avg_pts": 2.13,
+    "finished_count": 98,
+    "progress_pct": 94.2,
+    "avg_pts": 2.11,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -29,8 +29,8 @@
       "points_special": 0,
       "exact": 12,
       "partial": 52,
-      "fails": 33,
-      "pct": 66.0
+      "fails": 34,
+      "pct": 65.3
     },
     "ranking": [
       {
@@ -41,8 +41,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 52,
-        "fails": 33,
-        "pct": 66.0
+        "fails": 34,
+        "pct": 65.3
       },
       {
         "name": "Papá",
@@ -52,19 +52,19 @@
         "points_special": 0,
         "exact": 15,
         "partial": 47,
-        "fails": 35,
-        "pct": 63.9
+        "fails": 36,
+        "pct": 63.3
       },
       {
         "name": "Diego",
-        "points": 143,
-        "points_match": 143,
+        "points": 147,
+        "points_match": 147,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 49,
+        "partial": 50,
         "fails": 44,
-        "pct": 54.6
+        "pct": 55.1
       }
     ],
     "ranking_by_pct": [
@@ -76,8 +76,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 52,
-        "fails": 33,
-        "pct": 66.0
+        "fails": 34,
+        "pct": 65.3
       },
       {
         "name": "Papá",
@@ -87,19 +87,19 @@
         "points_special": 0,
         "exact": 15,
         "partial": 47,
-        "fails": 35,
-        "pct": 63.9
+        "fails": 36,
+        "pct": 63.3
       },
       {
         "name": "Diego",
-        "points": 143,
-        "points_match": 143,
+        "points": 147,
+        "points_match": 147,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 49,
+        "partial": 50,
         "fails": 44,
-        "pct": 54.6
+        "pct": 55.1
       }
     ],
     "ranking_by_exact": [
@@ -111,8 +111,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 47,
-        "fails": 35,
-        "pct": 63.9
+        "fails": 36,
+        "pct": 63.3
       },
       {
         "name": "Álvaro",
@@ -122,22 +122,55 @@
         "points_special": 0,
         "exact": 12,
         "partial": 52,
-        "fails": 33,
-        "pct": 66.0
+        "fails": 34,
+        "pct": 65.3
       },
       {
         "name": "Diego",
-        "points": 143,
-        "points_match": 143,
+        "points": 147,
+        "points_match": 147,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 49,
+        "partial": 50,
         "fails": 44,
-        "pct": 54.6
+        "pct": 55.1
       }
     ],
     "last_matches": [
+      {
+        "id": 98,
+        "local": "España",
+        "visitante": "Bélgica",
+        "score": "2-1",
+        "fecha": "10/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "1-1"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "miss",
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "1-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "difference",
+            "clasif_hit": true,
+            "points": 4,
+            "pred": "1-0"
+          }
+        ]
+      },
       {
         "id": 97,
         "local": "Francia",
@@ -269,70 +302,9 @@
             "pred": "2-0"
           }
         ]
-      },
-      {
-        "id": 93,
-        "local": "Portugal",
-        "visitante": "España",
-        "score": "0-1",
-        "fecha": "06/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "1-1"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "1-1"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 98,
-        "fecha": "10/07/2026",
-        "hora": "12:00",
-        "fase": "Cuartos",
-        "local": "Noruega",
-        "visitante": "Inglaterra",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "1-0",
-            "pred_clasificado": "Local"
-          }
-        ]
-      },
       {
         "id": 99,
         "fecha": "11/07/2026",
@@ -394,8 +366,8 @@
         "fecha": "14/07/2026",
         "hora": "14:00",
         "fase": "Semifinal",
-        "local": "Ganador Semifinal 1",
-        "visitante": "Ganador Semifinal 2",
+        "local": "Francia",
+        "visitante": "Noruega",
         "predictions": [
           {
             "name": "Álvaro",
@@ -424,6 +396,34 @@
         "fase": "Semifinal",
         "local": "Ganador Semifinal 3",
         "visitante": "Ganador Semifinal 4",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "—",
+            "pred_clasificado": ""
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "fecha": "18/07/2026",
+        "hora": "17:00",
+        "fase": "Tercer puesto",
+        "local": "Perdedor Semifinal 1",
+        "visitante": "Perdedor Semifinal 2",
         "predictions": [
           {
             "name": "Álvaro",
@@ -543,7 +543,8 @@
       94,
       95,
       96,
-      97
+      97,
+      98
     ],
     "evolution": {
       "Álvaro": [
@@ -643,6 +644,7 @@
         199,
         202,
         204,
+        207,
         207
       ],
       "Papá": [
@@ -742,6 +744,7 @@
         198,
         201,
         203,
+        206,
         206
       ],
       "Diego": [
@@ -841,7 +844,8 @@
         132,
         136,
         140,
-        143
+        143,
+        147
       ]
     },
     "specials_summary": [
@@ -2154,13 +2158,13 @@
       "fecha": "10/07/2026",
       "fase": "Cuartos",
       "jornada": 15,
-      "local": "Noruega",
-      "visitante": "Inglaterra",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "local": "España",
+      "visitante": "Bélgica",
+      "res_h": 2,
+      "res_a": 1,
+      "score": "2-1",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 99,
@@ -2193,8 +2197,8 @@
       "fecha": "14/07/2026",
       "fase": "Semifinal",
       "jornada": 16,
-      "local": "Ganador Semifinal 1",
-      "visitante": "Ganador Semifinal 2",
+      "local": "Francia",
+      "visitante": "Noruega",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -2276,8 +2280,8 @@
         "points_special": 0,
         "exact": 12,
         "partial": 52,
-        "fails": 33,
-        "pct": 66.0
+        "fails": 34,
+        "pct": 65.3
       },
       "matches": [
         {
@@ -3933,18 +3937,18 @@
           "id": 98,
           "fecha": "10/07/2026",
           "fase": "Cuartos",
-          "local": "Noruega",
-          "visitante": "Inglaterra",
+          "local": "España",
+          "visitante": "Bélgica",
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 99,
@@ -3984,8 +3988,8 @@
           "id": 101,
           "fecha": "14/07/2026",
           "fase": "Semifinal",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "Francia",
+          "visitante": "Noruega",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -4122,8 +4126,8 @@
         "points_special": 0,
         "exact": 15,
         "partial": 47,
-        "fails": 35,
-        "pct": 63.9
+        "fails": 36,
+        "pct": 63.3
       },
       "matches": [
         {
@@ -5779,18 +5783,18 @@
           "id": 98,
           "fecha": "10/07/2026",
           "fase": "Cuartos",
-          "local": "Noruega",
-          "visitante": "Inglaterra",
+          "local": "España",
+          "visitante": "Bélgica",
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 99,
@@ -5830,8 +5834,8 @@
           "id": 101,
           "fecha": "14/07/2026",
           "fase": "Semifinal",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "Francia",
+          "visitante": "Noruega",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -5962,14 +5966,14 @@
       "photo": "papinenes/photos/diego.jpg",
       "stats": {
         "name": "Diego",
-        "points": 143,
-        "points_match": 143,
+        "points": 147,
+        "points_match": 147,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 49,
+        "partial": 50,
         "fails": 44,
-        "pct": 54.6
+        "pct": 55.1
       },
       "matches": [
         {
@@ -7625,18 +7629,18 @@
           "id": 98,
           "fecha": "10/07/2026",
           "fase": "Cuartos",
-          "local": "Noruega",
-          "visitante": "Inglaterra",
+          "local": "España",
+          "visitante": "Bélgica",
           "pred_h": 1,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 2,
+          "real_a": 1,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": true,
+          "tier_label": "Diferencia de goles · ★ clasificado",
+          "points": 4
         },
         {
           "id": 99,
@@ -7676,8 +7680,8 @@
           "id": 101,
           "fecha": "14/07/2026",
           "fase": "Semifinal",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "Francia",
+          "visitante": "Noruega",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",

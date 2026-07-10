@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "06/07/2026 00:39",
+    "generated_at": "10/07/2026 11:31",
     "total_matches": 104,
-    "finished_count": 91,
-    "progress_pct": 87.5,
-    "avg_pts": 2.15,
+    "finished_count": 97,
+    "progress_pct": 93.3,
+    "avg_pts": 2.13,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,193 +23,259 @@
   "home": {
     "leader": {
       "name": "Álvaro",
-      "points": 196,
-      "points_match": 196,
+      "points": 207,
+      "points_match": 207,
       "points_bonus": 0,
       "points_special": 0,
       "exact": 12,
-      "partial": 48,
-      "fails": 31,
-      "pct": 65.9
+      "partial": 52,
+      "fails": 33,
+      "pct": 66.0
     },
     "ranking": [
       {
         "name": "Álvaro",
-        "points": 196,
-        "points_match": 196,
+        "points": 207,
+        "points_match": 207,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 48,
-        "fails": 31,
-        "pct": 65.9
+        "partial": 52,
+        "fails": 33,
+        "pct": 66.0
       },
       {
         "name": "Papá",
-        "points": 192,
-        "points_match": 192,
+        "points": 206,
+        "points_match": 206,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 42,
-        "fails": 34,
-        "pct": 62.6
+        "partial": 47,
+        "fails": 35,
+        "pct": 63.9
       },
       {
         "name": "Diego",
-        "points": 129,
-        "points_match": 129,
+        "points": 143,
+        "points_match": 143,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 45,
-        "fails": 42,
-        "pct": 53.8
+        "partial": 49,
+        "fails": 44,
+        "pct": 54.6
       }
     ],
     "ranking_by_pct": [
       {
         "name": "Álvaro",
-        "points": 196,
-        "points_match": 196,
+        "points": 207,
+        "points_match": 207,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 48,
-        "fails": 31,
-        "pct": 65.9
+        "partial": 52,
+        "fails": 33,
+        "pct": 66.0
       },
       {
         "name": "Papá",
-        "points": 192,
-        "points_match": 192,
+        "points": 206,
+        "points_match": 206,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 42,
-        "fails": 34,
-        "pct": 62.6
+        "partial": 47,
+        "fails": 35,
+        "pct": 63.9
       },
       {
         "name": "Diego",
-        "points": 129,
-        "points_match": 129,
+        "points": 143,
+        "points_match": 143,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 45,
-        "fails": 42,
-        "pct": 53.8
+        "partial": 49,
+        "fails": 44,
+        "pct": 54.6
       }
     ],
     "ranking_by_exact": [
       {
         "name": "Papá",
-        "points": 192,
-        "points_match": 192,
+        "points": 206,
+        "points_match": 206,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 42,
-        "fails": 34,
-        "pct": 62.6
+        "partial": 47,
+        "fails": 35,
+        "pct": 63.9
       },
       {
         "name": "Álvaro",
-        "points": 196,
-        "points_match": 196,
+        "points": 207,
+        "points_match": 207,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 48,
-        "fails": 31,
-        "pct": 65.9
+        "partial": 52,
+        "fails": 33,
+        "pct": 66.0
       },
       {
         "name": "Diego",
-        "points": 129,
-        "points_match": 129,
+        "points": 143,
+        "points_match": 143,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 45,
-        "fails": 42,
-        "pct": 53.8
+        "partial": 49,
+        "fails": 44,
+        "pct": 54.6
       }
     ],
     "last_matches": [
       {
-        "id": 91,
-        "local": "Brasil",
-        "visitante": "Noruega",
-        "score": "1-2",
-        "fecha": "05/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "1-1"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-1"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-1"
-          }
-        ]
-      },
-      {
-        "id": 89,
-        "local": "Paraguay",
-        "visitante": "Francia",
-        "score": "0-1",
-        "fecha": "04/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-2"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-3"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "0-4"
-          }
-        ]
-      },
-      {
-        "id": 90,
-        "local": "Canadá",
+        "id": 97,
+        "local": "Francia",
         "visitante": "Marruecos",
-        "score": "0-3",
-        "fecha": "04/07/2026",
+        "score": "2-0",
+        "fecha": "09/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "1-0"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-1"
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "local": "Suiza",
+        "visitante": "Colombia",
+        "score": "0-0",
+        "fecha": "07/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "difference",
+            "clasif_hit": false,
+            "points": 2,
+            "pred": "1-1"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "difference",
+            "clasif_hit": false,
+            "points": 2,
+            "pred": "1-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "difference",
+            "clasif_hit": true,
+            "points": 4,
+            "pred": "1-1"
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "local": "Argentina",
+        "visitante": "Egipto",
+        "score": "3-2",
+        "fecha": "07/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-0"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "miss",
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "2-0"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "difference",
+            "clasif_hit": true,
+            "points": 4,
+            "pred": "2-1"
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "local": "Estados Unidos",
+        "visitante": "Bélgica",
+        "score": "1-4",
+        "fecha": "06/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "miss",
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "1-1"
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "tier": "miss",
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-1"
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "tier": "miss",
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-0"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "local": "Portugal",
+        "visitante": "España",
+        "score": "0-1",
+        "fecha": "06/07/2026",
         "players": [
           {
             "name": "Álvaro",
@@ -233,91 +299,25 @@
             "tier": "miss",
             "clasif_hit": true,
             "points": 3,
-            "pred": "0-1"
-          }
-        ]
-      },
-      {
-        "id": 88,
-        "local": "Colombia",
-        "visitante": "Ghana",
-        "score": "1-0",
-        "fecha": "03/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "exact",
-            "clasif_hit": true,
-            "points": 8,
-            "pred": "1-0"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-2"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "exact",
-            "clasif_hit": true,
-            "points": 8,
-            "pred": "1-0"
-          }
-        ]
-      },
-      {
-        "id": 87,
-        "local": "Argentina",
-        "visitante": "Cabo Verde",
-        "score": "1-1",
-        "fecha": "03/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-0"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "3-0"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-0"
+            "pred": "1-1"
           }
         ]
       }
     ],
     "upcoming_matches": [
       {
-        "id": 92,
-        "fecha": "05/07/2026",
-        "hora": "18:00",
-        "fase": "Octavos",
-        "local": "México",
+        "id": 98,
+        "fecha": "10/07/2026",
+        "hora": "12:00",
+        "fase": "Cuartos",
+        "local": "Noruega",
         "visitante": "Inglaterra",
         "predictions": [
           {
             "name": "Álvaro",
             "initials": "A",
             "pred": "1-1",
-            "pred_clasificado": "Local"
+            "pred_clasificado": "Visitante"
           },
           {
             "name": "Papá",
@@ -328,120 +328,120 @@
           {
             "name": "Diego",
             "initials": "D",
-            "pred": "1-1",
+            "pred": "1-0",
             "pred_clasificado": "Local"
           }
         ]
       },
       {
-        "id": 93,
-        "fecha": "06/07/2026",
-        "hora": "14:00",
-        "fase": "Octavos",
-        "local": "Portugal",
-        "visitante": "España",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Papá",
-            "initials": "P",
-            "pred": "0-2",
-            "pred_clasificado": "Visitante"
-          },
-          {
-            "name": "Diego",
-            "initials": "D",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
-          }
-        ]
-      },
-      {
-        "id": 94,
-        "fecha": "06/07/2026",
+        "id": 99,
+        "fecha": "11/07/2026",
         "hora": "17:00",
-        "fase": "Octavos",
-        "local": "Estados Unidos",
+        "fase": "Cuartos",
+        "local": "España",
         "visitante": "Bélgica",
         "predictions": [
           {
             "name": "Álvaro",
             "initials": "A",
-            "pred": "1-1",
+            "pred": "1-0",
             "pred_clasificado": "Local"
           },
           {
             "name": "Papá",
             "initials": "P",
-            "pred": "2-1",
+            "pred": "2-0",
             "pred_clasificado": "Local"
           },
           {
             "name": "Diego",
             "initials": "D",
-            "pred": "2-0",
+            "pred": "3-1",
             "pred_clasificado": "Local"
           }
         ]
       },
       {
-        "id": 95,
-        "fecha": "07/07/2026",
-        "hora": "12:00",
-        "fase": "Octavos",
+        "id": 100,
+        "fecha": "11/07/2026",
+        "hora": "20:00",
+        "fase": "Cuartos",
         "local": "Argentina",
-        "visitante": "Egipto",
+        "visitante": "Suiza",
         "predictions": [
           {
             "name": "Álvaro",
             "initials": "A",
-            "pred": "2-0",
+            "pred": "1-0",
             "pred_clasificado": "Local"
           },
           {
             "name": "Papá",
             "initials": "P",
-            "pred": "2-0",
+            "pred": "2-1",
             "pred_clasificado": "Local"
           },
           {
             "name": "Diego",
             "initials": "D",
-            "pred": "2-1",
+            "pred": "1-1",
             "pred_clasificado": "Local"
           }
         ]
       },
       {
-        "id": 96,
-        "fecha": "07/07/2026",
-        "hora": "13:00",
-        "fase": "Octavos",
-        "local": "Suiza",
-        "visitante": "Colombia",
+        "id": 101,
+        "fecha": "14/07/2026",
+        "hora": "14:00",
+        "fase": "Semifinal",
+        "local": "Ganador Semifinal 1",
+        "visitante": "Ganador Semifinal 2",
         "predictions": [
           {
             "name": "Álvaro",
             "initials": "A",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
+            "pred": "—",
+            "pred_clasificado": ""
           },
           {
             "name": "Papá",
             "initials": "P",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
+            "pred": "—",
+            "pred_clasificado": ""
           },
           {
             "name": "Diego",
             "initials": "D",
-            "pred": "1-1",
-            "pred_clasificado": "Local"
+            "pred": "—",
+            "pred_clasificado": ""
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "fecha": "15/07/2026",
+        "hora": "15:00",
+        "fase": "Semifinal",
+        "local": "Ganador Semifinal 3",
+        "visitante": "Ganador Semifinal 4",
+        "predictions": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Papá",
+            "initials": "P",
+            "pred": "—",
+            "pred_clasificado": ""
+          },
+          {
+            "name": "Diego",
+            "initials": "D",
+            "pred": "—",
+            "pred_clasificado": ""
           }
         ]
       }
@@ -537,7 +537,13 @@
       88,
       89,
       90,
-      91
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
     ],
     "evolution": {
       "Álvaro": [
@@ -631,7 +637,13 @@
         190,
         193,
         196,
-        196
+        196,
+        196,
+        199,
+        199,
+        202,
+        204,
+        207
       ],
       "Papá": [
         2,
@@ -724,7 +736,13 @@
         186,
         189,
         192,
-        192
+        192,
+        195,
+        198,
+        198,
+        201,
+        203,
+        206
       ],
       "Diego": [
         5,
@@ -817,7 +835,13 @@
         123,
         126,
         129,
-        129
+        129,
+        129,
+        132,
+        132,
+        136,
+        140,
+        143
       ]
     },
     "specials_summary": [
@@ -2054,11 +2078,11 @@
       "jornada": 14,
       "local": "México",
       "visitante": "Inglaterra",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 2,
+      "res_a": 3,
+      "score": "2-3",
+      "clasificado": "Visitante",
+      "finished": true
     },
     {
       "id": 93,
@@ -2067,11 +2091,11 @@
       "jornada": 14,
       "local": "Portugal",
       "visitante": "España",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 0,
+      "res_a": 1,
+      "score": "0-1",
+      "clasificado": "Visitante",
+      "finished": true
     },
     {
       "id": 94,
@@ -2080,11 +2104,11 @@
       "jornada": 14,
       "local": "Estados Unidos",
       "visitante": "Bélgica",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 1,
+      "res_a": 4,
+      "score": "1-4",
+      "clasificado": "Visitante",
+      "finished": true
     },
     {
       "id": 95,
@@ -2093,11 +2117,11 @@
       "jornada": 14,
       "local": "Argentina",
       "visitante": "Egipto",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 3,
+      "res_a": 2,
+      "score": "3-2",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 96,
@@ -2106,11 +2130,11 @@
       "jornada": 14,
       "local": "Suiza",
       "visitante": "Colombia",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 0,
+      "res_a": 0,
+      "score": "0-0",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 97,
@@ -2119,19 +2143,19 @@
       "jornada": 15,
       "local": "Francia",
       "visitante": "Marruecos",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 2,
+      "res_a": 0,
+      "score": "2-0",
+      "clasificado": "Local",
+      "finished": true
     },
     {
       "id": 98,
       "fecha": "10/07/2026",
       "fase": "Cuartos",
       "jornada": 15,
-      "local": "Ganador Cuartos 3",
-      "visitante": "Ganador Cuartos 4",
+      "local": "Noruega",
+      "visitante": "Inglaterra",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -2143,8 +2167,8 @@
       "fecha": "11/07/2026",
       "fase": "Cuartos",
       "jornada": 15,
-      "local": "Ganador Cuartos 5",
-      "visitante": "Ganador Cuartos 6",
+      "local": "España",
+      "visitante": "Bélgica",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -2156,8 +2180,8 @@
       "fecha": "11/07/2026",
       "fase": "Cuartos",
       "jornada": 15,
-      "local": "Ganador Cuartos 7",
-      "visitante": "Ganador Cuartos 8",
+      "local": "Argentina",
+      "visitante": "Suiza",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -2246,14 +2270,14 @@
       "photo": "papinenes/photos/alvaro.jpg",
       "stats": {
         "name": "Álvaro",
-        "points": 196,
-        "points_match": 196,
+        "points": 207,
+        "points_match": 207,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 12,
-        "partial": 48,
-        "fails": 31,
-        "pct": 65.9
+        "partial": 52,
+        "fails": 33,
+        "pct": 66.0
       },
       "matches": [
         {
@@ -3812,13 +3836,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 2,
+          "real_a": 3,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 93,
@@ -3829,13 +3853,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 94,
@@ -3846,13 +3870,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 4,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 95,
@@ -3863,13 +3887,13 @@
           "pred_h": 2,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 3,
+          "real_a": 2,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 96,
@@ -3880,13 +3904,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Diferencia de goles",
+          "points": 2
         },
         {
           "id": 97,
@@ -3894,26 +3918,26 @@
           "fase": "Cuartos",
           "local": "Francia",
           "visitante": "Marruecos",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "pred_h": 1,
+          "pred_a": 0,
+          "pred_clasificado": "Local",
+          "real_h": 2,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 98,
           "fecha": "10/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 3",
-          "visitante": "Ganador Cuartos 4",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "Noruega",
+          "visitante": "Inglaterra",
+          "pred_h": 1,
+          "pred_a": 1,
+          "pred_clasificado": "Visitante",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -3926,11 +3950,11 @@
           "id": 99,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 5",
-          "visitante": "Ganador Cuartos 6",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "España",
+          "visitante": "Bélgica",
+          "pred_h": 1,
+          "pred_a": 0,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -3943,11 +3967,11 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "Argentina",
+          "visitante": "Suiza",
+          "pred_h": 1,
+          "pred_a": 0,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -4092,14 +4116,14 @@
       "photo": "papinenes/photos/papa.jpg",
       "stats": {
         "name": "Papá",
-        "points": 192,
-        "points_match": 192,
+        "points": 206,
+        "points_match": 206,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 15,
-        "partial": 42,
-        "fails": 34,
-        "pct": 62.6
+        "partial": 47,
+        "fails": 35,
+        "pct": 63.9
       },
       "matches": [
         {
@@ -5658,13 +5682,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 2,
+          "real_a": 3,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 93,
@@ -5675,13 +5699,13 @@
           "pred_h": 0,
           "pred_a": 2,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 94,
@@ -5692,13 +5716,13 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 4,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 95,
@@ -5709,13 +5733,13 @@
           "pred_h": 2,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 3,
+          "real_a": 2,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 96,
@@ -5723,6 +5747,40 @@
           "fase": "Octavos",
           "local": "Suiza",
           "visitante": "Colombia",
+          "pred_h": 1,
+          "pred_a": 1,
+          "pred_clasificado": "Visitante",
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": false,
+          "tier_label": "Diferencia de goles",
+          "points": 2
+        },
+        {
+          "id": 97,
+          "fecha": "09/07/2026",
+          "fase": "Cuartos",
+          "local": "Francia",
+          "visitante": "Marruecos",
+          "pred_h": 2,
+          "pred_a": 1,
+          "pred_clasificado": "Local",
+          "real_h": 2,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
+        },
+        {
+          "id": 98,
+          "fecha": "10/07/2026",
+          "fase": "Cuartos",
+          "local": "Noruega",
+          "visitante": "Inglaterra",
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
@@ -5735,48 +5793,14 @@
           "points": null
         },
         {
-          "id": 97,
-          "fecha": "09/07/2026",
-          "fase": "Cuartos",
-          "local": "Francia",
-          "visitante": "Marruecos",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
-        },
-        {
-          "id": 98,
-          "fecha": "10/07/2026",
-          "fase": "Cuartos",
-          "local": "Ganador Cuartos 3",
-          "visitante": "Ganador Cuartos 4",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
-        },
-        {
           "id": 99,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 5",
-          "visitante": "Ganador Cuartos 6",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "España",
+          "visitante": "Bélgica",
+          "pred_h": 2,
+          "pred_a": 0,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -5789,11 +5813,11 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "Argentina",
+          "visitante": "Suiza",
+          "pred_h": 2,
+          "pred_a": 1,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -5938,14 +5962,14 @@
       "photo": "papinenes/photos/diego.jpg",
       "stats": {
         "name": "Diego",
-        "points": 129,
-        "points_match": 129,
+        "points": 143,
+        "points_match": 143,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 4,
-        "partial": 45,
-        "fails": 42,
-        "pct": 53.8
+        "partial": 49,
+        "fails": 44,
+        "pct": 54.6
       },
       "matches": [
         {
@@ -7504,13 +7528,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 2,
+          "real_a": 3,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 93,
@@ -7521,13 +7545,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Visitante",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 0,
+          "real_a": 1,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 94,
@@ -7538,13 +7562,13 @@
           "pred_h": 2,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
+          "real_h": 1,
+          "real_a": 4,
+          "real_clasificado": "Visitante",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 95,
@@ -7555,13 +7579,13 @@
           "pred_h": 2,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 3,
+          "real_a": 2,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": true,
+          "tier_label": "Diferencia de goles · ★ clasificado",
+          "points": 4
         },
         {
           "id": 96,
@@ -7572,13 +7596,13 @@
           "pred_h": 1,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 0,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "difference",
+          "clasif_hit": true,
+          "tier_label": "Diferencia de goles · ★ clasificado",
+          "points": 4
         },
         {
           "id": 97,
@@ -7586,26 +7610,26 @@
           "fase": "Cuartos",
           "local": "Francia",
           "visitante": "Marruecos",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "pred_h": 2,
+          "pred_a": 1,
+          "pred_clasificado": "Local",
+          "real_h": 2,
+          "real_a": 0,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 98,
           "fecha": "10/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 3",
-          "visitante": "Ganador Cuartos 4",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "Noruega",
+          "visitante": "Inglaterra",
+          "pred_h": 1,
+          "pred_a": 0,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -7618,11 +7642,11 @@
           "id": 99,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 5",
-          "visitante": "Ganador Cuartos 6",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "España",
+          "visitante": "Bélgica",
+          "pred_h": 3,
+          "pred_a": 1,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",
@@ -7635,11 +7659,11 @@
           "id": 100,
           "fecha": "11/07/2026",
           "fase": "Cuartos",
-          "local": "Ganador Cuartos 7",
-          "visitante": "Ganador Cuartos 8",
-          "pred_h": null,
-          "pred_a": null,
-          "pred_clasificado": "",
+          "local": "Argentina",
+          "visitante": "Suiza",
+          "pred_h": 1,
+          "pred_a": 1,
+          "pred_clasificado": "Local",
           "real_h": null,
           "real_a": null,
           "real_clasificado": "",

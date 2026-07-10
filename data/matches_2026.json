@@ -973,8 +973,8 @@
     "id": 98,
     "fecha": "10/07/2026",
     "hora": "12:00",
-    "local": "Ganador Cuartos 3",
-    "visitante": "Ganador Cuartos 4",
+    "local": "Noruega",
+    "visitante": "Inglaterra",
     "grupo": "",
     "fase": "Cuartos",
     "jornada": 15
@@ -983,8 +983,8 @@
     "id": 99,
     "fecha": "11/07/2026",
     "hora": "17:00",
-    "local": "Ganador Cuartos 5",
-    "visitante": "Ganador Cuartos 6",
+    "local": "España",
+    "visitante": "Bélgica",
     "grupo": "",
     "fase": "Cuartos",
     "jornada": 15
@@ -993,8 +993,8 @@
     "id": 100,
     "fecha": "11/07/2026",
     "hora": "20:00",
-    "local": "Ganador Cuartos 7",
-    "visitante": "Ganador Cuartos 8",
+    "local": "Argentina",
+    "visitante": "Suiza",
     "grupo": "",
     "fase": "Cuartos",
     "jornada": 15

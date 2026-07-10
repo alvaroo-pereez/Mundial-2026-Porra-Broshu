@@ -106,6 +106,30 @@ IMPORTS_OCTAVOS: list[tuple[str, str, str, str, str]] = [
     ),
 ]
 
+IMPORTS_CUARTOS: list[tuple[str, str, str, str, str]] = [
+    (
+        r"c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Correo.xlsx",
+        "broshu",
+        "Luis",
+        "Álvaro",
+        "Luis",
+    ),
+    (
+        r"c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_papi.xlsx",
+        "papinenes",
+        "Papá",
+        "Álvaro",
+        "Papa",
+    ),
+    (
+        r"c:\Users\Alvaro J Perez Triay\AppData\Local\Temp\Porra_Mundial_2026_Diego.xlsx",
+        "papinenes",
+        "Diego",
+        "Álvaro",
+        "Diego",
+    ),
+]
+
 SOURCE_SHEET_FALLBACKS: dict[str, list[str]] = {
     "Nach": ["Nacho"],
     "Álvaro": ["Alvaro", "Luis", "Kike", "Pepe", "Papa", "Papá", "Diego"],
@@ -143,6 +167,8 @@ def open_source_sheet(wb, source_sheet: str):
 
 
 def _row_matches_standard(row: KoRow, std_id: int) -> bool:
+    if std_id not in STANDARD_OCTAVOS:
+        return False
     std_loc, std_vis = STANDARD_OCTAVOS[std_id]
     matches = 0
     if teams_match(row.local, std_loc):
@@ -190,6 +216,16 @@ def normalize_clasificado_ko(
     return None, "goles incompletos"
 
 
+def _row_matches_master_id(
+    row: KoRow, mid: int, master_pairs: dict[int, tuple[str, str]]
+) -> bool:
+    pair = master_pairs.get(mid)
+    if not pair:
+        return False
+    loc, vis = pair
+    return teams_match(row.local, loc) and teams_match(row.visit, vis)
+
+
 def resolve_master_id(
     row: KoRow,
     master_pairs: dict[int, tuple[str, str]],
@@ -202,12 +238,18 @@ def resolve_master_id(
     method = "none"
 
     if row.file_id is not None and first_id <= row.file_id <= last_id:
+        mid_by_pair = pair_index.get(pair_key(row.local, row.visit))
+        if not _row_matches_master_id(row, row.file_id, master_pairs):
+            if mid_by_pair is not None:
+                return mid_by_pair, "master_pair"
         if _row_matches_standard(row, row.file_id):
             template_id, method = row.file_id, "id"
         else:
             alt = _TEMPLATE_PAIR_INDEX.get(pair_key(row.local, row.visit))
             if alt is not None:
                 template_id, method = alt, "template_pair"
+            elif mid_by_pair is not None:
+                return mid_by_pair, "master_pair"
             else:
                 template_id, method = row.file_id, "id_fallback"
     else:
@@ -522,7 +564,11 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    imports = IMPORTS_OCTAVOS if args.phase == "octavos" else []
+    imports_by_phase = {
+        "octavos": IMPORTS_OCTAVOS,
+        "cuartos": IMPORTS_CUARTOS,
+    }
+    imports = imports_by_phase.get(args.phase, [])
     if not imports:
         print(f"No hay lista IMPORTS definida para fase '{args.phase}'.")
         sys.exit(1)

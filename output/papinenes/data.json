@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "10/07/2026 11:31",
+    "generated_at": "10/07/2026 12:52",
     "total_matches": 104,
     "finished_count": 97,
     "progress_pct": 93.3,
@@ -322,8 +322,8 @@
           {
             "name": "Papá",
             "initials": "P",
-            "pred": "—",
-            "pred_clasificado": ""
+            "pred": "1-1",
+            "pred_clasificado": "Visitante"
           },
           {
             "name": "Diego",
@@ -5789,8 +5789,8 @@
           "real_clasificado": "",
           "tier": "pending",
           "clasif_hit": false,
-          "tier_label": "Diferencia de goles",
-          "points": 2
+          "tier_label": "Pendiente",
+          "points": null
         },
         {
           "id": 99,

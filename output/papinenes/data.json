@@ -322,8 +322,8 @@
           {
             "name": "Papá",
             "initials": "P",
-            "pred": "1-1",
-            "pred_clasificado": "Visitante"
+            "pred": "—",
+            "pred_clasificado": ""
           },
           {
             "name": "Diego",
@@ -5789,8 +5789,8 @@
           "real_clasificado": "",
           "tier": "pending",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Diferencia de goles",
+          "points": 2
         },
         {
           "id": 99,

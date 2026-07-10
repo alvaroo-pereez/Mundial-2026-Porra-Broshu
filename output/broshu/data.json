@@ -493,9 +493,9 @@
             "name": "Fer",
             "initials": "FE",
             "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "0-0"
+            "clasif_hit": true,
+            "points": 3,
+            "pred": "3-1"
           }
         ]
       },
@@ -801,8 +801,8 @@
             "name": "Álvaro",
             "initials": "A",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
+            "clasif_hit": false,
+            "points": 0,
             "pred": "1-1"
           },
           {
@@ -817,9 +817,9 @@
             "name": "Patri",
             "initials": "PA",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "1-1"
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-1"
           },
           {
             "name": "Kike",
@@ -833,9 +833,9 @@
             "name": "Quintero",
             "initials": "Q",
             "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-2"
+            "clasif_hit": false,
+            "points": 0,
+            "pred": "2-1"
           },
           {
             "name": "Nacho",
@@ -854,8 +854,8 @@
             "pred": "0-1"
           },
           {
-            "name": "Felipe",
-            "initials": "F",
+            "name": "Luis",
+            "initials": "L",
             "tier": "miss",
             "clasif_hit": true,
             "points": 3,
@@ -988,8 +988,8 @@
           {
             "name": "Patri",
             "initials": "PA",
-            "pred": "3-0",
-            "pred_clasificado": "Local"
+            "pred": "—",
+            "pred_clasificado": ""
           },
           {
             "name": "Kike",
@@ -1012,8 +1012,8 @@
           {
             "name": "Luis",
             "initials": "L",
-            "pred": "2-0",
-            "pred_clasificado": "Local"
+            "pred": "—",
+            "pred_clasificado": ""
           },
           {
             "name": "Felipe",
@@ -1036,8 +1036,8 @@
           {
             "name": "Fer",
             "initials": "FE",
-            "pred": "3-1",
-            "pred_clasificado": "Local"
+            "pred": "—",
+            "pred_clasificado": ""
           }
         ]
       },
@@ -9311,13 +9311,13 @@
           "pred_h": 3,
           "pred_a": 0,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 3,
+          "real_a": 2,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 100,
@@ -12991,8 +12991,8 @@
           "real_clasificado": "",
           "tier": "pending",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Diferencia de goles",
+          "points": 2
         },
         {
           "id": 99,
@@ -24067,8 +24067,8 @@
           "real_clasificado": "",
           "tier": "pending",
           "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 99,
@@ -24079,13 +24079,13 @@
           "pred_h": 3,
           "pred_a": 1,
           "pred_clasificado": "Local",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
-          "tier": "pending",
-          "clasif_hit": false,
-          "tier_label": "Pendiente",
-          "points": null
+          "real_h": 3,
+          "real_a": 2,
+          "real_clasificado": "Local",
+          "tier": "miss",
+          "clasif_hit": true,
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 100,

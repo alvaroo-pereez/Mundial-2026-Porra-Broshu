@@ -3869,13 +3869,13 @@
     {
       "name": "Simón",
       "slug": "simon",
-      "rank": 10,
+      "rank": 11,
       "initials": "S"
     },
     {
       "name": "Muni",
       "slug": "muni",
-      "rank": 11,
+      "rank": 10,
       "initials": "M"
     },
     {
@@ -18658,7 +18658,7 @@
       "name": "Simón",
       "slug": "simon",
       "initials": "S",
-      "rank": 10,
+      "rank": 11,
       "photo": "broshu/photos/simon.jpg",
       "stats": {
         "name": "Simón",
@@ -20504,7 +20504,7 @@
       "name": "Muni",
       "slug": "muni",
       "initials": "M",
-      "rank": 11,
+      "rank": 10,
       "photo": "broshu/photos/muni.jpg",
       "stats": {
         "name": "Muni",

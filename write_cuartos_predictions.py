@@ -7,82 +7,94 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
+from cuartos_fixtures import CUARTOS_LIST_ORDER
 
 PT_FIRST_ROW = 4
 
-CUARTOS_LIST_ORDER: list[tuple[int, str, str]] = [
-    (97, "Francia", "Marruecos"),
-    (98, "Noruega", "Inglaterra"),
-    (99, "España", "Bélgica"),
-    (100, "Argentina", "Suiza"),
-]
-
-# (gh, ga, clasificado) por id calendario
+# (gh, ga, clasificado) por id calendario FIFA
 BROSHU_MANUAL: dict[str, dict[int, tuple[int, int, str]]] = {
     "Pepe": {
         97: (2, 1, "Local"),
-        99: (1, 0, "Local"),
-        98: (2, 2, "Visitante"),
+        98: (1, 0, "Local"),
+        99: (2, 2, "Visitante"),
         100: (2, 0, "Local"),
     },
     "Quintero": {
         97: (3, 1, "Local"),
-        99: (1, 0, "Local"),
-        98: (1, 1, "Visitante"),
+        98: (1, 0, "Local"),
+        99: (1, 1, "Visitante"),
         100: (2, 1, "Local"),
     },
     "Nacho": {
         97: (2, 2, "Visitante"),
-        99: (2, 0, "Local"),
-        98: (0, 2, "Visitante"),
+        98: (2, 0, "Local"),
+        99: (0, 2, "Visitante"),
         100: (0, 1, "Visitante"),
     },
     "Fer": {
         97: (0, 0, "Visitante"),
-        99: (3, 1, "Local"),
-        98: (2, 0, "Local"),
+        98: (3, 1, "Local"),
+        99: (2, 0, "Local"),
         100: (2, 0, "Local"),
     },
     "Simón": {
         97: (1, 3, "Visitante"),
-        99: (3, 0, "Local"),
-        98: (2, 2, "Local"),
+        98: (3, 0, "Local"),
+        99: (2, 2, "Local"),
         100: (0, 0, "Visitante"),
     },
     "Felipe": {
         97: (3, 1, "Local"),
-        99: (2, 2, "Local"),
-        98: (3, 2, "Local"),
+        98: (2, 2, "Local"),
+        99: (3, 2, "Local"),
         100: (2, 1, "Local"),
     },
     "Kike": {
         97: (3, 1, "Local"),
-        99: (2, 0, "Local"),
-        98: (1, 2, "Visitante"),
+        98: (2, 0, "Local"),
+        99: (1, 2, "Visitante"),
         100: (1, 1, "Local"),
     },
     "Muni": {
         97: (2, 1, "Local"),
-        99: (3, 0, "Local"),
-        98: (3, 2, "Local"),
+        98: (3, 0, "Local"),
+        99: (3, 2, "Local"),
         100: (1, 1, "Local"),
     },
     "Patri": {
         97: (2, 1, "Local"),
-        99: (3, 0, "Local"),
-        98: (1, 1, "Visitante"),
+        98: (3, 0, "Local"),
+        99: (1, 1, "Visitante"),
         100: (1, 1, "Local"),
     },
     "Álvaro": {
         97: (1, 0, "Local"),
-        99: (1, 0, "Local"),
-        98: (1, 1, "Visitante"),
+        98: (1, 0, "Local"),
+        99: (1, 1, "Visitante"),
         100: (1, 0, "Local"),
+    },
+    "Luis": {
+        97: (2, 1, "Local"),
+        98: (2, 0, "Local"),
+        99: (1, 3, "Visitante"),
+        100: (1, 1, "Local"),
     },
 }
 
 PAPINENES_MANUAL: dict[str, dict[int, tuple[int, int, str]]] = {
     "Álvaro": BROSHU_MANUAL["Álvaro"],
+    "Papá": {
+        97: (2, 1, "Local"),
+        98: (2, 0, "Local"),
+        99: (1, 1, "Visitante"),
+        100: (2, 1, "Local"),
+    },
+    "Diego": {
+        97: (2, 1, "Local"),
+        98: (3, 1, "Local"),
+        99: (1, 0, "Local"),
+        100: (1, 1, "Local"),
+    },
 }
 
 

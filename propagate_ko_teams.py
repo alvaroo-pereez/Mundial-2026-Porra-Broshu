@@ -9,6 +9,7 @@ from openpyxl import load_workbook
 
 from config.groups import list_groups, load_group
 from ko_bracket import compute_resolved_teams, is_ko_placeholder
+from cuartos_fixtures import CUARTOS_CANONICAL, apply_cuartos_canonical_teams
 from octavos_fixtures import OCTAVOS_CANONICAL, apply_octavos_canonical_teams
 from worldcup_data import load_calendar, save_json, MATCHES_JSON
 
@@ -48,7 +49,7 @@ def apply_teams_to_excel(excel_path: Path, teams: dict[int, tuple[str, str]], dr
         old_l, old_v = pt.cell(row, 4).value, pt.cell(row, 5).value
         if old_l == local and old_v == visitante:
             continue
-        if mid in OCTAVOS_CANONICAL:
+        if mid in OCTAVOS_CANONICAL or mid in CUARTOS_CANONICAL:
             continue
         cal_local = str(old_l or "")
         if not is_ko_placeholder(cal_local) and mid < 97:
@@ -74,7 +75,7 @@ def apply_teams_to_json(teams: dict[int, tuple[str, str]], dry_run: bool) -> lis
             continue
         if m["local"] == local and m["visitante"] == visitante:
             continue
-        if mid in OCTAVOS_CANONICAL:
+        if mid in OCTAVOS_CANONICAL or mid in CUARTOS_CANONICAL:
             continue
         if not is_ko_placeholder(m["local"]) and mid < 97:
             continue
@@ -90,6 +91,7 @@ def apply_teams_to_json(teams: dict[int, tuple[str, str]], dry_run: bool) -> lis
 def propagate_ko_teams(dry_run: bool = False) -> list[int]:
     """Propaga equipos usando resultados del Excel del primer grupo disponible."""
     oct_changed = apply_octavos_canonical_teams(dry_run=dry_run)
+    cuart_changed = apply_cuartos_canonical_teams(dry_run=dry_run)
     calendar = load_calendar()
     source_excel: Path | None = None
     for group_id in list_groups():
@@ -99,12 +101,12 @@ def propagate_ko_teams(dry_run: bool = False) -> list[int]:
             break
     if source_excel is None:
         print("No hay Excel maestro en output/.")
-        return sorted(oct_changed)
+        return sorted(set(oct_changed) | set(cuart_changed))
 
     print(f"Resultados fuente: {source_excel.name}")
     results = read_results_from_excel(source_excel)
     resolved = compute_resolved_teams(results, calendar)
-    all_changed: set[int] = set(oct_changed)
+    all_changed: set[int] = set(oct_changed) | set(cuart_changed)
     if not resolved:
         print("Sin equipos nuevos que propagar (cuartos+).")
         return sorted(all_changed)

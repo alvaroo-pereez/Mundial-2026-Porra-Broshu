@@ -973,8 +973,8 @@
     "id": 98,
     "fecha": "10/07/2026",
     "hora": "12:00",
-    "local": "Noruega",
-    "visitante": "Inglaterra",
+    "local": "España",
+    "visitante": "Bélgica",
     "grupo": "",
     "fase": "Cuartos",
     "jornada": 15
@@ -983,8 +983,8 @@
     "id": 99,
     "fecha": "11/07/2026",
     "hora": "17:00",
-    "local": "España",
-    "visitante": "Bélgica",
+    "local": "Noruega",
+    "visitante": "Inglaterra",
     "grupo": "",
     "fase": "Cuartos",
     "jornada": 15
@@ -1003,8 +1003,8 @@
     "id": 101,
     "fecha": "14/07/2026",
     "hora": "14:00",
-    "local": "Ganador Semifinal 1",
-    "visitante": "Ganador Semifinal 2",
+    "local": "Francia",
+    "visitante": "España",
     "grupo": "",
     "fase": "Semifinal",
     "jornada": 16
@@ -1013,8 +1013,8 @@
     "id": 102,
     "fecha": "15/07/2026",
     "hora": "15:00",
-    "local": "Ganador Semifinal 3",
-    "visitante": "Ganador Semifinal 4",
+    "local": "Inglaterra",
+    "visitante": "Argentina",
     "grupo": "",
     "fase": "Semifinal",
     "jornada": 16

@@ -5,6 +5,7 @@ import re
 import unicodedata
 
 from fifa_schedule_2026 import R32_RESOLVED, build_r32_matches_chronological
+from cuartos_fixtures import CUARTOS_OCTAVOS_PAIRS
 from octavos_fixtures import OCTAVOS_CANONICAL
 
 _PLACEHOLDER_RE = re.compile(
@@ -131,9 +132,10 @@ def compute_resolved_teams(
         w, _ = _match_result(mid, teams, results)
         oct_feeders[i] = w
 
-    for i in range(4):
+    for i, (oct_a, oct_b) in enumerate(CUARTOS_OCTAVOS_PAIRS):
         mid = 97 + i
-        loc, vis = oct_feeders[2 * i], oct_feeders[2 * i + 1]
+        loc = oct_feeders[oct_a - 89]
+        vis = oct_feeders[oct_b - 89]
         if loc and vis:
             teams[mid] = (loc, vis)
 

@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "15/07/2026 00:05",
+    "generated_at": "15/07/2026 22:08",
     "total_matches": 104,
-    "finished_count": 101,
-    "progress_pct": 97.1,
-    "avg_pts": 2.35,
+    "finished_count": 102,
+    "progress_pct": 98.1,
+    "avg_pts": 2.32,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -30,7 +30,7 @@
       "exact": 13,
       "partial": 54,
       "fails": 33,
-      "pct": 66.3
+      "pct": 65.7
     },
     "ranking": [
       {
@@ -42,7 +42,7 @@
         "exact": 13,
         "partial": 54,
         "fails": 33,
-        "pct": 66.3
+        "pct": 65.7
       },
       {
         "name": "Quintero",
@@ -53,7 +53,7 @@
         "exact": 14,
         "partial": 48,
         "fails": 38,
-        "pct": 61.4
+        "pct": 60.8
       },
       {
         "name": "Patri",
@@ -64,7 +64,7 @@
         "exact": 10,
         "partial": 58,
         "fails": 32,
-        "pct": 67.3
+        "pct": 66.7
       },
       {
         "name": "Kike",
@@ -75,7 +75,7 @@
         "exact": 9,
         "partial": 57,
         "fails": 34,
-        "pct": 65.3
+        "pct": 64.7
       },
       {
         "name": "Pepe",
@@ -86,7 +86,7 @@
         "exact": 10,
         "partial": 54,
         "fails": 36,
-        "pct": 63.4
+        "pct": 62.7
       },
       {
         "name": "Luis",
@@ -97,7 +97,7 @@
         "exact": 8,
         "partial": 53,
         "fails": 39,
-        "pct": 60.4
+        "pct": 59.8
       },
       {
         "name": "Nacho",
@@ -108,7 +108,7 @@
         "exact": 9,
         "partial": 46,
         "fails": 45,
-        "pct": 54.5
+        "pct": 53.9
       },
       {
         "name": "Felipe",
@@ -119,7 +119,7 @@
         "exact": 4,
         "partial": 53,
         "fails": 43,
-        "pct": 56.4
+        "pct": 55.9
       },
       {
         "name": "Fer",
@@ -130,7 +130,7 @@
         "exact": 7,
         "partial": 49,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       {
         "name": "Simón",
@@ -141,7 +141,7 @@
         "exact": 3,
         "partial": 53,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       {
         "name": "Muni",
@@ -152,7 +152,7 @@
         "exact": 5,
         "partial": 45,
         "fails": 50,
-        "pct": 49.5
+        "pct": 49.0
       }
     ],
     "ranking_by_pct": [
@@ -165,7 +165,7 @@
         "exact": 10,
         "partial": 58,
         "fails": 32,
-        "pct": 67.3
+        "pct": 66.7
       },
       {
         "name": "Álvaro",
@@ -176,7 +176,7 @@
         "exact": 13,
         "partial": 54,
         "fails": 33,
-        "pct": 66.3
+        "pct": 65.7
       },
       {
         "name": "Kike",
@@ -187,7 +187,7 @@
         "exact": 9,
         "partial": 57,
         "fails": 34,
-        "pct": 65.3
+        "pct": 64.7
       },
       {
         "name": "Pepe",
@@ -198,7 +198,7 @@
         "exact": 10,
         "partial": 54,
         "fails": 36,
-        "pct": 63.4
+        "pct": 62.7
       },
       {
         "name": "Quintero",
@@ -209,7 +209,7 @@
         "exact": 14,
         "partial": 48,
         "fails": 38,
-        "pct": 61.4
+        "pct": 60.8
       },
       {
         "name": "Luis",
@@ -220,7 +220,7 @@
         "exact": 8,
         "partial": 53,
         "fails": 39,
-        "pct": 60.4
+        "pct": 59.8
       },
       {
         "name": "Felipe",
@@ -231,7 +231,7 @@
         "exact": 4,
         "partial": 53,
         "fails": 43,
-        "pct": 56.4
+        "pct": 55.9
       },
       {
         "name": "Fer",
@@ -242,7 +242,7 @@
         "exact": 7,
         "partial": 49,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       {
         "name": "Simón",
@@ -253,7 +253,7 @@
         "exact": 3,
         "partial": 53,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       {
         "name": "Nacho",
@@ -264,7 +264,7 @@
         "exact": 9,
         "partial": 46,
         "fails": 45,
-        "pct": 54.5
+        "pct": 53.9
       },
       {
         "name": "Muni",
@@ -275,7 +275,7 @@
         "exact": 5,
         "partial": 45,
         "fails": 50,
-        "pct": 49.5
+        "pct": 49.0
       }
     ],
     "ranking_by_exact": [
@@ -288,7 +288,7 @@
         "exact": 14,
         "partial": 48,
         "fails": 38,
-        "pct": 61.4
+        "pct": 60.8
       },
       {
         "name": "Álvaro",
@@ -299,7 +299,7 @@
         "exact": 13,
         "partial": 54,
         "fails": 33,
-        "pct": 66.3
+        "pct": 65.7
       },
       {
         "name": "Patri",
@@ -310,7 +310,7 @@
         "exact": 10,
         "partial": 58,
         "fails": 32,
-        "pct": 67.3
+        "pct": 66.7
       },
       {
         "name": "Pepe",
@@ -321,7 +321,7 @@
         "exact": 10,
         "partial": 54,
         "fails": 36,
-        "pct": 63.4
+        "pct": 62.7
       },
       {
         "name": "Kike",
@@ -332,7 +332,7 @@
         "exact": 9,
         "partial": 57,
         "fails": 34,
-        "pct": 65.3
+        "pct": 64.7
       },
       {
         "name": "Nacho",
@@ -343,7 +343,7 @@
         "exact": 9,
         "partial": 46,
         "fails": 45,
-        "pct": 54.5
+        "pct": 53.9
       },
       {
         "name": "Luis",
@@ -354,7 +354,7 @@
         "exact": 8,
         "partial": 53,
         "fails": 39,
-        "pct": 60.4
+        "pct": 59.8
       },
       {
         "name": "Fer",
@@ -365,7 +365,7 @@
         "exact": 7,
         "partial": 49,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       {
         "name": "Muni",
@@ -376,7 +376,7 @@
         "exact": 5,
         "partial": 45,
         "fails": 50,
-        "pct": 49.5
+        "pct": 49.0
       },
       {
         "name": "Felipe",
@@ -387,7 +387,7 @@
         "exact": 4,
         "partial": 53,
         "fails": 43,
-        "pct": 56.4
+        "pct": 55.9
       },
       {
         "name": "Simón",
@@ -398,10 +398,107 @@
         "exact": 3,
         "partial": 53,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       }
     ],
     "last_matches": [
+      {
+        "id": 102,
+        "local": "Inglaterra",
+        "visitante": "Argentina",
+        "score": "1-2",
+        "fecha": "15/07/2026",
+        "players": [
+          {
+            "name": "Álvaro",
+            "initials": "A",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Pepe",
+            "initials": "P",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Patri",
+            "initials": "PA",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Kike",
+            "initials": "K",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Quintero",
+            "initials": "Q",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Nacho",
+            "initials": "N",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Luis",
+            "initials": "L",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Felipe",
+            "initials": "F",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Simón",
+            "initials": "S",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Muni",
+            "initials": "M",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          },
+          {
+            "name": "Fer",
+            "initials": "FE",
+            "tier": "pending",
+            "clasif_hit": false,
+            "points": null,
+            "pred": "—"
+          }
+        ]
+      },
       {
         "id": 101,
         "local": "Francia",
@@ -789,189 +886,16 @@
             "pred": "3-1"
           }
         ]
-      },
-      {
-        "id": 97,
-        "local": "Francia",
-        "visitante": "Marruecos",
-        "score": "2-0",
-        "fecha": "09/07/2026",
-        "players": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "1-0"
-          },
-          {
-            "name": "Pepe",
-            "initials": "P",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-1"
-          },
-          {
-            "name": "Patri",
-            "initials": "PA",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-1"
-          },
-          {
-            "name": "Kike",
-            "initials": "K",
-            "tier": "difference",
-            "clasif_hit": true,
-            "points": 4,
-            "pred": "3-1"
-          },
-          {
-            "name": "Quintero",
-            "initials": "Q",
-            "tier": "difference",
-            "clasif_hit": true,
-            "points": 4,
-            "pred": "3-1"
-          },
-          {
-            "name": "Nacho",
-            "initials": "N",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "2-2"
-          },
-          {
-            "name": "Luis",
-            "initials": "L",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-1"
-          },
-          {
-            "name": "Felipe",
-            "initials": "F",
-            "tier": "difference",
-            "clasif_hit": true,
-            "points": 4,
-            "pred": "3-1"
-          },
-          {
-            "name": "Simón",
-            "initials": "S",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "1-3"
-          },
-          {
-            "name": "Muni",
-            "initials": "M",
-            "tier": "miss",
-            "clasif_hit": true,
-            "points": 3,
-            "pred": "2-1"
-          },
-          {
-            "name": "Fer",
-            "initials": "FE",
-            "tier": "miss",
-            "clasif_hit": false,
-            "points": 0,
-            "pred": "0-0"
-          }
-        ]
       }
     ],
     "upcoming_matches": [
-      {
-        "id": 102,
-        "fecha": "15/07/2026",
-        "hora": "15:00",
-        "fase": "Semifinal",
-        "local": "Inglaterra",
-        "visitante": "Argentina",
-        "predictions": [
-          {
-            "name": "Álvaro",
-            "initials": "A",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Pepe",
-            "initials": "P",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Patri",
-            "initials": "PA",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Kike",
-            "initials": "K",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Quintero",
-            "initials": "Q",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Nacho",
-            "initials": "N",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Luis",
-            "initials": "L",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Felipe",
-            "initials": "F",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Simón",
-            "initials": "S",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Muni",
-            "initials": "M",
-            "pred": "—",
-            "pred_clasificado": ""
-          },
-          {
-            "name": "Fer",
-            "initials": "FE",
-            "pred": "—",
-            "pred_clasificado": ""
-          }
-        ]
-      },
       {
         "id": 103,
         "fecha": "18/07/2026",
         "hora": "17:00",
         "fase": "Tercer puesto",
-        "local": "Perdedor Semifinal 1",
-        "visitante": "Perdedor Semifinal 2",
+        "local": "Francia",
+        "visitante": "Inglaterra",
         "predictions": [
           {
             "name": "Álvaro",
@@ -1046,8 +970,8 @@
         "fecha": "19/07/2026",
         "hora": "15:00",
         "fase": "Final",
-        "local": "Ganador Semifinal 1",
-        "visitante": "Ganador Semifinal 2",
+        "local": "España",
+        "visitante": "Argentina",
         "predictions": [
           {
             "name": "Álvaro",
@@ -1219,7 +1143,8 @@
       98,
       99,
       100,
-      101
+      101,
+      102
     ],
     "evolution": {
       "Álvaro": [
@@ -1322,6 +1247,7 @@
         207,
         211,
         219,
+        222,
         222,
         222
       ],
@@ -1426,6 +1352,7 @@
         205,
         213,
         216,
+        216,
         216
       ],
       "Patri": [
@@ -1528,6 +1455,7 @@
         195,
         198,
         206,
+        214,
         214,
         214
       ],
@@ -1632,6 +1560,7 @@
         197,
         200,
         208,
+        208,
         208
       ],
       "Pepe": [
@@ -1734,6 +1663,7 @@
         187,
         191,
         195,
+        198,
         198,
         198
       ],
@@ -1838,6 +1768,7 @@
         170,
         173,
         181,
+        181,
         181
       ],
       "Nacho": [
@@ -1939,6 +1870,7 @@
         166,
         166,
         169,
+        172,
         172,
         172,
         172
@@ -2044,6 +1976,7 @@
         157,
         157,
         160,
+        160,
         160
       ],
       "Fer": [
@@ -2146,6 +2079,7 @@
         153,
         156,
         156,
+        159,
         159,
         159
       ],
@@ -2250,6 +2184,7 @@
         149,
         151,
         153,
+        153,
         153
       ],
       "Muni": [
@@ -2352,6 +2287,7 @@
         141,
         144,
         144,
+        152,
         152,
         152
       ]
@@ -3720,19 +3656,19 @@
       "jornada": 16,
       "local": "Inglaterra",
       "visitante": "Argentina",
-      "res_h": null,
-      "res_a": null,
-      "score": "—",
-      "clasificado": "",
-      "finished": false
+      "res_h": 1,
+      "res_a": 2,
+      "score": "1-2",
+      "clasificado": "Visitante",
+      "finished": true
     },
     {
       "id": 103,
       "fecha": "18/07/2026",
       "fase": "Tercer puesto",
       "jornada": 17,
-      "local": "Perdedor Semifinal 1",
-      "visitante": "Perdedor Semifinal 2",
+      "local": "Francia",
+      "visitante": "Inglaterra",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -3744,8 +3680,8 @@
       "fecha": "19/07/2026",
       "fase": "Final",
       "jornada": 17,
-      "local": "Ganador Semifinal 1",
-      "visitante": "Ganador Semifinal 2",
+      "local": "España",
+      "visitante": "Argentina",
       "res_h": null,
       "res_a": null,
       "score": "—",
@@ -3837,7 +3773,7 @@
         "exact": 13,
         "partial": 54,
         "fails": 33,
-        "pct": 66.3
+        "pct": 65.7
       },
       "matches": [
         {
@@ -5566,9 +5502,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -5578,8 +5514,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -5595,8 +5531,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -5683,7 +5619,7 @@
         "exact": 10,
         "partial": 54,
         "fails": 36,
-        "pct": 63.4
+        "pct": 62.7
       },
       "matches": [
         {
@@ -7412,9 +7348,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -7424,8 +7360,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -7441,8 +7377,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -7529,7 +7465,7 @@
         "exact": 10,
         "partial": 58,
         "fails": 32,
-        "pct": 67.3
+        "pct": 66.7
       },
       "matches": [
         {
@@ -9258,9 +9194,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -9270,8 +9206,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -9287,8 +9223,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -9375,7 +9311,7 @@
         "exact": 9,
         "partial": 57,
         "fails": 34,
-        "pct": 65.3
+        "pct": 64.7
       },
       "matches": [
         {
@@ -11104,9 +11040,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -11116,8 +11052,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -11133,8 +11069,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -11221,7 +11157,7 @@
         "exact": 14,
         "partial": 48,
         "fails": 38,
-        "pct": 61.4
+        "pct": 60.8
       },
       "matches": [
         {
@@ -12950,9 +12886,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -12962,8 +12898,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -12979,8 +12915,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -13067,7 +13003,7 @@
         "exact": 9,
         "partial": 46,
         "fails": 45,
-        "pct": 54.5
+        "pct": 53.9
       },
       "matches": [
         {
@@ -14796,9 +14732,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -14808,8 +14744,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -14825,8 +14761,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -14913,7 +14849,7 @@
         "exact": 8,
         "partial": 53,
         "fails": 39,
-        "pct": 60.4
+        "pct": 59.8
       },
       "matches": [
         {
@@ -16642,9 +16578,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -16654,8 +16590,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -16671,8 +16607,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -16759,7 +16695,7 @@
         "exact": 4,
         "partial": 53,
         "fails": 43,
-        "pct": 56.4
+        "pct": 55.9
       },
       "matches": [
         {
@@ -18488,9 +18424,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -18500,8 +18436,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -18517,8 +18453,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -18605,7 +18541,7 @@
         "exact": 3,
         "partial": 53,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       "matches": [
         {
@@ -20334,9 +20270,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -20346,8 +20282,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -20363,8 +20299,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -20451,7 +20387,7 @@
         "exact": 5,
         "partial": 45,
         "fails": 50,
-        "pct": 49.5
+        "pct": 49.0
       },
       "matches": [
         {
@@ -22180,9 +22116,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -22192,8 +22128,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -22209,8 +22145,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -22297,7 +22233,7 @@
         "exact": 7,
         "partial": 49,
         "fails": 44,
-        "pct": 55.4
+        "pct": 54.9
       },
       "matches": [
         {
@@ -24026,9 +23962,9 @@
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
-          "real_h": null,
-          "real_a": null,
-          "real_clasificado": "",
+          "real_h": 1,
+          "real_a": 2,
+          "real_clasificado": "Visitante",
           "tier": "pending",
           "clasif_hit": false,
           "tier_label": "Pendiente",
@@ -24038,8 +23974,8 @@
           "id": 103,
           "fecha": "18/07/2026",
           "fase": "Tercer puesto",
-          "local": "Perdedor Semifinal 1",
-          "visitante": "Perdedor Semifinal 2",
+          "local": "Francia",
+          "visitante": "Inglaterra",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",
@@ -24055,8 +23991,8 @@
           "id": 104,
           "fecha": "19/07/2026",
           "fase": "Final",
-          "local": "Ganador Semifinal 1",
-          "visitante": "Ganador Semifinal 2",
+          "local": "España",
+          "visitante": "Argentina",
           "pred_h": null,
           "pred_a": null,
           "pred_clasificado": "",

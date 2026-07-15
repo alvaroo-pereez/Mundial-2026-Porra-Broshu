@@ -1023,8 +1023,8 @@
     "id": 103,
     "fecha": "18/07/2026",
     "hora": "17:00",
-    "local": "Perdedor Semifinal 1",
-    "visitante": "Perdedor Semifinal 2",
+    "local": "Francia",
+    "visitante": "Inglaterra",
     "grupo": "",
     "fase": "Tercer puesto",
     "jornada": 17
@@ -1033,8 +1033,8 @@
     "id": 104,
     "fecha": "19/07/2026",
     "hora": "15:00",
-    "local": "Ganador Semifinal 1",
-    "visitante": "Ganador Semifinal 2",
+    "local": "España",
+    "visitante": "Argentina",
     "grupo": "",
     "fase": "Final",
     "jornada": 17

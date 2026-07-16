@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "16/07/2026 18:31",
+    "generated_at": "16/07/2026 20:55",
     "total_matches": 104,
     "finished_count": 102,
     "progress_pct": 98.1,
-    "avg_pts": 2.41,
+    "avg_pts": 2.33,
     "special_categories": [
       "Campeón del Mundial",
       "Subcampeón",
@@ -23,26 +23,26 @@
   "home": {
     "leader": {
       "name": "Papá",
-      "points": 246,
-      "points_match": 231,
+      "points": 238,
+      "points_match": 223,
       "points_bonus": 15,
       "points_special": 0,
-      "exact": 17,
+      "exact": 16,
       "partial": 50,
-      "fails": 35,
-      "pct": 65.7
+      "fails": 36,
+      "pct": 64.7
     },
     "ranking": [
       {
         "name": "Papá",
-        "points": 246,
-        "points_match": 231,
+        "points": 238,
+        "points_match": 223,
         "points_bonus": 15,
         "points_special": 0,
-        "exact": 17,
+        "exact": 16,
         "partial": 50,
-        "fails": 35,
-        "pct": 65.7
+        "fails": 36,
+        "pct": 64.7
       },
       {
         "name": "Álvaro",
@@ -57,8 +57,8 @@
       },
       {
         "name": "Diego",
-        "points": 158,
-        "points_match": 158,
+        "points": 157,
+        "points_match": 157,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 5,
@@ -69,17 +69,6 @@
     ],
     "ranking_by_pct": [
       {
-        "name": "Papá",
-        "points": 246,
-        "points_match": 231,
-        "points_bonus": 15,
-        "points_special": 0,
-        "exact": 17,
-        "partial": 50,
-        "fails": 35,
-        "pct": 65.7
-      },
-      {
         "name": "Álvaro",
         "points": 237,
         "points_match": 222,
@@ -91,9 +80,20 @@
         "pct": 65.7
       },
       {
+        "name": "Papá",
+        "points": 238,
+        "points_match": 223,
+        "points_bonus": 15,
+        "points_special": 0,
+        "exact": 16,
+        "partial": 50,
+        "fails": 36,
+        "pct": 64.7
+      },
+      {
         "name": "Diego",
-        "points": 158,
-        "points_match": 158,
+        "points": 157,
+        "points_match": 157,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 5,
@@ -105,14 +105,14 @@
     "ranking_by_exact": [
       {
         "name": "Papá",
-        "points": 246,
-        "points_match": 231,
+        "points": 238,
+        "points_match": 223,
         "points_bonus": 15,
         "points_special": 0,
-        "exact": 17,
+        "exact": 16,
         "partial": 50,
-        "fails": 35,
-        "pct": 65.7
+        "fails": 36,
+        "pct": 64.7
       },
       {
         "name": "Álvaro",
@@ -127,8 +127,8 @@
       },
       {
         "name": "Diego",
-        "points": 158,
-        "points_match": 158,
+        "points": 157,
+        "points_match": 157,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 5,
@@ -156,18 +156,18 @@
           {
             "name": "Papá",
             "initials": "P",
-            "tier": "exact",
+            "tier": "miss",
             "clasif_hit": false,
-            "points": 8,
-            "pred": "1-2"
+            "points": 0,
+            "pred": "2-1"
           },
           {
             "name": "Diego",
             "initials": "D",
-            "tier": "difference",
+            "tier": "miss",
             "clasif_hit": true,
-            "points": 4,
-            "pred": "0-1"
+            "points": 3,
+            "pred": "1-0"
           }
         ]
       },
@@ -569,7 +569,7 @@
         217,
         220,
         223,
-        231
+        223
       ],
       "Álvaro": [
         2,
@@ -777,7 +777,7 @@
         146,
         154,
         154,
-        158
+        157
       ]
     },
     "specials_summary": [
@@ -4052,14 +4052,14 @@
       "photo": "papinenes/photos/papa.jpg",
       "stats": {
         "name": "Papá",
-        "points": 246,
-        "points_match": 231,
+        "points": 238,
+        "points_match": 223,
         "points_bonus": 15,
         "points_special": 0,
-        "exact": 17,
+        "exact": 16,
         "partial": 50,
-        "fails": 35,
-        "pct": 65.7
+        "fails": 36,
+        "pct": 64.7
       },
       "matches": [
         {
@@ -5785,16 +5785,16 @@
           "fase": "Semifinal",
           "local": "Inglaterra",
           "visitante": "Argentina",
-          "pred_h": 1,
-          "pred_a": 2,
+          "pred_h": 2,
+          "pred_a": 1,
           "pred_clasificado": "Local",
           "real_h": 1,
           "real_a": 2,
           "real_clasificado": "Visitante",
-          "tier": "exact",
+          "tier": "miss",
           "clasif_hit": false,
-          "tier_label": "Resultado exacto",
-          "points": 8
+          "tier_label": "Sin acierto",
+          "points": 0
         },
         {
           "id": 103,
@@ -5898,8 +5898,8 @@
       "photo": "papinenes/photos/diego.jpg",
       "stats": {
         "name": "Diego",
-        "points": 158,
-        "points_match": 158,
+        "points": 157,
+        "points_match": 157,
         "points_bonus": 0,
         "points_special": 0,
         "exact": 5,
@@ -7631,16 +7631,16 @@
           "fase": "Semifinal",
           "local": "Inglaterra",
           "visitante": "Argentina",
-          "pred_h": 0,
-          "pred_a": 1,
+          "pred_h": 1,
+          "pred_a": 0,
           "pred_clasificado": "Visitante",
           "real_h": 1,
           "real_a": 2,
           "real_clasificado": "Visitante",
-          "tier": "difference",
+          "tier": "miss",
           "clasif_hit": true,
-          "tier_label": "Diferencia de goles · ★ clasificado",
-          "points": 4
+          "tier_label": "Sin acierto · ★ clasificado",
+          "points": 3
         },
         {
           "id": 103,

@@ -33,7 +33,7 @@ BROSHU_SEMIFINAL: dict[str, dict[int, tuple[int, int, str]]] = {
     },
     "Simón": {
         101: (2, 3, "Visitante"),
-        102: (1, 2, "Local"),
+        102: (4, 2, "Local"),
     },
     "Patri": {
         101: (1, 1, "Visitante"),
@@ -41,11 +41,11 @@ BROSHU_SEMIFINAL: dict[str, dict[int, tuple[int, int, str]]] = {
     },
     "Luis": {
         101: (2, 3, "Visitante"),
-        102: (0, 1, "Local"),
+        102: (1, 0, "Local"),
     },
     "Nacho": {
         101: (4, 0, "Local"),
-        102: (1, 2, "Local"),
+        102: (2, 1, "Local"),
     },
     "Fer": {
         101: (0, 7, "Visitante"),
@@ -53,7 +53,7 @@ BROSHU_SEMIFINAL: dict[str, dict[int, tuple[int, int, str]]] = {
     },
     "Kike": {
         101: (2, 3, "Visitante"),
-        102: (1, 2, "Local"),
+        102: (2, 1, "Local"),
     },
     "Álvaro": {
         101: (1, 1, "Local"),
@@ -65,11 +65,11 @@ PAPINENES_SEMIFINAL: dict[str, dict[int, tuple[int, int, str]]] = {
     "Álvaro": BROSHU_SEMIFINAL["Álvaro"],
     "Papá": {
         101: (1, 2, "Visitante"),
-        102: (1, 2, "Local"),
+        102: (2, 1, "Local"),
     },
     "Diego": {
         101: (2, 1, "Local"),
-        102: (0, 1, "Visitante"),
+        102: (1, 0, "Visitante"),
     },
 }
 
